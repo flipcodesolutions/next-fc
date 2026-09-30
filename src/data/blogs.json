@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "Scaling Next.js 16 Applications in Production: Micro-frontends & Edge Caching",
+    "slug": "scaling-nextjs-microfrontends-edge-caching",
+    "summary": "A deep dive into architecture patterns for enterprise web applications handling millions of requests with Next.js and Cloudflare edge workers.",
+    "category": "Architecture",
+    "readTime": "6 min read",
+    "publishedAt": "March 2026",
+    "author": {
+      "name": "Jigar Parmar",
+      "role": "CTO",
+      "avatar": "/images/teams/cto.webp"
+    },
+    "tags": ["Next.js", "Edge Computing", "Performance", "Cloud"]
+  },
+  {
+    "id": "2",
+    "title": "Flutter vs React Native in 2026: Choosing the Right Mobile Stack",
+    "slug": "flutter-vs-react-native-2026",
+    "summary": "An honest architectural comparison for CTOs and engineering leads looking to build high-performance iOS and Android apps from a single codebase.",
+    "category": "Mobile",
+    "readTime": "8 min read",
+    "publishedAt": "February 2026",
+    "author": {
+      "name": "Prakash Kaliya",
+      "role": "Lead Mobile Developer",
+      "avatar": "/images/teams/praksahjpg.webp"
+    },
+    "tags": ["Flutter", "React Native", "Mobile", "Cross-Platform"]
+  },
+  {
+    "id": "3",
+    "title": "Designing Resilient API Gateways with Node.js and Redis",
+    "slug": "resilient-api-gateways-nodejs-redis",
+    "summary": "How we construct rate-limiting, authentication tokens, and distributed caching pipelines to prevent cascading service failures in microservices.",
+    "category": "Backend",
+    "readTime": "5 min read",
+    "publishedAt": "January 2026",
+    "author": {
+      "name": "Rudrika Dave",
+      "role": "Lead Full Stack Developer",
+      "avatar": "/images/teams/rudrika.webp"
+    },
+    "tags": ["Backend", "Node.js", "Redis", "Security"]
+  }
+]

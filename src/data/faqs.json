@@ -1,0 +1,18 @@
+[
+  {
+    "q": "What IT and software services does Flipcode Solutions offer?",
+    "a": "We provide full-lifecycle IT services including custom web application development, mobile app development (iOS & Android), custom CRM & ERP systems, e-commerce stores, cloud architecture & DevOps on AWS, UI/UX product design, SEO optimization, and 24/7 maintenance."
+  },
+  {
+    "q": "How long does a typical custom software project take?",
+    "a": "Project timelines depend on complexity. Fast-track web applications take 3 to 6 weeks, while enterprise software platforms and mobile ecosystems typically require 2 to 4 months. We provide detailed sprint milestones and transparent delivery dates before kickoff."
+  },
+  {
+    "q": "Do you provide post-launch support and SLAs?",
+    "a": "Yes. All projects include an initial complimentary warranty period followed by customizable SLA maintenance plans that include server health monitoring, security patches, regular backups, and ongoing feature development."
+  },
+  {
+    "q": "Who retains the intellectual property (IP) and source code?",
+    "a": "You retain 100% full intellectual property ownership of all custom source code, design assets, and database schemas developed for your project upon final payment settlement."
+  }
+]

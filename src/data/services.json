@@ -1,0 +1,106 @@
+[
+  {
+    "id": "mobile-app-development",
+    "slug": "mobile",
+    "title": "Mobile App Development",
+    "badge": "iOS & Android",
+    "description": "We specialize in designing and developing high-performance mobile applications that deliver seamless user experiences across all devices and operating systems.",
+    "features": [
+      "Native iOS & Android Apps",
+      "Cross-Platform Frameworks (Flutter & React Native)",
+      "Offline Sync & Real-Time Telemetry"
+    ],
+    "link": "/services#mobile"
+  },
+  {
+    "id": "web-application-development",
+    "slug": "web",
+    "title": "Web Application Development",
+    "badge": "Enterprise Web",
+    "description": "We engineer robust, scalable, and responsive web applications catering to unique workflows using modern full-stack architectures and high-security standards.",
+    "features": [
+      "Multi-Tenant SaaS Platforms",
+      "Enterprise Web Portals & Dashboards",
+      "Progressive Web Apps (PWA) with Offline Caching"
+    ],
+    "link": "/services#web"
+  },
+  {
+    "id": "backend-development",
+    "slug": "backend",
+    "title": "Backend Development",
+    "badge": "APIs & Cloud Architecture",
+    "description": "Our backend engineering services build powerful, resilient, and fault-tolerant cloud backbones that power high-concurrency enterprise workloads.",
+    "features": [
+      "Microservices & Event-Driven Architecture",
+      "High-Throughput RESTful & GraphQL APIs",
+      "Optimized Database Schemas & Caching Layers"
+    ],
+    "link": "/services#backend"
+  },
+  {
+    "id": "seo-digital-marketing",
+    "slug": "marketing",
+    "title": "SEO & Digital Marketing",
+    "badge": "Growth & Search Ranking",
+    "description": "We help brands achieve technical search dominance and organic customer acquisition through data-driven technical SEO, performance audits, and strategy.",
+    "features": [
+      "Technical Core Web Vitals Audits",
+      "Keyword Strategy & Competitor Analysis",
+      "Conversion Rate Optimization (CRO) Pipelines"
+    ],
+    "link": "/services#marketing"
+  },
+  {
+    "id": "uiux-development",
+    "slug": "uiux",
+    "title": "UI/UX Development",
+    "badge": "Design Systems & UX",
+    "description": "We craft intuitive, accessible, and conversion-optimized digital interfaces anchored by scalable design systems and polished micro-interactions.",
+    "features": [
+      "User Journey Mapping & Wireframing",
+      "Multi-Brand Design Systems & Tokens",
+      "Fluid Micro-Interactions & Motion Choreography"
+    ],
+    "link": "/services#uiux"
+  },
+  {
+    "id": "crm-development",
+    "slug": "crm",
+    "title": "CRM Development",
+    "badge": "Enterprise CRM & Automation",
+    "description": "Custom Customer Relationship Management (CRM) and ERP solutions designed to streamline sales pipelines, automate workflows, and unify data.",
+    "features": [
+      "Custom Sales & Lead Pipelines",
+      "Omnichannel In-App Communications",
+      "Third-Party ERP, Billing & Logistics Integrations"
+    ],
+    "link": "/services#crm"
+  },
+  {
+    "id": "e-commerce-development",
+    "slug": "ecommerce",
+    "title": "E-commerce Development",
+    "badge": "High-Conversion Stores",
+    "description": "Scalable multi-vendor marketplaces, high-speed headless stores, and custom checkout flows engineered to maximize revenue and minimize cart drop-off.",
+    "features": [
+      "Sub-Second High-Conversion Checkout",
+      "Multi-Warehouse & Inventory Real-Time Sync",
+      "Headless & Omnichannel Commerce Architectures"
+    ],
+    "link": "/services#ecommerce"
+  },
+  {
+    "id": "cms-development",
+    "slug": "cms",
+    "title": "CMS Development",
+    "badge": "Content Management Platforms",
+    "description": "Custom headless and modular Content Management Systems giving marketing teams full editorial autonomy with lightning-fast static delivery.",
+    "features": [
+      "Custom Headless CMS Architecture",
+      "Enterprise WordPress & Strapi Integration",
+      "Multi-Language Localization & Granular Roles"
+    ],
+    "link": "/services#cms"
+  }
+]

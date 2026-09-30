@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "badge": "Enterprise Digital Product Engineering",
+    "title": "Architecting Scalable Software for High-Growth Enterprises",
+    "subtitle": "FlipCode Solutions Private Limited delivers resilient web applications, cross-platform mobile apps, cloud infrastructure, and custom CRM systems tailored for operational excellence.",
+    "primaryCta": "Explore Services",
+    "secondaryCta": "View Case Studies"
+  },
+  "stats": [
+    { "value": "70+", "label": "Projects Delivered", "highlight": true },
+    { "value": "70+", "label": "Happy Clients", "highlight": false },
+    { "value": "6+", "label": "Countries Served", "highlight": false },
+    { "value": "99.9%", "label": "Uptime SLA", "highlight": false }
+  ],
+  "highlights": [
+    "Full-Stack Web & SaaS Engineering",
+    "Flutter & React Native Mobile Development",
+    "Enterprise Cloud Architecture & DevOps",
+    "Secure CRM & Custom ERP Solutions"
+  ]
+}

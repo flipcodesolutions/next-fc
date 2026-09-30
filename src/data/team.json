@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Ravirajsinh Gohil",
+    "role": "CEO & Founder",
+    "avatar": "/images/teams/ceo.webp",
+    "bio": "Over a decade of IT leadership driving FlipCode toward future-ready products and long-term client partnerships.",
+    "linkedin": "https://www.linkedin.com/company/flipcode-solutions-private-limited/"
+  },
+  {
+    "name": "Jigar Parmar",
+    "role": "CTO",
+    "avatar": "/images/teams/cto.webp",
+    "bio": "Architect of our technical vision — software architecture, cloud solutions, and emerging technologies.",
+    "linkedin": "https://www.linkedin.com/company/flipcode-solutions-private-limited/"
+  },
+  {
+    "name": "Rudrika Dave",
+    "role": "Lead Full Stack Developer",
+    "avatar": "/images/teams/rudrika.webp",
+    "bio": "Five years crafting seamless, user-friendly applications with clean code and innovative problem-solving.",
+    "linkedin": "https://www.linkedin.com/company/flipcode-solutions-private-limited/"
+  },
+  {
+    "name": "Prakash Kaliya",
+    "role": "Lead Mobile App Developer",
+    "avatar": "/images/teams/praksahjpg.webp",
+    "bio": "Seven years building high-performing mobile apps with React Native, Flutter, and native technologies.",
+    "linkedin": "https://www.linkedin.com/company/flipcode-solutions-private-limited/"
+  }
+]

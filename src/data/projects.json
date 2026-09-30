@@ -1,0 +1,153 @@
+[
+  {
+    "id": "smvs",
+    "name": "Swaminarayan Mandir Vasna Sanstha (SMVS)",
+    "category": "web",
+    "categoryLabel": "Web & Mobile Ecosystem",
+    "industry": "Spiritual Organization & Community",
+    "summary": "The SMVS platform is a comprehensive digital platform designed to deliver spiritual teachings, organizational information, live event broadcasts, and community services globally.",
+    "fullOverview": "An international non-profit platform serving over 250,000 devotees across 12 countries. Featuring real-time event streaming, multi-lingual publication readers, donation payment gateway integration, and volunteer management hierarchies.",
+    "challenge": "Handling massive spike traffic during annual spiritual festivals while maintaining low-latency live media streaming across low-bandwidth mobile networks.",
+    "requirements": [
+      "Global CDN caching with adaptive bitrate live video streaming.",
+      "Multi-lingual e-publication reader with offline caching.",
+      "Automated donation tax receipts generation.",
+      "Cross-platform Flutter mobile app with push notifications."
+    ],
+    "solution": "We engineered a resilient Next.js and React frontend paired with a modular Node.js API and PostgreSQL cluster, orchestrated inside Docker containers on AWS.",
+    "keyFeatures": [
+      "Live Festival HD Video & Audio Webcasting",
+      "Interactive Multi-Lingual Spiritual Publication Reader",
+      "Secure Multi-Currency Donation Gateway",
+      "Devotee Community Directory & Event Scheduler"
+    ],
+    "techs": ["React.js", "Node.js", "Flutter", "PostgreSQL", "Docker", "AWS CloudFront"],
+    "impact": "250,000+ Active Devotees · 99.98% Uptime During Festivals",
+    "timeline": "12 Weeks Sprint Delivery"
+  },
+  {
+    "id": "argil-tiles",
+    "name": "Argil Tiles Digital Showroom & Spec Portal",
+    "category": "ecommerce",
+    "categoryLabel": "Web & E-Commerce Ecosystem",
+    "industry": "Manufacturing & Architecture",
+    "summary": "The Argil Tiles website is a modern digital platform designed to showcase premium tile collections, highlight architectural aesthetics, and drive B2B export inquiries.",
+    "fullOverview": "Engineered with interactive tile room visualizers, instant surface square-footage calculators, bulk export inquiry pipelines, and high-resolution web-optimized 3D asset galleries.",
+    "challenge": "Presenting heavy high-res tile textures and patterns without degrading mobile performance or international page load speeds.",
+    "requirements": [
+      "Interactive real-time tile surface and texture visualizer.",
+      "B2B export quote calculator with tiered quantity pricing.",
+      "Sub-second search filtering across 1,500+ SKU variations."
+    ],
+    "solution": "Developed an ultra-lightweight Next.js dynamic catalog with automated WebP/AVIF asset optimization on AWS S3/CloudFront and MySQL indexing.",
+    "keyFeatures": [
+      "3D Surface Texture & Visualizer Studio",
+      "Automated Export Spec Sheet PDF Generator",
+      "Instant Distributor Lead Capture Pipeline",
+      "Multi-Country Currency & Measurement Converter"
+    ],
+    "techs": ["Next.js", "Node.js", "MySQL 8.0", "Tailwind CSS", "AWS S3", "Redis"],
+    "impact": "3.4x Increase in International Distributor Leads",
+    "timeline": "10 Weeks Sprint Delivery"
+  },
+  {
+    "id": "ubn",
+    "name": "United Business Network (UBN)",
+    "category": "custom",
+    "categoryLabel": "Enterprise Platform & Community",
+    "industry": "Business Networking & Communities",
+    "summary": "The UBN Community website is a professional networking platform designed to connect entrepreneurs, business owners, and corporate executives with automated matchmaking.",
+    "fullOverview": "Features verified member authentication, peer-to-peer referral pipelines, automated chapter meeting schedulers, dues billing, and privacy-shielded direct messaging.",
+    "challenge": "Fragmented manual attendance tracking and lack of clear financial attribution for peer business referrals.",
+    "requirements": [
+      "Verified membership KYC onboarding with role tiers.",
+      "Automated referral tracking and closed-business attribution analytics.",
+      "Chapter meeting check-ins with QR codes."
+    ],
+    "solution": "Built a unified web and mobile ecosystem on React, Node.js, and Flutter with encrypted direct messaging and real-time referral pipelines.",
+    "keyFeatures": [
+      "Business Referral Pipeline & Closed-Deal Telemetry",
+      "Automated Chapter Meeting Scheduler & QR Check-In",
+      "Peer-to-Peer Privacy Shielded Direct Messenger",
+      "Annual Membership Dues Billing Automation"
+    ],
+    "techs": ["React.js", "Node.js", "Flutter", "PostgreSQL", "Docker", "WebSockets"],
+    "impact": "5,000+ Verified Business Members · $12M+ Referrals Exchanged",
+    "timeline": "14 Weeks Sprint Delivery"
+  },
+  {
+    "id": "aadesh-patola",
+    "name": "Aadesh Patola House Luxury Heritage E-Commerce",
+    "category": "ecommerce",
+    "categoryLabel": "Luxury E-Commerce & Marketplace",
+    "industry": "Heritage Fashion & E-Commerce",
+    "summary": "The Aadesh Patola House website is a premium digital platform designed to showcase traditional Patola sarees and heritage craftsmanship with international checkout.",
+    "fullOverview": "Equipped with custom weave customization modules, secure multi-currency Stripe checkout, anti-counterfeit digital authenticity certificates, and automated DHL freight tracking.",
+    "challenge": "Replicating the tactile luxury showroom experience online and building trust against counterfeit reproductions.",
+    "requirements": [
+      "High-resolution micro-zoom weave inspector.",
+      "Digital Certificate of Authenticity generation per serialized saree.",
+      "Multi-currency checkout supporting international cards, PayPal, and Apple Pay."
+    ],
+    "solution": "Created a bespoke Next.js storefront paired with Stripe international checkout, anti-counterfeit QR certificates, and automated DHL customs documentation.",
+    "keyFeatures": [
+      "Interactive Weave Loom Inspector & Story Timeline",
+      "Anti-Counterfeit Serialized QR Digital Authenticity Certificate",
+      "Multi-Currency Stripe & PayPal Express Checkout",
+      "Automated Global Express Freight Tracking"
+    ],
+    "techs": ["Next.js", "Node.js", "Stripe API", "MySQL", "Tailwind CSS", "AWS S3"],
+    "impact": "180% Surge in Global NRI Customer Orders",
+    "timeline": "8 Weeks Sprint Delivery"
+  },
+  {
+    "id": "career-culture",
+    "name": "Career & Culture – Youth Growth Platform",
+    "category": "mobile",
+    "categoryLabel": "Cross-Platform Mobile Application",
+    "industry": "Youth Education & EdTech",
+    "summary": "Career and Culture is a youth-focused holistic development application designed to help young individuals grow physically, mentally, and spiritually through habit tracking.",
+    "fullOverview": "Interactive mobile application built on Flutter featuring gamified daily meditation trackers, mentor live streaming, audio discourse libraries, and push notification engagement engine.",
+    "challenge": "Retaining teenage and young adult engagement over long continuous 30-day spiritual and career habit sprints.",
+    "requirements": [
+      "Gamified daily streak mechanics and community leaderboards.",
+      "Offline audio player for meditation and lecture tracks.",
+      "Automated push notification reminders tailored to user timezones."
+    ],
+    "solution": "Developed an iOS and Android app on Flutter powered by Firebase cloud functions and a scalable Node.js audio streaming backend.",
+    "keyFeatures": [
+      "Gamified Habit Streaks & Level Badges",
+      "Curated Audio Discourse Library with Background Play",
+      "Live Interactive Workshop Streaming with Q&A",
+      "Personalized Daily Journaling & Goal Tracking"
+    ],
+    "techs": ["Flutter", "Firebase", "REST API", "Node.js", "WebSockets"],
+    "impact": "50,000+ Student Downloads · 4.8 App Store Rating",
+    "timeline": "10 Weeks Sprint Delivery"
+  },
+  {
+    "id": "vaidraj-ayurvedic",
+    "name": "Vaidraj Ayurvedic Consultation & Wellness Portal",
+    "category": "custom",
+    "categoryLabel": "HealthTech & Consultation Portal",
+    "industry": "Ayurveda & HealthTech",
+    "summary": "The Vaidraj Ayurvedic website is a dedicated online platform for Ayurvedic health services, herbal treatments, wellness products, and online doctor consultations.",
+    "fullOverview": "Includes HIPAA-compliant patient intake questionnaires, automated doctor appointment calendar booking, prescription PDF generation, and secure Ayurvedic e-pharmacy integration.",
+    "challenge": "Standardizing patient dosha diagnostics into structured intake forms and managing doctor appointment schedules across multiple clinical locations.",
+    "requirements": [
+      "Intelligent Ayurvedic dosha assessment questionnaire.",
+      "Physician appointment calendar with automated reminders.",
+      "Integrated e-pharmacy with formulation dosage notes."
+    ],
+    "solution": "Engineered a secure React web app with Node.js backend, automated PDF prescription generation, and integrated inventory management.",
+    "keyFeatures": [
+      "Dosha Diagnostic Interactive Triage Intake",
+      "Automated Doctor Video Appointment Booking",
+      "Herbal Formulation E-Commerce & Dosage Instructions",
+      "Patient Health Progress Telemetry & Follow-Up Reminders"
+    ],
+    "techs": ["React.js", "Node.js", "Flutter", "PostgreSQL", "Docker", "Stripe"],
+    "impact": "15,000+ Online Doctor Consultations Completed",
+    "timeline": "8 Weeks Sprint Delivery"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "quote": "Professional team with excellent service quality. They delivered our project on time with modern design and outstanding performance.",
+    "author": "Kushal Varneshiya",
+    "role": "Director at Argil Tile",
+    "initials": "KV",
+    "rating": 5
+  },
+  {
+    "quote": "Their development expertise and communication were exceptional. The final product exceeded our expectations in every aspect.",
+    "author": "Jaydeep Parekh",
+    "role": "UBN Director",
+    "initials": "JP",
+    "rating": 5
+  },
+  {
+    "quote": "Very reliable and highly skilled team. They helped us build a scalable and user-friendly platform with great long-term support.",
+    "author": "Himanshu Thakkar",
+    "role": "Career & Culture MD",
+    "initials": "HT",
+    "rating": 5
+  }
+]

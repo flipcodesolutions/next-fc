@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-orange: #FF6B35;
+    --brand-orange-hover: #e85924;
+    --charcoal-gray: #5A5D5C;
+    --dark-primary: #202323;
+    --dark-secondary: #2C3030;
+    --light-bg: #F7F8F8;
+    --border-color: #E5E7E9;
+    --text-primary: #303333;
+    --text-muted: #6B7070;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: var(--text-primary);
+    font-family: var(--font-inter, 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope, 'Manrope', sans-serif);
+    color: var(--dark-primary);
+  }
+}
+
+/* Custom Flipcode Brand Utilities */
+.bg-dark-primary {
+  background-color: #202323;
+}
+
+.bg-dark-secondary {
+  background-color: #2C3030;
+}
+
+.bg-light-surface {
+  background-color: #F7F8F8;
+}
+
+.text-brand-orange {
+  color: #FF6B35;
+}
+
+.text-dark-primary {
+  color: #202323;
+}
+
+.text-charcoal {
+  color: #5A5D5C;
+}
+
+.text-body-dark {
+  color: #303333;
+}
+
+.border-subtle {
+  border-color: #E5E7E9;
+}
+
+/* Buttons */
+.btn-primary-orange {
+  background-color: #FF6B35;
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-orange:hover {
+  background-color: #202323;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(32, 35, 35, 0.25);
+}
+
+.btn-secondary-outline {
+  background-color: transparent;
+  color: #202323;
+  border: 1px solid #202323;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary-outline:hover {
+  border-color: #FF6B35;
+  color: #FF6B35;
+  background-color: rgba(255, 107, 53, 0.04);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-white:hover {
+  border-color: #FF6B35;
+  color: #FF6B35;
+  background-color: rgba(255, 107, 53, 0.08);
+}
+
+/* Card Hover Lift */
+.card-lift {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(32, 35, 35, 0.07);
+  border-color: rgba(255, 107, 53, 0.35);
+}
+
+.card-lift-dark {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-lift-dark:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 53, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Background Grids & Subtle Glows */
+.bg-grid-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Criss-Cross Pattern (Diagonal Crosses + Grid) */
+.bg-cross-pattern-dark {
+  background-color: #202323;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 64px 64px, 64px 64px;
+}
+
+.bg-crisscross-subtle {
+  background-image: 
+    linear-gradient(45deg, rgba(255, 102, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(255, 102, 0, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-dots-light {
+  background-image: radial-gradient(rgba(32, 35, 35, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hero-radial-glow {
+  background: radial-gradient(circle at 80% 35%, rgba(255, 107, 53, 0.18) 0%, rgba(255, 107, 53, 0.04) 50%, transparent 70%);
+}
+
+.cta-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.18) 0%, transparent 65%);
+}
+
+/* Timeline Connectors */
+.timeline-line {
+  background: linear-gradient(to right, #FF6B35 0%, #5A5D5C 100%);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #202323;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5A5D5C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B35;
+}
