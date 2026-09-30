@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
-import { AuthProvider } from "@/lib/auth-context";
 import PageLoader from "@/components/ui/PageLoader";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
@@ -103,9 +102,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col bg-white text-[#3F4446] font-sans selection:bg-[#FF6B35] selection:text-white">
         <PageLoader />
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        {children}
       </body>
     </html>
   );
