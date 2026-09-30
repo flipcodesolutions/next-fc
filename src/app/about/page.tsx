@@ -19,8 +19,6 @@ import {
   Quote,
   Calendar,
   Layers,
-  MapPin,
-  ExternalLink,
 } from 'lucide-react';
 import teamData from '@/data/team.json';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';

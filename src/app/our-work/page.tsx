@@ -6,25 +6,31 @@ import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import {
   ArrowRight,
-  ExternalLink,
   CheckCircle2,
   X,
-  Layers,
-  Sparkles,
-  Calendar,
-  DollarSign,
-  TrendingUp,
-  Cpu,
-  Server,
-  Smartphone,
-  ShoppingBag,
-  Building2,
-  ShieldCheck,
 } from 'lucide-react';
+
+interface ProjectItem {
+  id: string;
+  name: string;
+  category: string;
+  categoryLabel: string;
+  industry: string;
+  shortDesc: string;
+  overview: string;
+  challenge: string;
+  requirements: string[];
+  solution: string;
+  keyFeatures: string[];
+  techs: string[];
+  process: string;
+  results: string[];
+  gradient: string;
+}
 
 export default function OurWorkPage() {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   const filters = ['All', 'Web', 'Mobile', 'SaaS', 'eCommerce', 'Business Software'];
 

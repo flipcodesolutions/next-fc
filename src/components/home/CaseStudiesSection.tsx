@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface CaseStudiesSectionProps {
   onOpenCaseStudy?: (title: string) => void;

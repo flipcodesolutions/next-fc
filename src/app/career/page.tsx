@@ -1,13 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import {
-  Briefcase,
   MapPin,
-  Clock,
   Sparkles,
   ArrowRight,
   CheckCircle2,
@@ -18,11 +15,21 @@ import {
   TrendingUp,
   HeartHandshake,
   Code2,
-  Palette,
 } from 'lucide-react';
 
+interface Job {
+  id: string;
+  title: string;
+  type: string;
+  experience: string;
+  location: string;
+  salary: string;
+  desc: string;
+  skills: string[];
+}
+
 export default function CareerPage() {
-  const [selectedJob, setSelectedJob] = useState<any | null>(null);
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
   const [applyForm, setApplyForm] = useState({
     name: '',
@@ -137,7 +144,7 @@ export default function CareerPage() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleOpenApply = (job?: any) => {
+  const handleOpenApply = (job?: Job) => {
     setSelectedJob(job || null);
     setApplyForm({
       ...applyForm,
@@ -336,7 +343,7 @@ export default function CareerPage() {
                     Job Application
                   </div>
                   <h3 className="text-lg font-bold font-heading text-white mt-0.5">
-                    {applyForm.role}
+                    {selectedJob ? `${selectedJob.title} • ${selectedJob.location}` : applyForm.role}
                   </h3>
                 </div>
                 <button

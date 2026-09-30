@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
-import { ArrowLeft, Home, Compass } from 'lucide-react';
+import { Home, Compass } from 'lucide-react';
 
 export default function NotFound() {
   return (

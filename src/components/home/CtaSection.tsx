@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, MessageSquare, Sparkles, Mail, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, MessageSquare, CheckCircle2 } from 'lucide-react';
 
 interface CtaSectionProps {
   onOpenContact?: () => void;

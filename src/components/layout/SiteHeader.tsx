@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import FlipcodeLogo from '@/components/ui/FlipcodeLogo';
-import { Menu, X, ArrowRight, Phone } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export default function SiteHeader() {
   const pathname = usePathname();

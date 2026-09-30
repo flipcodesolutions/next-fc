@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import {
@@ -16,7 +15,6 @@ import {
   Building2,
   Sparkles,
   ShieldCheck,
-  ArrowRight,
   User,
   X,
 } from 'lucide-react';

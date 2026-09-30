@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ShieldCheck, Zap, Globe2, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Zap, Globe2 } from 'lucide-react';
 
 export default function WhyFlipcodeSection() {
   const stats = [

@@ -20,32 +20,14 @@ import {
   ArrowRight,
   Code2,
   Smartphone,
-  Layers,
-  Cpu,
   ShoppingBag,
-  Network,
   ShieldCheck,
-  Zap,
   Users2,
-  CheckCircle2,
-  Sparkles,
   Server,
-  Database,
-  Cloud,
   ChevronRight,
   ChevronDown,
   ChevronUp,
-  ExternalLink,
-  Activity,
-  Award,
   HeartHandshake,
-  Stethoscope,
-  GraduationCap,
-  Car,
-  Landmark,
-  Building2,
-  Store,
-  Compass,
   Star,
   Phone,
   Mail,
@@ -53,19 +35,36 @@ import {
   Clock,
   Lock,
   Check,
+  CheckCircle2,
   X,
   Calendar,
   Send,
   FileText,
-  Boxes,
   TrendingUp,
   Palette,
-  Search,
 } from 'lucide-react';
+
+interface ProjectModalItem {
+  id: string;
+  name: string;
+  category: string;
+  categoryLabel: string;
+  industry: string;
+  summary: string;
+  fullOverview: string;
+  challenge: string;
+  requirements: string[];
+  solution: string;
+  keyFeatures: string[];
+  techs: string[];
+  impact: string;
+  timeline: string;
+  color?: string;
+}
 
 export default function HomePage() {
   // Modal states
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState<any | null>(null);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<ProjectModalItem | null>(null);
   const [isConsultModalOpen, setIsConsultModalOpen] = useState(false);
   
   // Contact / Consultation form states
@@ -152,7 +151,7 @@ export default function HomePage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
   // Icon mapping for services from JSON
-  const serviceIconMap: Record<string, any> = {
+  const serviceIconMap: Record<string, React.ElementType> = {
     mobile: Smartphone,
     web: Code2,
     backend: Server,

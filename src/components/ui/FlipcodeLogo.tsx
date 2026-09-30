@@ -22,14 +22,20 @@ export default function FlipcodeLogo({
   }[size];
 
   return (
-    <Link href="/" className={`inline-flex items-center group ${className}`}>
-      <img
+    <Link
+      href="/"
+      className={`inline-flex items-center group ${className} ${
+        variant === 'light' ? 'brightness-110' : ''
+      }`}
+      aria-label="Flipcode Solutions"
+    >
+      <Image
         src="/images/logo.webp"
-        alt="Flipcode Solutions Private Limited"
+        alt={showSubtitle ? 'Flipcode Solutions Private Limited' : 'Flipcode Solutions'}
         width={dimensions.width}
         height={dimensions.height}
         className="h-auto object-contain transition-transform group-hover:scale-[1.02] duration-200"
-        style={{ width: `${dimensions.width}px` }}
+        priority
       />
     </Link>
   );

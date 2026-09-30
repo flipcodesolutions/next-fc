@@ -13,11 +13,6 @@ import {
   Network,
   CheckCircle2,
   ArrowRight,
-  Database,
-  Cloud,
-  Cpu,
-  Lock,
-  Zap,
 } from 'lucide-react';
 
 export const metadata: Metadata = {

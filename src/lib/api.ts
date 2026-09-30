@@ -1,11 +1,11 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   message?: string;
   data?: T;
   count?: number;
-  meta?: any;
+  meta?: Record<string, unknown>;
 }
 
 export interface User {
@@ -110,7 +110,7 @@ async function fetchWithAuth<T>(endpoint: string, options: RequestInit = {}): Pr
       throw new Error(data.message || `Request failed with status ${res.status}`);
     }
     return data;
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(`[API Error] ${endpoint}:`, err);
     throw err;
   }

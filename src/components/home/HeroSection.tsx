@@ -8,16 +8,9 @@ import {
   Cloud,
   Zap,
   Smartphone,
-  CheckCircle2,
   Sparkles,
   FileCode,
   Box,
-  Terminal,
-  ShieldCheck,
-  Calendar,
-  Laptop,
-  Smile,
-  Globe2,
 } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -90,13 +83,23 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
 
             {/* CTA Buttons Group */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#FF6600] hover:bg-[#E85C00] text-white text-base font-bold transition-all shadow-lg shadow-[#FF6600]/30 hover:shadow-[#FF6600]/45 hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <span>Start Your Project</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              {onOpenContact ? (
+                <button
+                  onClick={onOpenContact}
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#FF6600] hover:bg-[#E85C00] text-white text-base font-bold transition-all shadow-lg shadow-[#FF6600]/30 hover:shadow-[#FF6600]/45 hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  <span>Start Your Project</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              ) : (
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#FF6600] hover:bg-[#E85C00] text-white text-base font-bold transition-all shadow-lg shadow-[#FF6600]/30 hover:shadow-[#FF6600]/45 hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  <span>Start Your Project</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              )}
 
               <Link
                 href="/our-work"
@@ -244,7 +247,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
                           <span className="text-[#C084FC]">import</span> <span className="text-white">&#123;</span> <span className="text-[#FF6600] font-semibold">FlipEngine</span> <span className="text-white">&#125;</span> <span className="text-[#C084FC]">from</span> <span className="text-[#34D399]">&apos;@flipcode/core&apos;</span>;
                         </div>
                         <div className="text-slate-500 italic">
-                          // Initializing Enterprise Scalable Engine
+                          {'// Initializing Enterprise Scalable Engine'}
                         </div>
                         <div>
                           <span className="text-[#38BDF8]">export const</span> <span className="text-[#FBBF24]">solution</span> <span className="text-white">=</span> <span className="text-[#C084FC]">new</span> <span className="text-[#FF6600]">FlipEngine</span><span className="text-white">(&#123;</span>
@@ -262,7 +265,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
                           <span className="text-white">&#125;);</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <span className="text-[#FBBF24]">solution</span>.<span className="text-[#60A5FA]">deployToProduction</span><span className="text-white">();</span> <span className="text-[#34D399] font-sans font-semibold">// 🚀 Live in Production</span>
+                          <span className="text-[#FBBF24]">solution</span>.<span className="text-[#60A5FA]">deployToProduction</span><span className="text-white">();</span> <span className="text-[#34D399] font-sans font-semibold">{'// 🚀 Live in Production'}</span>
                           <span className="w-2 h-4 bg-[#FF6600] inline-block animate-pulse"></span>
                         </div>
                       </>
@@ -275,7 +278,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
                           <span className="text-[#C084FC]">import</span> <span className="text-[#34D399]">&quot;github.com/flipcode/cloud&quot;</span>
                         </div>
                         <div className="text-slate-500 italic">
-                          // Multi-Region Edge Mesh Controller
+                          {'// Multi-Region Edge Mesh Controller'}
                         </div>
                         <div>
                           <span className="text-[#C084FC]">func</span> <span className="text-[#60A5FA]">main</span><span className="text-white">() &#123;</span>
@@ -287,7 +290,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
                           <span className="text-[#FBBF24]">mesh</span>.<span className="text-[#60A5FA]">ScaleAuto</span><span className="text-white">(1000000)</span>
                         </div>
                         <div className="pl-4">
-                          <span className="text-[#FBBF24]">mesh</span>.<span className="text-[#60A5FA]">Deploy</span><span className="text-white">()</span> <span className="text-[#38BDF8] font-sans font-semibold">// ⚡ Peak Performance</span>
+                          <span className="text-[#FBBF24]">mesh</span>.<span className="text-[#60A5FA]">Deploy</span><span className="text-white">()</span> <span className="text-[#38BDF8] font-sans font-semibold">{'// ⚡ Peak Performance'}</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <span className="text-white">&#125;</span>

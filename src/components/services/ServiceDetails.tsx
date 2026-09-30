@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Service } from '@/types';
-import { ArrowRight, CheckCircle2, Layers, Cpu, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 
 interface ServiceDetailsProps {
   service: Service;

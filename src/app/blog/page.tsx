@@ -1,19 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import {
-  Calendar,
-  Clock,
   ArrowRight,
-  Search,
   Mail,
   CheckCircle2,
-  Sparkles,
-  Tag,
-  BookOpen,
 } from 'lucide-react';
 
 export default function BlogPage() {

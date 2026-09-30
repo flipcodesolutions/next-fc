@@ -5,9 +5,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowUpRight,
-  ShieldCheck,
-  Globe,
 } from 'lucide-react';
 
 export default function BrandFooter() {

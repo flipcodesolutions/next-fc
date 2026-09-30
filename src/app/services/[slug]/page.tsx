@@ -7,7 +7,7 @@ import SiteFooter from '@/components/layout/SiteFooter';
 import ServiceDetails from '@/components/services/ServiceDetails';
 import servicesData from '@/data/services.json';
 import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
-import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface Props {
   params: Promise<{ slug: string }>;

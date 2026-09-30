@@ -6,7 +6,7 @@ import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import blogsData from '@/data/blogs.json';
 import { BreadcrumbJsonLd, ArticleJsonLd } from '@/components/seo/JsonLd';
-import { ArrowLeft, Clock, Calendar, Tag, ArrowRight, Share2, Sparkles } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar } from 'lucide-react';
 
 interface Props {
   params: Promise<{ slug: string }>;

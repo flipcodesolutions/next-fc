@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Send, CheckCircle2, Sparkles, Building2, Mail, Phone, User } from 'lucide-react';
+import { X, Send, CheckCircle2, Building2, Mail, User } from 'lucide-react';
 import FlipcodeLogo from '@/components/ui/FlipcodeLogo';
 
 interface ContactModalProps {

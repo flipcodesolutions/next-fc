@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import FlipcodeLogo from '@/components/ui/FlipcodeLogo';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function SiteFooter() {
   return (

@@ -21,18 +21,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const savedToken = localStorage.getItem('flipcode_token');
-    const savedUser = localStorage.getItem('flipcode_user');
+    const timer = setTimeout(() => {
+      const savedToken = typeof window !== 'undefined' ? localStorage.getItem('flipcode_token') : null;
+      const savedUser = typeof window !== 'undefined' ? localStorage.getItem('flipcode_user') : null;
 
-    if (savedToken && savedUser) {
-      try {
-        setToken(savedToken);
-        setUser(JSON.parse(savedUser));
-      } catch (e) {
-        console.error('Failed to parse saved user', e);
+      if (savedToken && savedUser) {
+        try {
+          setToken(savedToken);
+          setUser(JSON.parse(savedUser));
+        } catch (e) {
+          console.error('Failed to parse saved user', e);
+        }
       }
-    }
-    setIsLoading(false);
+      setIsLoading(false);
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const login = async (email: string, password: string) => {
@@ -46,8 +50,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: true };
       }
       return { success: false, message: res.message || 'Login failed' };
-    } catch (err: any) {
-      return { success: false, message: err.message || 'Network error' };
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Network error';
+      return { success: false, message };
     }
   };
 
@@ -62,8 +67,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: true };
       }
       return { success: false, message: res.message || 'Registration failed' };
-    } catch (err: any) {
-      return { success: false, message: err.message || 'Network error' };
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Network error';
+      return { success: false, message };
     }
   };
 
