@@ -154,7 +154,7 @@ export default function AboutPage() {
               '@type': 'ContactPoint',
               telephone: '+91-9979404044',
               contactType: 'customer service',
-              email: 'info@flipcodesolutions.com',
+              email: 'contact@flipcodesolutions.com',
               areaServed: ['IN', 'US', 'GB', 'AE', 'AU', 'CA', 'EU'],
               availableLanguage: ['English', 'Hindi', 'Gujarati'],
             },

@@ -34,11 +34,13 @@ export default function BrandFooter() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#FF6600]" />
-                <span className="hover:text-white transition-colors">+91 (0) 80 4920 1800</span>
+                <a href="tel:+919979404044" className="hover:text-white transition-colors">
+                  +91 99794 04044
+                </a>
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#FF6600] flex-shrink-0 mt-0.5" />
-                <span>Flipcode Towers, Tech Innovation Park, Bangalore, India</span>
+                <span>Nr. Panama Sales, Dalmill Road, Surendranagar, Gujarat 363001, India</span>
               </div>
             </div>
 

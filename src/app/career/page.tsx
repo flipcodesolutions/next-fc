@@ -81,7 +81,7 @@ export default function CareerPage() {
       title: 'Senior Laravel Developer',
       type: 'Full Time',
       experience: '3+ Years',
-      location: 'Bangalore, India (Hybrid / Remote)',
+      location: 'Surendranagar, Gujarat, India (Hybrid / Remote)',
       salary: 'Competitive + Performance Bonuses',
       desc: 'Looking for a seasoned Laravel & PHP backend engineer with experience building scalable REST APIs, MySQL query optimization, queues, and multi-tenant architectures.',
       skills: ['Laravel 11', 'PHP 8.3', 'MySQL 8.0', 'Redis', 'Docker', 'REST APIs', 'Unit Testing'],
@@ -91,7 +91,7 @@ export default function CareerPage() {
       title: 'React.js Developer',
       type: 'Full Time',
       experience: '2+ Years',
-      location: 'Bangalore, India (Hybrid / Remote)',
+      location: 'Surendranagar, Gujarat, India (Hybrid / Remote)',
       salary: 'Competitive + Performance Bonuses',
       desc: 'Seeking a proactive React & Next.js frontend engineer to build responsive, accessible, and high-performance user interfaces with Tailwind CSS and TypeScript.',
       skills: ['React.js', 'Next.js (App Router)', 'TypeScript', 'Tailwind CSS', 'Redux / Zustand', 'Web Vitals'],
@@ -101,7 +101,7 @@ export default function CareerPage() {
       title: 'Node.js Developer',
       type: 'Full Time',
       experience: '2+ Years',
-      location: 'Bangalore, India (Hybrid / Remote)',
+      location: 'Surendranagar, Gujarat, India (Hybrid / Remote)',
       salary: 'Competitive + Performance Bonuses',
       desc: 'Passionate Node.js developer to architect high-throughput microservices, WebSocket event gateways, and third-party API payment integrations.',
       skills: ['Node.js', 'Express', 'TypeScript', 'MySQL / PostgreSQL', 'WebSockets', 'AWS / Docker'],
@@ -111,7 +111,7 @@ export default function CareerPage() {
       title: 'UI/UX Designer',
       type: 'Full Time',
       experience: '2+ Years',
-      location: 'Bangalore, India (Hybrid / Remote)',
+      location: 'Surendranagar, Gujarat, India (Hybrid / Remote)',
       salary: 'Competitive + Performance Bonuses',
       desc: 'Product designer with strong visual aesthetic sensibilities to create intuitive B2B web applications, mobile apps, design tokens, and user flow wireframes.',
       skills: ['Figma', 'Design Systems', 'Wireframing', 'Prototyping', 'User Research', 'Micro-Interactions'],
@@ -245,7 +245,7 @@ export default function CareerPage() {
                 Open <span className="text-[#FF6B35]">Positions</span>
               </h2>
               <p className="mt-3 text-sm text-[#6B7070]">
-                Explore roles across engineering and design. Join our team in Bangalore or work remotely.
+                Explore roles across engineering and design. Join our team in Surendranagar, Gujarat or work remotely.
               </p>
             </div>
 

@@ -31,14 +31,16 @@ export function OrganizationJsonLd({
     foundingDate: '2023',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Bangalore / Surat',
-      addressRegion: 'India',
+      streetAddress: 'Nr. Panama Sales, Dalmill Road',
+      addressLocality: 'Surendranagar',
+      addressRegion: 'Gujarat',
+      postalCode: '363001',
       addressCountry: 'IN',
     },
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+91-80-4920-1800',
+        telephone: '+91-9979404044',
         contactType: 'sales',
         email: 'contact@flipcodesolutions.com',
         areaServed: ['US', 'CA', 'GB', 'AE', 'IN', 'AU', 'EU'],

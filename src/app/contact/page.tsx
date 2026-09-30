@@ -411,9 +411,18 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <span className="text-[10px] text-[#A0A4A6] uppercase font-bold block">Email Inquiries</span>
-                        <a href="mailto:contact@flipcodesolutions.com" className="hover:text-white font-medium">
-                          contact@flipcodesolutions.com
-                        </a>
+                        <div className="space-y-0.5">
+                          <div>
+                            <a href="mailto:contact@flipcodesolutions.com" className="hover:text-white font-medium">
+                              contact@flipcodesolutions.com
+                            </a>
+                          </div>
+                          <div>
+                            <a href="mailto:hr@flipcodesolutions.com" className="hover:text-white font-medium text-xs text-[#A0A4A6]">
+                              hr@flipcodesolutions.com <span className="text-[10px] text-slate-400">(Careers)</span>
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -423,7 +432,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <span className="text-[10px] text-[#A0A4A6] uppercase font-bold block">Phone &amp; WhatsApp</span>
-                        <span className="font-medium">+91 (0) 80 4920 1800</span>
+                        <a href="tel:+919979404044" className="font-medium hover:text-[#FF6B35] transition-colors">
+                          +91 99794 04044
+                        </a>
                       </div>
                     </div>
 
@@ -433,7 +444,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <span className="text-[10px] text-[#A0A4A6] uppercase font-bold block">Corporate Headquarters</span>
-                        <span className="font-medium">Flipcode Towers, Silicon Tech Innovation Hub, Bangalore, Karnataka, India</span>
+                        <span className="font-medium">Nr. Panama Sales, Dalmill Road, Surendranagar, Gujarat 363001, India</span>
                       </div>
                     </div>
 
@@ -443,7 +454,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <span className="text-[10px] text-[#A0A4A6] uppercase font-bold block">Operating Hours</span>
-                        <span className="font-medium">Monday – Friday: 9:00 AM – 7:00 PM IST (24/7 SLA Client Support)</span>
+                        <span className="font-medium">Mon - Fri: 10:30 AM - 7:30 PM IST (24/7 SLA Client Support)</span>
                       </div>
                     </div>
                   </div>
@@ -467,7 +478,7 @@ export default function ContactPage() {
                   <div className="pt-2">
                     <button
                       onClick={() => setScheduleModalOpen(true)}
-                      className="w-full btn-primary-orange py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2"
+                      className="w-full btn-primary-orange py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <Calendar className="w-4 h-4" />
                       <span>Schedule a Consultation</span>
@@ -480,9 +491,9 @@ export default function ContactPage() {
                   <div className="p-4 bg-white border-b border-[#E5E7E9] flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs font-bold text-[#202323]">
                       <MapPin className="w-4 h-4 text-[#FF6B35]" />
-                      <span>Bangalore Technology Park Campus</span>
+                      <span>Surendranagar Campus, Gujarat</span>
                     </div>
-                    <span className="text-[10px] text-[#5A5D5C] font-mono">12.9716° N, 77.5946° E</span>
+                    <span className="text-[10px] text-[#5A5D5C] font-mono">22.7226° N, 71.6496° E</span>
                   </div>
 
                   {/* Visual Map Rendering Canvas */}
@@ -496,7 +507,7 @@ export default function ContactPage() {
 
                     <div className="relative z-10 flex items-center gap-2 text-white text-xs">
                       <div className="w-3 h-3 rounded-full bg-[#FF6B35] animate-ping"></div>
-                      <span className="font-bold">Flipcode Solutions Towers</span>
+                      <span className="font-bold">Flipcode Solutions HQ</span>
                     </div>
                   </div>
                 </div>
