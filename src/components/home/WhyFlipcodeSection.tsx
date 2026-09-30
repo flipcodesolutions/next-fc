@@ -73,7 +73,7 @@ export default function WhyFlipcodeSection() {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-2xl bg-[#2A2E30]/80 border border-white/10 relative overflow-hidden group hover:border-[#FF6600]/40 transition-all duration-300"
+              className="card-lift-dark cursor-pointer p-8 rounded-2xl bg-[#2A2E30]/80 border border-white/10 relative overflow-hidden group hover:border-[#FF6600]/40 transition-all duration-300"
             >
               {/* Subtle top indicator */}
               <div className="w-8 h-1 bg-[#FF6600] rounded-full mb-6"></div>

@@ -192,7 +192,7 @@ export default function ServicesPage() {
                 <div
                   key={service.id}
                   id={service.id}
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-8 sm:p-12 rounded-3xl border border-[#E5E7E9] ${
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-8 sm:p-12 rounded-3xl border border-[#E5E7E9] hover:border-[#FF6B35]/40 transition-all ${
                     isEven ? 'bg-[#F7F8F8]' : 'bg-white shadow-sm'
                   }`}
                 >
@@ -230,7 +230,7 @@ export default function ServicesPage() {
                     <div className="pt-4">
                       <Link
                         href="/contact"
-                        className="btn-primary-orange px-6 py-2.5 rounded-xl text-xs font-bold inline-flex items-center gap-2"
+                        className="btn-primary-orange px-6 py-2.5 rounded-xl text-xs font-bold inline-flex items-center gap-2 cursor-pointer"
                       >
                         <span>Discuss Your Project</span>
                         <ArrowRight className="w-4 h-4" />
@@ -240,7 +240,7 @@ export default function ServicesPage() {
 
                   {/* Right Column: Capabilities list (6 cols) */}
                   <div className={`lg:col-span-6 ${isEven ? 'lg:order-1' : ''}`}>
-                    <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E5E7E9] shadow-sm space-y-3.5">
+                    <div className="card-lift cursor-pointer p-6 sm:p-8 rounded-2xl bg-white border border-[#E5E7E9] shadow-sm space-y-3.5 hover:border-[#FF6B35]/40 transition-all">
                       <h3 className="text-sm font-bold uppercase tracking-wider text-[#5A5D5C] font-heading mb-4">
                         Core Deliverables &amp; Capabilities
                       </h3>

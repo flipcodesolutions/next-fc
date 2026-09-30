@@ -50,7 +50,7 @@ export default function AboutSection() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative rounded-3xl bg-gradient-to-br from-[#202323] to-[#2C3030] p-8 sm:p-10 text-white shadow-xl overflow-hidden border border-white/10">
+            <div className="card-lift-dark cursor-pointer relative rounded-3xl bg-gradient-to-br from-[#202323] to-[#2C3030] p-8 sm:p-10 text-white shadow-xl overflow-hidden border border-white/10 hover:border-[#FF6B35]/40 transition-all">
               <div className="absolute -right-8 -bottom-8 w-64 h-64 rounded-full bg-radial from-[#FF6B35]/25 to-transparent pointer-events-none"></div>
 
               <div className="relative z-10 space-y-6">

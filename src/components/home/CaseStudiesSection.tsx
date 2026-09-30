@@ -77,7 +77,8 @@ export default function CaseStudiesSection({ onOpenCaseStudy }: CaseStudiesSecti
           {caseStudies.map((cs) => (
             <div
               key={cs.id}
-              className="group rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
+              onClick={() => onOpenCaseStudy && onOpenCaseStudy(cs.title)}
+              className="group cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
             >
               <div>
                 {/* Visual Thumbnail */}
@@ -131,8 +132,13 @@ export default function CaseStudiesSection({ onOpenCaseStudy }: CaseStudiesSecti
               {/* Card Footer Link */}
               <div className="px-7 pb-6 pt-2">
                 <button
-                  onClick={() => onOpenCaseStudy && onOpenCaseStudy(cs.title)}
-                  className="w-full py-2.5 rounded-lg border border-[#E5E7E9] text-xs font-bold text-[#202426] group-hover:bg-[#202426] group-hover:text-white group-hover:border-[#202426] transition-all flex items-center justify-center gap-2"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onOpenCaseStudy) {
+                      onOpenCaseStudy(cs.title);
+                    }
+                  }}
+                  className="w-full py-2.5 rounded-lg border border-[#E5E7E9] text-xs font-bold text-[#202426] group-hover:bg-[#202426] group-hover:text-white group-hover:border-[#202426] transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Explore Architecture &amp; Solution</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[#FF6600]" />

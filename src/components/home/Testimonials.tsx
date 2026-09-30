@@ -24,7 +24,7 @@ export default function Testimonials() {
           {testimonialsData.map((item, idx) => (
             <div
               key={idx}
-              className="card-lift rounded-2xl bg-white border border-[#E5E7E9] p-7 sm:p-8 flex flex-col justify-between shadow-xs"
+              className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 sm:p-8 flex flex-col justify-between shadow-xs"
             >
               <div>
                 <div className="flex items-center gap-1 text-[#FF6B35] mb-4">

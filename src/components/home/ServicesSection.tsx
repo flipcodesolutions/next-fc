@@ -110,7 +110,8 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
             return (
               <div
                 key={service.id}
-                className="group relative rounded-2xl bg-white border border-[#E5E7E9] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#FF6600]/40 flex flex-col justify-between"
+                onClick={() => onSelectService && onSelectService(service.title)}
+                className="group cursor-pointer relative rounded-2xl bg-white border border-[#E5E7E9] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#FF6600]/40 flex flex-col justify-between"
               >
                 {/* Accent top border highlight on hover */}
                 <div className="absolute top-0 left-6 right-6 h-[2px] bg-transparent group-hover:bg-[#FF6600] transition-colors rounded-t"></div>
@@ -146,8 +147,13 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                   </div>
 
                   <button
-                    onClick={() => onSelectService && onSelectService(service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#202426] group-hover:text-[#FF6600] transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (onSelectService) {
+                        onSelectService(service.title);
+                      }
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#202426] group-hover:text-[#FF6600] transition-colors cursor-pointer"
                   >
                     <span>Learn More &amp; Inquire</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

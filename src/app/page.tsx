@@ -299,7 +299,7 @@ export default function HomePage() {
                 return (
                   <article
                     key={item.id}
-                    className="card-lift rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between group hover:border-[#FF6600]/40 transition-all shadow-sm"
+                    className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between group hover:border-[#FF6600]/40 transition-all shadow-sm"
                   >
                     <div>
                       <div className="w-12 h-12 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#202323] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-all duration-300 shadow-2xs mb-5">
@@ -368,7 +368,7 @@ export default function HomePage() {
               {solutions.map((sol) => (
                 <div
                   key={sol.num}
-                  className="rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] p-8 hover:border-[#FF6600]/40 transition-all hover:shadow-md group relative overflow-hidden flex flex-col justify-between"
+                  className="cursor-pointer rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] p-8 hover:border-[#FF6600]/40 transition-all hover:shadow-md group relative overflow-hidden flex flex-col justify-between"
                 >
                   <div className="absolute top-4 right-4 text-4xl font-extrabold font-mono text-[#E5E7E9] group-hover:text-[#FF6600]/15 transition-colors select-none">
                     {sol.num}
@@ -463,7 +463,7 @@ export default function HomePage() {
               {filteredTechnologies.map((tech, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl bg-[#2C3030]/80 border border-white/10 hover:border-[#FF6600]/50 transition-all hover:-translate-y-1 group"
+                  className="cursor-pointer p-4 rounded-xl bg-[#2C3030]/80 border border-white/10 hover:border-[#FF6600]/50 transition-all hover:-translate-y-1 group"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-extrabold text-white group-hover:text-[#FF6600] transition-colors">
@@ -508,7 +508,7 @@ export default function HomePage() {
                 return (
                   <div
                     key={idx}
-                    className="card-lift rounded-2xl bg-white border border-[#E5E7E9] p-8 group hover:border-[#FF6600]/40 transition-all shadow-sm"
+                    className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-8 group hover:border-[#FF6600]/40 transition-all shadow-sm"
                   >
                     <div className="w-12 h-12 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#202323] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors shadow-2xs mb-6">
                       <Icon className="w-6 h-6" />
@@ -576,7 +576,8 @@ export default function HomePage() {
               {filteredProjects.map((project) => (
                 <article
                   key={project.id}
-                  className="rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group hover:border-[#FF6600]/40 transition-all hover:shadow-lg flex flex-col justify-between"
+                  onClick={() => setSelectedCaseStudy(project)}
+                  className="cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group hover:border-[#FF6600]/40 transition-all hover:shadow-lg flex flex-col justify-between"
                 >
                   {/* Card Visual Header */}
                   <div className={`p-6 bg-gradient-to-br ${project.color} text-white relative overflow-hidden min-h-[160px] flex flex-col justify-between`}>
@@ -619,7 +620,10 @@ export default function HomePage() {
 
                     <div className="mt-6 pt-4 border-t border-[#E5E7E9] flex items-center justify-between">
                       <button
-                        onClick={() => setSelectedCaseStudy(project)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedCaseStudy(project);
+                        }}
                         className="btn-secondary-outline px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5"
                       >
                         <span>View Case Study</span>
@@ -628,6 +632,7 @@ export default function HomePage() {
 
                       <Link
                         href="/our-work"
+                        onClick={(e) => e.stopPropagation()}
                         className="text-xs font-semibold text-[#5A5D5C] hover:text-[#FF6600] transition-colors"
                       >
                         All Works →
@@ -664,7 +669,7 @@ export default function HomePage() {
               {processStages.map((stg) => (
                 <div
                   key={stg.num}
-                  className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all hover:shadow-md group flex flex-col justify-between"
+                  className="cursor-pointer p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all hover:shadow-md group flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-10 h-10 rounded-xl bg-[#202323] text-white flex items-center justify-center font-mono font-bold text-sm group-hover:bg-[#FF6600] transition-colors mb-4 shadow-sm">
@@ -816,7 +821,7 @@ export default function HomePage() {
               {testimonials.map((test, idx) => (
                 <div
                   key={idx}
-                  className="card-lift rounded-2xl bg-white border border-[#E5E7E9] p-8 flex flex-col justify-between shadow-sm"
+                  className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-8 flex flex-col justify-between shadow-sm"
                 >
                   <div>
                     {/* 5 Stars */}
@@ -876,11 +881,15 @@ export default function HomePage() {
                 return (
                   <div
                     key={fIdx}
-                    className="rounded-2xl border border-[#E5E7E9] bg-white overflow-hidden transition-all duration-200"
+                    onClick={() => setActiveFaq(isOpen ? null : fIdx)}
+                    className="cursor-pointer rounded-2xl border border-[#E5E7E9] bg-white overflow-hidden transition-all duration-200 hover:border-[#FF6600]/40"
                   >
                     <button
-                      onClick={() => setActiveFaq(isOpen ? null : fIdx)}
-                      className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold font-heading text-base sm:text-lg text-[#202323] hover:text-[#FF6600] transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveFaq(isOpen ? null : fIdx);
+                      }}
+                      className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold font-heading text-base sm:text-lg text-[#202323] hover:text-[#FF6600] transition-colors cursor-pointer"
                     >
                       <span>{faq.q}</span>
                       <span className="w-8 h-8 rounded-full bg-[#F7F8F8] flex items-center justify-center text-[#5A5D5C] flex-shrink-0">
@@ -927,7 +936,7 @@ export default function HomePage() {
 
               <button
                 onClick={() => setIsConsultModalOpen(true)}
-                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#202323] text-white hover:bg-[#2C3030] text-base font-bold transition-all border border-white/20 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#202323] text-white hover:bg-[#2C3030] text-base font-bold transition-all border border-white/20 hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-[#FF6600]" />
                 <span>Book 30-Min Discovery Call</span>
@@ -960,24 +969,24 @@ export default function HomePage() {
 
                 <div className="space-y-4">
                   {/* Address */}
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] flex items-start gap-4 shadow-2xs">
-                    <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#FF6600] flex-shrink-0">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all flex items-start gap-4 shadow-2xs group cursor-pointer">
+                    <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors flex items-center justify-center text-[#FF6600] flex-shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-[#202323]">Registered Office</h4>
+                      <h4 className="text-sm font-bold text-[#202323] group-hover:text-[#FF6600] transition-colors">Registered Office</h4>
                       <p className="text-xs text-[#5A5D5C] mt-1">{companyData.headquarters.street}</p>
                       <p className="text-xs text-[#5A5D5C]">{companyData.headquarters.city}, {companyData.headquarters.state} {companyData.headquarters.postalCode}, {companyData.headquarters.country}</p>
                     </div>
                   </div>
 
                   {/* Email */}
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] flex items-start gap-4 shadow-2xs">
-                    <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#FF6600] flex-shrink-0">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all flex items-start gap-4 shadow-2xs group cursor-pointer">
+                    <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors flex items-center justify-center text-[#FF6600] flex-shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div className="space-y-1">
-                      <h4 className="text-sm font-bold text-[#202323]">Direct Emails</h4>
+                      <h4 className="text-sm font-bold text-[#202323] group-hover:text-[#FF6600] transition-colors">Direct Emails</h4>
                       <p><a href={`mailto:${companyData.contact.emails.general}`} className="text-xs text-[#5A5D5C] hover:text-[#FF6600]">{companyData.contact.emails.general}</a></p>
                       <p><a href={`mailto:${companyData.contact.emails.info}`} className="text-xs text-[#5A5D5C] hover:text-[#FF6600]">{companyData.contact.emails.info}</a></p>
                       <p><a href={`mailto:${companyData.contact.emails.careers}`} className="text-xs text-[#5A5D5C] hover:text-[#FF6600]">{companyData.contact.emails.careers}</a></p>
@@ -985,12 +994,12 @@ export default function HomePage() {
                   </div>
 
                   {/* Phone */}
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] flex items-start gap-4 shadow-2xs">
-                    <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#FF6600] flex-shrink-0">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all flex items-start gap-4 shadow-2xs group cursor-pointer">
+                    <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors flex items-center justify-center text-[#FF6600] flex-shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-[#202323]">Phone &amp; WhatsApp</h4>
+                      <h4 className="text-sm font-bold text-[#202323] group-hover:text-[#FF6600] transition-colors">Phone &amp; WhatsApp</h4>
                       <p><a href={`tel:${companyData.contact.phone.replace(/[^0-9+]/g, '')}`} className="text-xs font-bold text-[#202323] hover:text-[#FF6600]">{companyData.contact.phone}</a></p>
                       <p className="text-[11px] text-[#5A5D5C] mt-1 flex items-center gap-1">
                         <Clock className="w-3 h-3 text-[#FF6600]" />

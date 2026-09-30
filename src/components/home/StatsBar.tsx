@@ -35,7 +35,7 @@ export default function StatsBar() {
             return (
               <div
                 key={idx}
-                className="flex items-center gap-4 p-5 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all hover:shadow-md group"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all hover:shadow-md group cursor-pointer"
               >
                 <div className="w-12 h-12 rounded-xl bg-white border border-[#E5E7E9] flex items-center justify-center text-[#202323] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors flex-shrink-0 shadow-2xs">
                   <Icon className="w-6 h-6" />

@@ -9,7 +9,7 @@ interface BlogCardProps {
 
 export default function BlogCard({ post }: BlogCardProps) {
   return (
-    <article className="card-lift rounded-2xl bg-white border border-[#E5E7E9] p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:border-[#FF6B35]/40 transition-all duration-300">
+    <article className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:border-[#FF6B35]/40 transition-all duration-300">
       <div>
         <div className="flex items-center justify-between text-xs text-[#6B7070] mb-4">
           <span className="px-2.5 py-1 rounded-full bg-[#FF6B35]/10 text-[#FF6B35] font-bold uppercase tracking-wider font-mono">

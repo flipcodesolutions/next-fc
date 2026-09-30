@@ -362,7 +362,7 @@ export default function AboutPage() {
               {teamData.map((member, idx) => (
                 <article
                   key={idx}
-                  className="card-lift rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group flex flex-col shadow-xs"
+                  className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group flex flex-col shadow-xs"
                 >
                   {/* Photo & LinkedIn Link */}
                   <div className="relative aspect-square w-full bg-[#202323] overflow-hidden">
@@ -380,7 +380,7 @@ export default function AboutPage() {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-xl bg-[#FF6B35] text-white flex items-center justify-center shadow-lg hover:bg-white hover:text-[#FF6B35] transition-all transform group-hover:translate-y-0 translate-y-2"
+                        className="w-10 h-10 rounded-xl bg-[#FF6B35] text-white flex items-center justify-center shadow-lg hover:bg-white hover:text-[#FF6B35] transition-all transform group-hover:translate-y-0 translate-y-2 cursor-pointer"
                         aria-label={`${member.name} on LinkedIn`}
                       >
                         <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -434,7 +434,7 @@ export default function AboutPage() {
             {/* Mission & Vision Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {/* Mission Card */}
-              <div className="card-lift p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between">
+              <div className="card-lift cursor-pointer p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#FF6B35]/10 border border-[#FF6B35]/20 flex items-center justify-center text-[#FF6B35] mb-6">
                     <Target className="w-6 h-6" />
@@ -449,7 +449,7 @@ export default function AboutPage() {
               </div>
 
               {/* Vision Card */}
-              <div className="card-lift p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between">
+              <div className="card-lift cursor-pointer p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center text-[#2563EB] mb-6">
                     <Eye className="w-6 h-6" />
@@ -471,7 +471,7 @@ export default function AboutPage() {
                 return (
                   <div
                     key={idx}
-                    className="card-lift rounded-2xl bg-[#F8FAFC] border border-[#E5E7E9] p-7 flex flex-col justify-between hover:border-[#FF6B35]/40 transition-colors"
+                    className="card-lift cursor-pointer rounded-2xl bg-[#F8FAFC] border border-[#E5E7E9] p-7 flex flex-col justify-between hover:border-[#FF6B35]/40 transition-colors"
                   >
                     <div>
                       <div
@@ -531,7 +531,7 @@ export default function AboutPage() {
                       {/* Left Column (Card when isLeft, Empty on desktop when !isLeft) */}
                       <div className={`w-full ${isLeft ? 'block pl-14 md:pl-0' : 'hidden md:block'}`}>
                         {isLeft && (
-                          <div className="card-lift relative bg-white border border-[#E5E7E9] rounded-2xl p-6 sm:p-7 shadow-xs hover:border-[#FF6B35]/40 transition-all duration-300">
+                          <div className="card-lift cursor-pointer relative bg-white border border-[#E5E7E9] rounded-2xl p-6 sm:p-7 shadow-xs hover:border-[#FF6B35]/40 transition-all duration-300">
                             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF6B35]/10 text-[#FF6B35] font-extrabold text-xs mb-3 font-mono">
                               <Calendar className="w-3.5 h-3.5" />
                               <span>{item.year}</span>
@@ -556,7 +556,7 @@ export default function AboutPage() {
                       {/* Right Column (Card when !isLeft, Empty on desktop when isLeft) */}
                       <div className={`w-full ${!isLeft ? 'block pl-14 md:pl-0' : 'hidden md:block'}`}>
                         {!isLeft && (
-                          <div className="card-lift relative bg-white border border-[#E5E7E9] rounded-2xl p-6 sm:p-7 shadow-xs hover:border-[#FF6B35]/40 transition-all duration-300">
+                          <div className="card-lift cursor-pointer relative bg-white border border-[#E5E7E9] rounded-2xl p-6 sm:p-7 shadow-xs hover:border-[#FF6B35]/40 transition-all duration-300">
                             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF6B35]/10 text-[#FF6B35] font-extrabold text-xs mb-3 font-mono">
                               <Calendar className="w-3.5 h-3.5" />
                               <span>{item.year}</span>

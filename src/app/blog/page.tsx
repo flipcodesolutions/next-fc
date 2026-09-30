@@ -158,7 +158,7 @@ export default function BlogPage() {
         <section className="bg-white py-14 lg:py-20 border-b border-[#E5E7E9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="p-8 sm:p-12 rounded-3xl bg-[#202323] text-white relative overflow-hidden shadow-2xl border border-white/10">
+            <div className="card-lift-dark cursor-pointer p-8 sm:p-12 rounded-3xl bg-[#202323] text-white relative overflow-hidden shadow-2xl border border-white/10 hover:border-[#FF6B35]/40 transition-all">
               <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF6B35]/15 rounded-full blur-3xl pointer-events-none"></div>
 
               <div className="max-w-3xl relative z-10 space-y-4">
@@ -220,7 +220,7 @@ export default function BlogPage() {
               {filteredArticles.map((article) => (
                 <div
                   key={article.id}
-                  className="rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group cursor-pointer"
+                  className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group hover:border-[#FF6B35]/40"
                 >
                   <div>
                     <div className="flex items-center justify-between text-xs text-[#5A5D5C] mb-3.5">

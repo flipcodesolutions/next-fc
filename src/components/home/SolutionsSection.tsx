@@ -103,7 +103,8 @@ export default function SolutionsSection({ onSelectSolution }: SolutionsSectionP
             return (
               <div
                 key={item.id}
-                className="group rounded-2xl bg-white border border-[#E5E7E9] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[#FF6600]/40 flex flex-col justify-between"
+                onClick={() => onSelectSolution && onSelectSolution(item.title)}
+                className="group cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[#FF6600]/40 flex flex-col justify-between"
               >
                 <div>
                   {/* Clean icon badge */}
@@ -134,8 +135,13 @@ export default function SolutionsSection({ onSelectSolution }: SolutionsSectionP
 
                 <div className="mt-6 pt-4 border-t border-[#E5E7E9]/60">
                   <button
-                    onClick={() => onSelectSolution && onSelectSolution(item.title)}
-                    className="text-xs font-bold text-[#202426] group-hover:text-[#FF6600] inline-flex items-center gap-1.5 transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (onSelectSolution) {
+                        onSelectSolution(item.title);
+                      }
+                    }}
+                    className="text-xs font-bold text-[#202426] group-hover:text-[#FF6600] inline-flex items-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <span>Request Custom Solution</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

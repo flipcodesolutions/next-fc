@@ -213,7 +213,7 @@ export default function CareerPage() {
                 return (
                   <div
                     key={idx}
-                    className="card-lift p-8 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9]"
+                    className="card-lift cursor-pointer p-8 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9]"
                   >
                     <div className="w-11 h-11 rounded-xl bg-white border border-[#E5E7E9] flex items-center justify-center text-[#FF6B35] mb-5 shadow-2xs">
                       <Icon className="w-5 h-5" />
@@ -253,7 +253,8 @@ export default function CareerPage() {
               {jobs.map((job) => (
                 <div
                   key={job.id}
-                  className="rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between hover:shadow-lg transition-all hover:border-[#FF6B35]/40"
+                  onClick={() => handleOpenApply(job)}
+                  className="cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between hover:shadow-lg transition-all hover:border-[#FF6B35]/40 group"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
@@ -265,7 +266,7 @@ export default function CareerPage() {
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold font-heading text-[#202323] mb-2">
+                    <h3 className="text-xl font-bold font-heading text-[#202323] group-hover:text-[#FF6B35] transition-colors mb-2">
                       {job.title}
                     </h3>
 
@@ -292,15 +293,21 @@ export default function CareerPage() {
 
                   <div className="mt-7 pt-4 border-t border-[#E5E7E9] flex items-center justify-between">
                     <button
-                      onClick={() => handleOpenApply(job)}
-                      className="text-xs font-bold text-[#202323] hover:text-[#FF6B35] transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleOpenApply(job);
+                      }}
+                      className="text-xs font-bold text-[#202323] group-hover:text-[#FF6B35] transition-colors cursor-pointer"
                     >
                       View Position Details
                     </button>
 
                     <button
-                      onClick={() => handleOpenApply(job)}
-                      className="btn-primary-orange px-5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleOpenApply(job);
+                      }}
+                      className="btn-primary-orange px-5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer"
                     >
                       <span>Apply Now</span>
                       <ArrowRight className="w-3.5 h-3.5" />

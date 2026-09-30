@@ -100,7 +100,7 @@ export default function TechnologyExpertiseSection() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl bg-[#F7F8F9] border border-[#E5E7E9] p-6 hover:border-[#FF6600]/40 transition-all duration-300 hover:shadow-md"
+                  className="card-lift cursor-pointer rounded-2xl bg-[#F7F8F9] border border-[#E5E7E9] p-6 hover:border-[#FF6600]/40 transition-all duration-300 hover:shadow-md"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-9 h-9 rounded-xl bg-white border border-[#E5E7E9] flex items-center justify-center text-[#202426] shadow-2xs">
