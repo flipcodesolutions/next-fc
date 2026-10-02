@@ -30,15 +30,37 @@ export interface Service {
 
 export interface Project {
   id: string;
-  title: string;
-  category: string;
-  tags: string[];
-  image: string;
+  name?: string;
+  title?: string;
+  category: 'WEB' | 'MOBILE' | string;
+  categoryLabel?: string;
+  industry?: string;
+  tags?: string[];
+  image?: string;
   shortDesc: string;
+  overview?: string;
+  fullOverview?: string;
   challenge?: string;
+  requirements?: string[];
   solution?: string;
-  outcome?: string;
+  keyFeatures?: string[];
+  techs?: string[];
   technologies?: string[];
+  process?: string;
+  results?: string[];
+  outcome?: string;
+  gradient?: string;
+  timeline?: string;
+}
+
+export interface BlogSection {
+  heading: string;
+  body: string;
+  codeSnippet?: {
+    language: string;
+    code: string;
+  };
+  keyPoints?: string[];
 }
 
 export interface BlogPost {
@@ -50,12 +72,15 @@ export interface BlogPost {
   category: string;
   readTime: string;
   publishedAt: string;
+  featured?: boolean;
   author: {
     name: string;
     role: string;
     avatar?: string;
   };
   tags: string[];
+  sections?: BlogSection[];
+  conclusion?: string;
 }
 
 export interface Testimonial {

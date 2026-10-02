@@ -1,37 +1,14 @@
 [
   {
-    "id": "smvs",
-    "name": "Swaminarayan Mandir Vasna Sanstha (SMVS)",
-    "category": "web",
-    "categoryLabel": "Web & Mobile Ecosystem",
-    "industry": "Spiritual Organization & Community",
-    "summary": "The SMVS platform is a comprehensive digital platform designed to deliver spiritual teachings, organizational information, live event broadcasts, and community services globally.",
-    "fullOverview": "An international non-profit platform serving over 250,000 devotees across 12 countries. Featuring real-time event streaming, multi-lingual publication readers, donation payment gateway integration, and volunteer management hierarchies.",
-    "challenge": "Handling massive spike traffic during annual spiritual festivals while maintaining low-latency live media streaming across low-bandwidth mobile networks.",
-    "requirements": [
-      "Global CDN caching with adaptive bitrate live video streaming.",
-      "Multi-lingual e-publication reader with offline caching.",
-      "Automated donation tax receipts generation.",
-      "Cross-platform Flutter mobile app with push notifications."
-    ],
-    "solution": "We engineered a resilient Next.js and React frontend paired with a modular Node.js API and PostgreSQL cluster, orchestrated inside Docker containers on AWS.",
-    "keyFeatures": [
-      "Live Festival HD Video & Audio Webcasting",
-      "Interactive Multi-Lingual Spiritual Publication Reader",
-      "Secure Multi-Currency Donation Gateway",
-      "Devotee Community Directory & Event Scheduler"
-    ],
-    "techs": ["React.js", "Node.js", "Flutter", "PostgreSQL", "Docker", "AWS CloudFront"],
-    "impact": "250,000+ Active Devotees · 99.98% Uptime During Festivals",
-    "timeline": "12 Weeks Sprint Delivery"
-  },
-  {
-    "id": "argil-tiles",
+    "id": "argil-tiles-web",
     "name": "Argil Tiles Digital Showroom & Spec Portal",
-    "category": "ecommerce",
-    "categoryLabel": "Web & E-Commerce Ecosystem",
+    "title": "Argil Tiles Digital Showroom & Spec Portal",
+    "category": "WEB",
+    "categoryLabel": "Enterprise Web Platform",
     "industry": "Manufacturing & Architecture",
     "summary": "The Argil Tiles website is a modern digital platform designed to showcase premium tile collections, highlight architectural aesthetics, and drive B2B export inquiries.",
+    "shortDesc": "A modern digital platform designed to showcase premium tile collections, highlight architectural aesthetics, and drive B2B export inquiries.",
+    "overview": "Argil Tiles is an enterprise manufacturing export platform showcasing thousands of surface finishes, tiles, and slabs with high-resolution 3D asset galleries, square footage calculators, and instant dealer quotations.",
     "fullOverview": "Engineered with interactive tile room visualizers, instant surface square-footage calculators, bulk export inquiry pipelines, and high-resolution web-optimized 3D asset galleries.",
     "challenge": "Presenting heavy high-res tile textures and patterns without degrading mobile performance or international page load speeds.",
     "requirements": [
@@ -47,16 +24,132 @@
       "Multi-Country Currency & Measurement Converter"
     ],
     "techs": ["Next.js", "Node.js", "MySQL 8.0", "Tailwind CSS", "AWS S3", "Redis"],
+    "process": "Catalog Mapping → 3D Visualizer UX → Performance Optimization → B2B Ingestion Testing → Production Launch",
+    "results": [
+      "3.4x Increase in International Distributor Leads",
+      "98 Google PageSpeed mobile score across all product pages",
+      "Over 12,000 architectural spec sheets downloaded"
+    ],
     "impact": "3.4x Increase in International Distributor Leads",
-    "timeline": "10 Weeks Sprint Delivery"
+    "timeline": "10 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-slate-800 to-[#202323]"
   },
   {
-    "id": "ubn",
-    "name": "United Business Network (UBN)",
-    "category": "custom",
-    "categoryLabel": "Enterprise Platform & Community",
+    "id": "argil-tiles-mobile",
+    "name": "Argil Tiles AR Room Visualizer & Catalog App",
+    "title": "Argil Tiles AR Room Visualizer & Catalog App",
+    "category": "MOBILE",
+    "categoryLabel": "iOS & Android Mobile App",
+    "industry": "Manufacturing & Architecture",
+    "summary": "An Augmented Reality (AR) mobile app enabling architects, dealers, and homeowners to visualize tile collections on real room floors using mobile cameras.",
+    "shortDesc": "Interactive AR mobile app for iOS & Android that visualizes ceramic tiles on real room floors with real-time square-footage estimation.",
+    "overview": "The Argil Tiles Mobile App delivers an interactive AR experience allowing architects, dealers, and homeowners to scan room floors in real-time, test different tile textures, compute area measurements, and place sample orders directly from iOS and Android devices.",
+    "fullOverview": "Built using Flutter with ARKit and ARCore camera projection engines, enabling users to digitally overlay porcelain slabs and tile patterns onto physical surfaces with photorealistic lighting adjustments and offline SKU caching.",
+    "challenge": "Rendering high-polygon 3D textures with accurate dimensional scaling in real-time without causing mobile device thermal throttling.",
+    "requirements": [
+      "Real-time plane detection and AR tile grid alignment.",
+      "Offline SKU catalog sync with fast search.",
+      "One-tap sample delivery requests with dealer push alerts."
+    ],
+    "solution": "Engineered a native Flutter AR module utilizing ARCore/ARKit shaders, with local SQLite texture caching and Firebase push notification pipeline for dealer quote alerts.",
+    "keyFeatures": [
+      "Real-Time Camera Floor AR Surface Overlay",
+      "Automated Tile Tile-Count & Box Quantity Calculator",
+      "Direct Distributor Sample Order Pipeline",
+      "Offline Catalog with Instant SKU Search"
+    ],
+    "techs": ["Flutter", "Dart", "ARCore", "ARKit", "Firebase", "Node.js API", "SQLite"],
+    "process": "AR UX Prototyping → Shader Optimization → Physical Plane Testing → Flutter App Build → App Store Release",
+    "results": [
+      "25,000+ Downloads by Architects & Interior Designers",
+      "4.9/5 Average Rating on App Store & Google Play",
+      "52% Faster Sample Request Turnaround for Dealers"
+    ],
+    "impact": "25,000+ Downloads by Architects & Interior Designers",
+    "timeline": "12 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#202323] to-amber-950"
+  },
+  {
+    "id": "smvs-web",
+    "name": "Swaminarayan Mandir Vasna Sanstha (SMVS) Global Portal",
+    "title": "Swaminarayan Mandir Vasna Sanstha (SMVS) Global Portal",
+    "category": "WEB",
+    "categoryLabel": "Enterprise Web Platform",
+    "industry": "Spiritual Organization & Community",
+    "summary": "The SMVS platform is a comprehensive digital platform designed to deliver spiritual teachings, organizational information, live event broadcasts, and community services globally.",
+    "shortDesc": "Global web platform serving over 250,000 devotees across 12 countries with real-time live video streaming and multilingual publication reader.",
+    "overview": "SMVS is an international non-profit platform serving over 250,000 devotees across 12 countries. Featuring real-time event streaming, multi-lingual publication readers, donation payment gateway integration, and volunteer management hierarchies.",
+    "fullOverview": "An international non-profit platform serving over 250,000 devotees across 12 countries. Featuring real-time event streaming, multi-lingual publication readers, donation payment gateway integration, and volunteer management hierarchies.",
+    "challenge": "Handling massive spike traffic during annual spiritual festivals while maintaining low-latency live media streaming across low-bandwidth mobile networks.",
+    "requirements": [
+      "Global CDN caching with adaptive bitrate live video streaming.",
+      "Multi-lingual e-publication reader with offline caching.",
+      "Automated donation tax receipts generation.",
+      "Volunteer hierarchy portal with role-based access."
+    ],
+    "solution": "We engineered a resilient Next.js and React frontend paired with a modular Node.js API and PostgreSQL cluster, orchestrated inside Docker containers on AWS.",
+    "keyFeatures": [
+      "Live Festival HD Video & Audio Webcasting",
+      "Interactive Multi-Lingual Spiritual Publication Reader",
+      "Secure Multi-Currency Donation Gateway",
+      "Devotee Community Directory & Event Scheduler"
+    ],
+    "techs": ["Next.js", "React.js", "Node.js", "PostgreSQL", "Docker", "AWS CloudFront"],
+    "process": "Scoping & Architecture → Multi-Lingual Design Tokens → Video Streaming Engine QA → Load Testing → Worldwide Rollout",
+    "results": [
+      "250,000+ Active Devotees onboarded worldwide",
+      "99.98% System uptime maintained during peak holiday festivals",
+      "Sub-second page rendering across international edge servers"
+    ],
+    "impact": "250,000+ Active Devotees · 99.98% Uptime During Festivals",
+    "timeline": "12 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#202323] to-[#2C3030]"
+  },
+  {
+    "id": "smvs-mobile",
+    "name": "SMVS Daily Satsang & Media App",
+    "title": "SMVS Daily Satsang & Media App",
+    "category": "MOBILE",
+    "categoryLabel": "iOS & Android Mobile App",
+    "industry": "Spiritual Organization & Community",
+    "summary": "Cross-platform mobile application providing daily devotional audio/video streaming, offline publication readers, and festival push notifications.",
+    "shortDesc": "Cross-platform mobile app for iOS & Android featuring daily audio discourses, offline scripture reader, and real-time live event notifications.",
+    "overview": "The SMVS Mobile App enables devotees globally to participate in daily prayers, stream HD discourses with background audio play, download spiritual literature for offline reading, and receive festival event alerts.",
+    "fullOverview": "Developed in Flutter for seamless iOS and Android execution. Features custom audio player with lock-screen media controls, localized push notification schedules according to user timezone, and offline-first SQLite synchronization.",
+    "challenge": "Ensuring continuous background audio streaming across aggressive Android battery saver modes and iOS background execution limits.",
+    "requirements": [
+      "Background audio playback with lock-screen metadata controls.",
+      "Offline reading mode with synchronized font resizing and night mode.",
+      "Timezone-aware push notification scheduling."
+    ],
+    "solution": "Engineered native audio service bridges in Flutter paired with local SQLite caching and Firebase Cloud Messaging.",
+    "keyFeatures": [
+      "Continuous Background Audio Playback Service",
+      "Offline Scripture & Magazine E-Reader",
+      "Automated Timezone-Aware Daily Darshan Notifications",
+      "Community Volunteer Check-In Module"
+    ],
+    "techs": ["Flutter", "Dart", "Firebase", "Node.js API", "SQLite", "Fastlane"],
+    "process": "Mobile UX Wireframing → Audio Engine Integration → SQLite Sync Testing → Store Verification → Global Release",
+    "results": [
+      "100,000+ Active Mobile App Installations",
+      "4.9/5 Star App Store & Play Store User Rating",
+      "Over 2.5 Million Audio Stream Minutes Monthly"
+    ],
+    "impact": "100,000+ Active Mobile App Installations",
+    "timeline": "10 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#2C3030] to-orange-950"
+  },
+  {
+    "id": "ubn-web",
+    "name": "United Business Network (UBN) Enterprise Portal",
+    "title": "United Business Network (UBN) Enterprise Portal",
+    "category": "WEB",
+    "categoryLabel": "Web & Enterprise Portal",
     "industry": "Business Networking & Communities",
-    "summary": "The UBN Community website is a professional networking platform designed to connect entrepreneurs, business owners, and corporate executives with automated matchmaking.",
+    "summary": "The UBN Community website is a professional networking web platform designed to connect entrepreneurs, business owners, and corporate executives with automated matchmaking.",
+    "shortDesc": "Professional networking web platform for entrepreneurs with chapter meeting management, business referral tracking, and annual dues processing.",
+    "overview": "UBN provides verified business leaders with a structured environment to exchange referrals, manage local chapter meetings, track transaction volume, and attend masterclasses.",
     "fullOverview": "Features verified member authentication, peer-to-peer referral pipelines, automated chapter meeting schedulers, dues billing, and privacy-shielded direct messaging.",
     "challenge": "Fragmented manual attendance tracking and lack of clear financial attribution for peer business referrals.",
     "requirements": [
@@ -64,24 +157,69 @@
       "Automated referral tracking and closed-business attribution analytics.",
       "Chapter meeting check-ins with QR codes."
     ],
-    "solution": "Built a unified web and mobile ecosystem on React, Node.js, and Flutter with encrypted direct messaging and real-time referral pipelines.",
+    "solution": "Built a unified web platform on React, Node.js, and PostgreSQL with encrypted direct messaging and real-time referral pipelines.",
     "keyFeatures": [
       "Business Referral Pipeline & Closed-Deal Telemetry",
       "Automated Chapter Meeting Scheduler & QR Check-In",
       "Peer-to-Peer Privacy Shielded Direct Messenger",
       "Annual Membership Dues Billing Automation"
     ],
-    "techs": ["React.js", "Node.js", "Flutter", "PostgreSQL", "Docker", "WebSockets"],
+    "techs": ["React.js", "Next.js", "Node.js", "PostgreSQL", "Docker", "WebSockets"],
+    "process": "Community Research → Referral Matrix DB Design → Web Platform Build → Beta Testing → Regional Launch",
+    "results": [
+      "5,000+ Verified business owners across 40 chapters",
+      "$12M+ Business referrals recorded in system",
+      "85% Daily active member engagement rate"
+    ],
     "impact": "5,000+ Verified Business Members · $12M+ Referrals Exchanged",
-    "timeline": "14 Weeks Sprint Delivery"
+    "timeline": "14 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#2C3030] to-emerald-950"
   },
   {
-    "id": "aadesh-patola",
+    "id": "ubn-mobile",
+    "name": "UBN Connect Member Mobile App",
+    "title": "UBN Connect Member Mobile App",
+    "category": "MOBILE",
+    "categoryLabel": "Mobile Networking App",
+    "industry": "Business Networking & Communities",
+    "summary": "Mobile companion app for verified business leaders with instant QR chapter check-ins, direct peer messaging, and real-time business referral exchange.",
+    "shortDesc": "Native iOS & Android mobile app for chapter members with QR meeting check-ins, direct business referrals, and 1-on-1 meeting scheduler.",
+    "overview": "The UBN Connect Mobile App enables executives to quickly exchange business referrals during weekly chapter breakfasts, pass digital business cards via NFC/QR, and chat securely with fellow members.",
+    "fullOverview": "Constructed on Flutter with WebSockets for real-time referral notifications and immediate push alerts when closed business is verified.",
+    "challenge": "Enabling fast in-person QR check-ins for 100+ concurrent attendees in under 5 minutes at chapter meeting halls.",
+    "requirements": [
+      "Sub-second QR code scanner with instant badge verification.",
+      "Push alerts when a referral or 1-on-1 meeting request is sent.",
+      "Offline member contact directory with click-to-call."
+    ],
+    "solution": "Engineered a camera QR scanner module in Flutter integrated with real-time WebSocket backend and Redis caching.",
+    "keyFeatures": [
+      "Fast QR Chapter Meeting Check-In",
+      "Instant Referral Submission & Revenue Logger",
+      "1-on-1 Meeting Scheduler with Calendar Sync",
+      "Direct Member In-App Messaging"
+    ],
+    "techs": ["Flutter", "Dart", "Firebase", "WebSockets", "Node.js API", "SQLite"],
+    "process": "Mobile UX → QR Engine Prototype → WebSocket Pipeline → Chapter Trial → Production Release",
+    "results": [
+      "94% Meeting check-in speedup compared to paper registries",
+      "3.1x Increase in recorded weekly referral slips",
+      "4.8/5 Star Member satisfaction rating"
+    ],
+    "impact": "94% Meeting check-in speedup across 40 chapters",
+    "timeline": "10 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-slate-800 to-teal-950"
+  },
+  {
+    "id": "aadesh-patola-web",
     "name": "Aadesh Patola House Luxury Heritage E-Commerce",
-    "category": "ecommerce",
-    "categoryLabel": "Luxury E-Commerce & Marketplace",
+    "title": "Aadesh Patola House Luxury Heritage E-Commerce",
+    "category": "WEB",
+    "categoryLabel": "E-Commerce Web Storefront",
     "industry": "Heritage Fashion & E-Commerce",
     "summary": "The Aadesh Patola House website is a premium digital platform designed to showcase traditional Patola sarees and heritage craftsmanship with international checkout.",
+    "shortDesc": "A premium digital e-commerce platform designed to showcase traditional Patola sarees with high-resolution weave zoom and multi-currency Stripe checkout.",
+    "overview": "Aadesh Patola House is an internationally renowned heritage textile brand. The platform allows global collectors and diaspora customers to purchase handcrafted authentic Patola sarees.",
     "fullOverview": "Equipped with custom weave customization modules, secure multi-currency Stripe checkout, anti-counterfeit digital authenticity certificates, and automated DHL freight tracking.",
     "challenge": "Replicating the tactile luxury showroom experience online and building trust against counterfeit reproductions.",
     "requirements": [
@@ -97,16 +235,26 @@
       "Automated Global Express Freight Tracking"
     ],
     "techs": ["Next.js", "Node.js", "Stripe API", "MySQL", "Tailwind CSS", "AWS S3"],
+    "process": "Brand Story Discovery → High-Res Media Pipeline → Checkout Integration → Security Audit → Global Launch",
+    "results": [
+      "180% Surge in international NRI orders across USA and UK",
+      "0% Payment failure rate during festive season sales",
+      "Featured in international textile and luxury heritage publications"
+    ],
     "impact": "180% Surge in Global NRI Customer Orders",
-    "timeline": "8 Weeks Sprint Delivery"
+    "timeline": "8 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-slate-800 to-[#202323]"
   },
   {
-    "id": "career-culture",
-    "name": "Career & Culture – Youth Growth Platform",
-    "category": "mobile",
+    "id": "career-culture-mobile",
+    "name": "Career & Culture – Youth Growth Mobile App",
+    "title": "Career & Culture – Youth Growth Mobile App",
+    "category": "MOBILE",
     "categoryLabel": "Cross-Platform Mobile Application",
     "industry": "Youth Education & EdTech",
     "summary": "Career and Culture is a youth-focused holistic development application designed to help young individuals grow physically, mentally, and spiritually through habit tracking.",
+    "shortDesc": "A youth-focused holistic development mobile app featuring gamified daily meditation trackers, audio discourses, and mentorship streaming.",
+    "overview": "Career and Culture is a comprehensive digital wellness and lifestyle coaching app with gamified daily routine trackers, mentor live streaming, audio discourse libraries, and mindfulness exercises.",
     "fullOverview": "Interactive mobile application built on Flutter featuring gamified daily meditation trackers, mentor live streaming, audio discourse libraries, and push notification engagement engine.",
     "challenge": "Retaining teenage and young adult engagement over long continuous 30-day spiritual and career habit sprints.",
     "requirements": [
@@ -122,16 +270,96 @@
       "Personalized Daily Journaling & Goal Tracking"
     ],
     "techs": ["Flutter", "Firebase", "REST API", "Node.js", "WebSockets"],
+    "process": "Youth Persona Research → Gamification UI Wireframes → Flutter App Build → Beta Cohort → App Stores Release",
+    "results": [
+      "50,000+ Downloads on iOS App Store and Google Play",
+      "4.8/5 Star average rating from 1,200+ reviews",
+      "68% 30-day user habit completion rate"
+    ],
     "impact": "50,000+ Student Downloads · 4.8 App Store Rating",
-    "timeline": "10 Weeks Sprint Delivery"
+    "timeline": "10 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#202323] to-[#2C3030]"
   },
   {
-    "id": "vaidraj-ayurvedic",
-    "name": "Vaidraj Ayurvedic Consultation & Wellness Portal",
-    "category": "custom",
-    "categoryLabel": "HealthTech & Consultation Portal",
+    "id": "omni-fleet-web",
+    "name": "OmniFleet IoT Logistics Dispatcher Cockpit",
+    "title": "OmniFleet IoT Logistics Dispatcher Cockpit",
+    "category": "WEB",
+    "categoryLabel": "SaaS & Web Telemetry",
+    "industry": "Logistics & Supply Chain",
+    "summary": "A high-throughput IoT fleet management web platform processing 1.2M daily telematics events with live route optimization.",
+    "shortDesc": "High-throughput IoT fleet management web dashboard processing 1.2M daily telematics events with live route optimization and vehicle clustering.",
+    "overview": "OmniFleet is a cloud-native logistics SaaS platform architected for enterprise transportation fleets operating across North America. It connects 50,000+ IoT hardware sensors in real time to provide sub-second dispatching, predictive engine maintenance, and fuel cost reduction.",
+    "fullOverview": "Features WebSockets live map tracking, driver dispatch assignment cockpit, geofencing boundary alerts, and automated engine telemetry diagnostics.",
+    "challenge": "Handling 50,000 concurrent GPS location pings per minute without database lockup or browser map frame drops.",
+    "requirements": [
+      "Sub-second telemetry ingestion engine with WebSocket live map synchronization.",
+      "Automated geofencing and instant driver alert notifications.",
+      "Multi-tenant dispatcher portals with customizable analytics dashboards."
+    ],
+    "solution": "We re-architected the system using a distributed microservices pipeline: Next.js with WebSockets for the dispatcher cockpit, Node.js + Redis caching for sub-millisecond ingest, and partitioned MySQL 8.0 cluster storage.",
+    "keyFeatures": [
+      "Live Real-Time Map Telemetry with driver clustering",
+      "Automated Dynamic Route Optimization Engine",
+      "Dispatcher Fleet Cockpit with multi-monitor support",
+      "Automated Maintenance & Fuel Consumption Analytics"
+    ],
+    "techs": ["Next.js", "Node.js", "MySQL 8.0", "Redis", "WebSockets", "AWS ECS", "Docker"],
+    "process": "Discover → Schema Partitioning → WebSocket Prototype → Load Testing (100k req/s) → Full Migration → Zero Downtime Launch",
+    "results": [
+      "42% Increase in overall fleet dispatching efficiency",
+      "99.99% Telematics stream uptime with 14ms average query latency",
+      "18% Reduction in quarterly commercial fuel waste"
+    ],
+    "impact": "1.2M Daily Telematics Events Processed with 14ms Latency",
+    "timeline": "14 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#202323] to-[#2C3030]"
+  },
+  {
+    "id": "omni-fleet-mobile",
+    "name": "OmniFleet Driver Telemetry & POD App",
+    "title": "OmniFleet Driver Telemetry & POD App",
+    "category": "MOBILE",
+    "categoryLabel": "Mobile Driver Application",
+    "industry": "Logistics & Supply Chain",
+    "summary": "Offline-first driver mobile app for turn-by-turn route dispatching, vehicle inspection logging, and digital proof-of-delivery signatures.",
+    "shortDesc": "Offline-first iOS & Android driver app for dispatching, electronic logs, and digital signature proof of delivery.",
+    "overview": "The OmniFleet Driver App equips commercial truck drivers with an offline-first companion for managing route stops, scanning freight barcodes, capturing recipient e-signatures, and auto-syncing telemetry.",
+    "fullOverview": "Constructed on React Native with background geolocation tracking, local SQLite queue for zero network connectivity zones, and camera barcode scanner.",
+    "challenge": "Maintaining route navigation and capturing proof-of-delivery signatures in remote highway regions with zero cell coverage.",
+    "requirements": [
+      "Offline signature and photo proof-of-delivery caching.",
+      "Background GPS pinging with low battery consumption.",
+      "Automated turn-by-turn route guidance."
+    ],
+    "solution": "Developed an offline-first React Native app with SQLite local queues that automatically sync when cellular signal resumes.",
+    "keyFeatures": [
+      "Offline Digital E-Signature & Photo Capture",
+      "Barcode & QR Freight Manifest Scanner",
+      "Low-Power Background GPS Telemetry Engine",
+      "Instant Dispatcher Messaging & Route Updates"
+    ],
+    "techs": ["React Native", "TypeScript", "SQLite", "Background GPS", "Node.js API"],
+    "process": "Driver Persona Ergonomics → Offline Sync Engine → Battery Optimization QA → Pilot Field Trial → Fleet Deployment",
+    "results": [
+      "100% Proof-of-delivery capture even in remote dead zones",
+      "35% Reduction in driver administrative delivery paperwork",
+      "4.8/5 Driver satisfaction rating across 2,500 active drivers"
+    ],
+    "impact": "2,500+ Active Drivers · 100% Offline Delivery Capture",
+    "timeline": "10 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-slate-800 to-blue-950"
+  },
+  {
+    "id": "vaidraj-ayurvedic-web",
+    "name": "Vaidraj Ayurvedic Consultation & Wellness Web Portal",
+    "title": "Vaidraj Ayurvedic Consultation & Wellness Web Portal",
+    "category": "WEB",
+    "categoryLabel": "HealthTech Web Portal",
     "industry": "Ayurveda & HealthTech",
     "summary": "The Vaidraj Ayurvedic website is a dedicated online platform for Ayurvedic health services, herbal treatments, wellness products, and online doctor consultations.",
+    "shortDesc": "An online platform for Ayurvedic health services, dosha diagnostics, automated prescription generation, and doctor consultation booking.",
+    "overview": "Vaidraj Ayurvedic delivers holistic classical medicine to patients worldwide, offering digital clinical questionnaires, video appointments, prescription management, and herbal e-pharmacy delivery.",
     "fullOverview": "Includes HIPAA-compliant patient intake questionnaires, automated doctor appointment calendar booking, prescription PDF generation, and secure Ayurvedic e-pharmacy integration.",
     "challenge": "Standardizing patient dosha diagnostics into structured intake forms and managing doctor appointment schedules across multiple clinical locations.",
     "requirements": [
@@ -146,8 +374,50 @@
       "Herbal Formulation E-Commerce & Dosage Instructions",
       "Patient Health Progress Telemetry & Follow-Up Reminders"
     ],
-    "techs": ["React.js", "Node.js", "Flutter", "PostgreSQL", "Docker", "Stripe"],
+    "techs": ["React.js", "Next.js", "Node.js", "PostgreSQL", "Docker", "Stripe"],
+    "process": "Clinical Diagnostic Mapping → HIPAA Privacy Design → Patient Portal Build → Doctor Testing → Live Launch",
+    "results": [
+      "15,000+ Online doctor consultations completed",
+      "4.9/5 Patient wellness satisfaction rating",
+      "2.8x Growth in authentic Ayurvedic herbal product sales"
+    ],
     "impact": "15,000+ Online Doctor Consultations Completed",
-    "timeline": "8 Weeks Sprint Delivery"
+    "timeline": "8 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#2C3030] to-emerald-950"
+  },
+  {
+    "id": "care-sync-mobile",
+    "name": "CareSync HIPAA-Compliant Telehealth Mobile App",
+    "title": "CareSync HIPAA-Compliant Telehealth Mobile App",
+    "category": "MOBILE",
+    "categoryLabel": "Telehealth Mobile Application",
+    "industry": "Healthcare & Life Sciences",
+    "summary": "A secure telehealth mobile app with end-to-end encrypted WebRTC video doctor consultations, automated prescription sync, and EHR integration.",
+    "shortDesc": "A complete clinical patient mobile app for iOS & Android with encrypted HD video consultations, automated prescription sync, and EHR integration.",
+    "overview": "CareSync connects over 120 clinical healthcare networks with 180,000 active patients, providing secure video consultations, digital triage, and real-time electronic health records synchronization.",
+    "fullOverview": "Features end-to-end encrypted peer-to-peer WebRTC video consultations, biometric login, automated pharmacy routing, and appointment calendar reminders.",
+    "challenge": "Ensuring absolute HIPAA and SOC2 compliance with end-to-end encrypted WebRTC video streaming and zero client-side patient data caching vulnerabilities.",
+    "requirements": [
+      "End-to-end encrypted peer-to-peer WebRTC video consultations",
+      "Cross-platform Flutter patient mobile application for iOS & Android",
+      "Instant prescription routing to local licensed pharmacy networks"
+    ],
+    "solution": "Developed a zero-knowledge encrypted video gateway, paired with a cross-platform Flutter patient mobile application and Node.js EHR backend.",
+    "keyFeatures": [
+      "HD Low-Latency WebRTC Telehealth Video Rooms",
+      "Encrypted Patient Record Vault (EHR/EMR)",
+      "Automated Doctor Scheduling with Timezone Conversion",
+      "Mobile E-Prescription Delivery with Pharmacy Sync"
+    ],
+    "techs": ["Flutter", "Dart", "Node.js", "WebRTC", "PostgreSQL", "HIPAA Compliant"],
+    "process": "Compliance Review → Architecture Threat Model → Flutter Mobile App → Video Gateway Testing → Production Deployment",
+    "results": [
+      "180,000+ Active patients onboarded in first 12 months",
+      "4.9/5 App Store customer satisfaction rating",
+      "100% HIPAA & SOC2 Type II audit compliance certification"
+    ],
+    "impact": "180,000+ Active Patients · 100% HIPAA Compliant",
+    "timeline": "12 Weeks Sprint Delivery",
+    "gradient": "from-slate-900 via-[#2C3030] to-cyan-950"
   }
 ]
