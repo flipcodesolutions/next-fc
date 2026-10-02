@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import AnimatedCounter from '@/components/animations/AnimatedCounter';
 import {
   ArrowRight,
   Layers,
@@ -19,14 +20,44 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenContact }: HeroSectionProps) {
   const [activeTab, setActiveTab] = useState<'ts' | 'go'>('ts');
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isDesktop, setIsDesktop] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    // Enable mouse parallax only on non-touch desktop screens
+    const mediaQuery = window.matchMedia('(pointer: fine) and (min-width: 1024px)');
+    const updateDesktop = () => setIsDesktop(mediaQuery.matches);
+    updateDesktop();
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', updateDesktop);
+      return () => mediaQuery.removeEventListener('change', updateDesktop);
+    }
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!isDesktop || !heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5; // -0.5 to 0.5
+    setMousePos({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos({ x: 0, y: 0 });
+  };
 
   return (
     <section
+      ref={heroRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="relative bg-[#202323] text-white min-h-screen lg:h-screen flex items-center justify-center pt-28 pb-16 lg:pt-24 lg:pb-0 overflow-hidden"
       id="home"
     >
       {/* 1. Base Criss-Cross Pattern (Diagonal Crosses + Grid) */}
-      <div className="absolute inset-0 bg-cross-pattern-dark pointer-events-none"></div>
+      <div className="absolute inset-0 bg-cross-pattern-dark pointer-events-none opacity-80"></div>
 
       {/* 2. Additional Subtle Crosshair Plus-Grid Layer */}
       <div
@@ -43,11 +74,25 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
         }}
       ></div>
 
-      {/* 3. Top-Right Brand Orange Radial Glow Blob */}
-      <div className="absolute -top-24 right-0 w-[650px] h-[650px] bg-gradient-to-br from-[#FF6600]/22 via-[#FF6600]/6 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      {/* 3. Top-Right Brand Orange Radial Glow Blob (with subtle mouse parallax) */}
+      <div
+        className="absolute -top-24 right-0 w-[650px] h-[650px] bg-gradient-to-br from-[#FF6600]/22 via-[#FF6600]/6 to-transparent rounded-full blur-3xl pointer-events-none transition-transform duration-700 ease-out"
+        style={{
+          transform: isDesktop
+            ? `translate3d(${mousePos.x * 25}px, ${mousePos.y * 25}px, 0)`
+            : 'none',
+        }}
+      ></div>
 
       {/* 4. Bottom-Left Subtle Ambient Glow Blob */}
-      <div className="absolute -bottom-24 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-[#38BDF8]/12 via-[#FF6600]/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div
+        className="absolute -bottom-24 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-[#38BDF8]/12 via-[#FF6600]/5 to-transparent rounded-full blur-3xl pointer-events-none transition-transform duration-700 ease-out"
+        style={{
+          transform: isDesktop
+            ? `translate3d(${-mousePos.x * 20}px, ${-mousePos.y * 20}px, 0)`
+            : 'none',
+        }}
+      ></div>
 
       {/* 5. Center Radial Fade Overlay for High Contrast Legibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#202323]/40 via-transparent to-[#202323]/80 pointer-events-none"></div>
@@ -60,10 +105,13 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
           ======================================================== */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Pill Badge with Cross Accent */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-slate-200 backdrop-blur-md shadow-sm">
+            {/* Pill Badge with Cross Accent (Sequence 1: 100ms) */}
+            <div
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-slate-200 backdrop-blur-md shadow-sm animate-fade-down"
+              style={{ animationDelay: '100ms' }}
+            >
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6600] opacity-75"></span>
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6600] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FF6600]"></span>
               </span>
               <span>Next-Gen Enterprise Engineering Partner</span>
@@ -71,47 +119,59 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               <span className="text-[#FF6600] font-mono text-[11px]">Flipcode Solutions</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[3.85rem] font-extrabold font-heading tracking-tight leading-[1.08] text-white">
-              We Build <span className="text-[#FF6600]">Digital Solutions</span> That Help Your Business <span className="text-[#FF6600]">Grow</span>
+            {/* Main Headline (Sequence 2: 250ms) */}
+            <h1
+              className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[3.85rem] font-extrabold font-heading tracking-tight leading-[1.08] text-white animate-fade-up"
+              style={{ animationDelay: '250ms' }}
+            >
+              We Build <span className="text-[#FF6600] inline-block hover:scale-[1.02] transition-transform">Digital Solutions</span> That Help Your Business <span className="text-[#FF6600] inline-block hover:scale-[1.02] transition-transform">Grow</span>
             </h1>
 
-            {/* Subheading */}
-            <p className="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl font-normal">
+            {/* Subheading (Sequence 3: 400ms) */}
+            <p
+              className="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl font-normal animate-fade-up"
+              style={{ animationDelay: '400ms' }}
+            >
               Flipcode Solutions helps startups, SMEs, and growing enterprises build reliable, scalable, and production-ready web, mobile, SaaS, and custom software solutions.
             </p>
 
-            {/* CTA Buttons Group */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            {/* CTA Buttons Group (Sequence 4: 520ms) */}
+            <div
+              className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 animate-fade-up"
+              style={{ animationDelay: '520ms' }}
+            >
               {onOpenContact ? (
                 <button
                   onClick={onOpenContact}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#FF6600] hover:bg-[#E85C00] text-white text-base font-bold transition-all shadow-lg shadow-[#FF6600]/30 hover:shadow-[#FF6600]/45 hover:-translate-y-0.5 active:translate-y-0"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#FF6600] hover:bg-[#E85C00] text-white text-base font-bold transition-all shadow-lg shadow-[#FF6600]/30 hover:shadow-[#FF6600]/45 hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
                 >
                   <span>Start Your Project</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               ) : (
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#FF6600] hover:bg-[#E85C00] text-white text-base font-bold transition-all shadow-lg shadow-[#FF6600]/30 hover:shadow-[#FF6600]/45 hover:-translate-y-0.5 active:translate-y-0"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#FF6600] hover:bg-[#E85C00] text-white text-base font-bold transition-all shadow-lg shadow-[#FF6600]/30 hover:shadow-[#FF6600]/45 hover:-translate-y-0.5 active:translate-y-0 group"
                 >
                   <span>Start Your Project</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               )}
 
               <Link
                 href="/our-work"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/[0.06] hover:bg-white/10 text-white text-base font-semibold border border-white/15 transition-all hover:border-white/30 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/[0.06] hover:bg-white/10 text-white text-base font-semibold border border-white/15 transition-all hover:border-white/30 hover:-translate-y-0.5 group"
               >
-                <Layers className="w-4 h-4 text-[#FF6600]" />
+                <Layers className="w-4 h-4 text-[#FF6600] group-hover:rotate-12 transition-transform duration-300" />
                 <span>View Our Work</span>
               </Link>
             </div>
 
-            {/* Trust Metrics Strip */}
-            <div className="pt-7 border-t border-white/10 grid grid-cols-3 gap-4">
+            {/* Trust Metrics Strip (Sequence 5: 650ms) */}
+            <div
+              className="pt-7 border-t border-white/10 grid grid-cols-3 gap-4 animate-fade-up"
+              style={{ animationDelay: '650ms' }}
+            >
               <div className="space-y-0.5">
                 <div className="text-xl sm:text-2xl font-extrabold font-heading text-white">
                   Sep 2023
@@ -123,7 +183,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
 
               <div className="space-y-0.5">
                 <div className="text-xl sm:text-2xl font-extrabold font-heading text-[#FF6600]">
-                  70+
+                  <AnimatedCounter value={70} suffix="+" />
                 </div>
                 <div className="text-xs text-slate-400 font-medium">
                   Projects Delivered
@@ -132,7 +192,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
 
               <div className="space-y-0.5">
                 <div className="text-xl sm:text-2xl font-extrabold font-heading text-[#FF6600]">
-                  70+
+                  <AnimatedCounter value={70} suffix="+" />
                 </div>
                 <div className="text-xs text-slate-400 font-medium">
                   Happy Clients
@@ -145,7 +205,15 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
           {/* ========================================================
               RIGHT COLUMN: INTERACTIVE TECH IDE & METRIC CARDS (5 Cols)
           ======================================================== */}
-          <div className="lg:col-span-5 relative">
+          <div
+            className="lg:col-span-5 relative animate-fade-up transition-transform duration-500 ease-out"
+            style={{
+              animationDelay: '600ms',
+              transform: isDesktop
+                ? `translate3d(${mousePos.x * 12}px, ${mousePos.y * 12}px, 0)`
+                : 'none',
+            }}
+          >
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Connecting Circuits SVG Overlay */}
@@ -184,22 +252,22 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               </svg>
 
               {/* Central Glassmorphic IDE Window */}
-              <div className="relative z-10 rounded-2xl bg-[#2C3030]/95 border border-white/10 shadow-2xl backdrop-blur-2xl overflow-hidden">
+              <div className="relative z-10 rounded-2xl bg-[#2C3030]/95 border border-white/10 shadow-2xl backdrop-blur-2xl overflow-hidden group hover:border-[#FF6600]/30 transition-colors">
                 
                 {/* Window Top Controls & Tab Header */}
                 <div className="bg-[#202323] px-4 py-3 border-b border-white/10 flex items-center justify-between">
                   {/* Traffic Light Dots */}
                   <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-[#EF4444] inline-block"></span>
-                    <span className="w-3 h-3 rounded-full bg-[#F59E0B] inline-block"></span>
-                    <span className="w-3 h-3 rounded-full bg-[#10B981] inline-block"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#EF4444] inline-block hover:scale-110 transition-transform"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#F59E0B] inline-block hover:scale-110 transition-transform"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#10B981] inline-block hover:scale-110 transition-transform"></span>
                   </div>
 
                   {/* Interactive Tab Switchers */}
                   <div className="flex items-center gap-1 bg-[#1A1D1D] p-1 rounded-lg border border-white/10">
                     <button
                       onClick={() => setActiveTab('ts')}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono transition-all ${
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono transition-all cursor-pointer ${
                         activeTab === 'ts'
                           ? 'bg-[#2C3030] text-white shadow-sm border border-white/15'
                           : 'text-slate-400 hover:text-white'
@@ -212,7 +280,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
 
                     <button
                       onClick={() => setActiveTab('go')}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono transition-all ${
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono transition-all cursor-pointer ${
                         activeTab === 'go'
                           ? 'bg-[#2C3030] text-white shadow-sm border border-white/15'
                           : 'text-slate-400 hover:text-white'
@@ -315,7 +383,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               </div>
 
               {/* Floating Badge 1: Cloud Scalability (Top Right) */}
-              <div className="absolute -top-6 -right-6 z-20 p-3 rounded-xl bg-[#2C3030]/95 backdrop-blur-xl border border-white/10 shadow-xl flex items-center gap-3 animate-in fade-in slide-in-from-top-2 duration-300">
+              <div className="absolute -top-6 -right-6 z-20 p-3 rounded-xl bg-[#2C3030]/95 backdrop-blur-xl border border-white/10 shadow-xl flex items-center gap-3 animate-float-slow hover:border-[#38BDF8]/40 transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-blue-500/20 text-[#38BDF8] flex items-center justify-center">
                   <Cloud className="w-5 h-5" />
                 </div>
@@ -329,7 +397,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               </div>
 
               {/* Floating Badge 2: Ultra-Fast APIs (Bottom Left) */}
-              <div className="absolute -bottom-6 -left-6 z-20 p-3 rounded-xl bg-[#2C3030]/95 backdrop-blur-xl border border-white/10 shadow-xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
+              <div className="absolute -bottom-6 -left-6 z-20 p-3 rounded-xl bg-[#2C3030]/95 backdrop-blur-xl border border-white/10 shadow-xl flex items-center gap-3 animate-float-reverse hover:border-[#FF6600]/40 transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-[#FF6600]/20 text-[#FF6600] flex items-center justify-center">
                   <Zap className="w-5 h-5" />
                 </div>
@@ -342,7 +410,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               </div>
 
               {/* Floating Badge 3: Web, Mobile & Cloud (Bottom Right) */}
-              <div className="absolute -bottom-8 right-8 z-20 hidden sm:flex items-center gap-3 p-3 rounded-xl bg-[#2C3030]/95 backdrop-blur-xl border border-white/10 shadow-xl">
+              <div className="absolute -bottom-8 right-8 z-20 hidden sm:flex items-center gap-3 p-3 rounded-xl bg-[#2C3030]/95 backdrop-blur-xl border border-white/10 shadow-xl animate-float-slow hover:border-amber-400/40 transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center">
                   <Smartphone className="w-5 h-5" />
                 </div>
@@ -360,3 +428,4 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
     </section>
   );
 }
+

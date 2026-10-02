@@ -1,26 +1,242 @@
 [
-  { "name": "Node.js", "category": "backend", "sub": "Backend Runtime", "badge": "High-Scale" },
-  { "name": "Laravel", "category": "backend", "sub": "PHP Enterprise", "badge": "Robust MVC" },
-  { "name": "PHP", "category": "backend", "sub": "Backend Language", "badge": "v8.3+" },
-  { "name": "Python", "category": "ai", "sub": "AI & Data Backend", "badge": "ML / API" },
-  { "name": "FastAPI", "category": "backend", "sub": "High-Speed API", "badge": "Async Python" },
-  { "name": "React JS", "category": "frontend", "sub": "Frontend UI", "badge": "SPA / SSR" },
-  { "name": "Next.js", "category": "frontend", "sub": "Fullstack React", "badge": "Turbopack" },
-  { "name": "Vue.js", "category": "frontend", "sub": "Frontend Framework", "badge": "Reactive" },
-  { "name": "TypeScript", "category": "frontend", "sub": "Type Safety", "badge": "Strict Typing" },
-  { "name": "Tailwind CSS", "category": "frontend", "sub": "Utility Styling", "badge": "Design System" },
-  { "name": "Flutter", "category": "mobile", "sub": "Cross-Platform SDK", "badge": "iOS & Android" },
-  { "name": "React Native", "category": "mobile", "sub": "Cross-Platform Mobile", "badge": "Native Bridges" },
-  { "name": "MySQL", "category": "database", "sub": "Relational Database", "badge": "ACID Compliant" },
-  { "name": "PostgreSQL", "category": "database", "sub": "Advanced Relational", "badge": "JSONB / GIS" },
-  { "name": "MongoDB", "category": "database", "sub": "NoSQL Document DB", "badge": "Scalable" },
-  { "name": "Firebase", "category": "database", "sub": "Realtime Cloud DB", "badge": "Serverless" },
-  { "name": "Redis", "category": "database", "sub": "In-Memory Cache", "badge": "Sub-Millisecond" },
-  { "name": "AWS", "category": "cloud", "sub": "Cloud Infrastructure", "badge": "ECS / S3 / Lambda" },
-  { "name": "Docker", "category": "cloud", "sub": "Containerization", "badge": "DevOps" },
-  { "name": "Wordpress", "category": "cms", "sub": "CMS Platform", "badge": "Custom Themes" },
-  { "name": "Squarespace", "category": "cms", "sub": "Site Builder", "badge": "Web Publishing" },
-  { "name": "GraphQL", "category": "backend", "sub": "Data Query API", "badge": "Flexible Graph" },
-  { "name": "Figma", "category": "frontend", "sub": "UI/UX Prototyping", "badge": "Design Systems" },
-  { "name": "Stripe API", "category": "backend", "sub": "Fintech Payments", "badge": "PCI-DSS Tier 1" }
+  {
+    "name": "Next.js",
+    "category": "frontend",
+    "categoryLabel": "Frontend & UI",
+    "sub": "Fullstack React Framework",
+    "badge": "Turbopack & SSR",
+    "tags": ["App Router", "Server Components"],
+    "brandColor": "#FFFFFF",
+    "description": "Production-grade React framework with server-side rendering, static generation, and edge routing."
+  },
+  {
+    "name": "React JS",
+    "category": "frontend",
+    "categoryLabel": "Frontend & UI",
+    "sub": "Frontend UI Library",
+    "badge": "v18 / React 19",
+    "tags": ["SPA / SSR", "Virtual DOM"],
+    "brandColor": "#61DAFB",
+    "description": "Declarative, component-driven UI library for building scalable, responsive web experiences."
+  },
+  {
+    "name": "TypeScript",
+    "category": "frontend",
+    "categoryLabel": "Frontend & UI",
+    "sub": "Typed JavaScript",
+    "badge": "Strict Typing",
+    "tags": ["Type Safety", "Refactoring Safety"],
+    "brandColor": "#3178C6",
+    "description": "Strongly typed superset of JavaScript ensuring compile-time reliability and code maintainability."
+  },
+  {
+    "name": "Vue.js",
+    "category": "frontend",
+    "categoryLabel": "Frontend & UI",
+    "sub": "Reactive Framework",
+    "badge": "Composition API",
+    "tags": ["Pinia Store", "Vite Tooling"],
+    "brandColor": "#42B883",
+    "description": "Progressive, approachable framework for building high-performance single-page interfaces."
+  },
+  {
+    "name": "Tailwind CSS",
+    "category": "frontend",
+    "categoryLabel": "Frontend & UI",
+    "sub": "Utility-First Styling",
+    "badge": "Design System",
+    "tags": ["JIT Engine", "Custom Tokens"],
+    "brandColor": "#38BDF8",
+    "description": "Engineered CSS design system enabling rapid UI iterations with zero runtime stylesheet bloat."
+  },
+  {
+    "name": "Figma",
+    "category": "frontend",
+    "categoryLabel": "Frontend & UI",
+    "sub": "UI/UX & Prototyping",
+    "badge": "Design Systems",
+    "tags": ["Auto-Layout", "Design-to-Code"],
+    "brandColor": "#F24E1E",
+    "description": "Collaborative design tooling powering design systems, interactive prototypes, and UX specifications."
+  },
+  {
+    "name": "Node.js",
+    "category": "backend",
+    "categoryLabel": "Backend & APIs",
+    "sub": "Async Backend Runtime",
+    "badge": "High-Throughput",
+    "tags": ["Event-Driven", "Microservices"],
+    "brandColor": "#68A063",
+    "description": "High-scale JavaScript runtime powering low-latency REST APIs, GraphQL, and microservices."
+  },
+  {
+    "name": "Laravel",
+    "category": "backend",
+    "categoryLabel": "Backend & APIs",
+    "sub": "PHP Enterprise Framework",
+    "badge": "Robust MVC",
+    "tags": ["Eloquent ORM", "Queues / Jobs"],
+    "brandColor": "#FF2D20",
+    "description": "Elegant PHP enterprise framework featuring expressive ORM, secure authentication, and queue pipelines."
+  },
+  {
+    "name": "FastAPI",
+    "category": "backend",
+    "categoryLabel": "Backend & APIs",
+    "sub": "Async Python API",
+    "badge": "Async Python",
+    "tags": ["Pydantic Typing", "Auto OpenAPI"],
+    "brandColor": "#009688",
+    "description": "High-performance Python web framework for microservices, machine learning APIs, and async processing."
+  },
+  {
+    "name": "PHP",
+    "category": "backend",
+    "categoryLabel": "Backend & APIs",
+    "sub": "Backend Language",
+    "badge": "v8.3+ Enterprise",
+    "tags": ["JIT Compiler", "Strict Types"],
+    "brandColor": "#777BB4",
+    "description": "Modern server-side language powering mission-critical web portals and enterprise backends."
+  },
+  {
+    "name": "GraphQL",
+    "category": "backend",
+    "categoryLabel": "Backend & APIs",
+    "sub": "Declarative Query API",
+    "badge": "Flexible Graph",
+    "tags": ["Schema Stitching", "Zero Over-Fetch"],
+    "brandColor": "#E10098",
+    "description": "Precise data-querying layer reducing network payload and decoupling frontend and backend schemas."
+  },
+  {
+    "name": "Stripe API",
+    "category": "backend",
+    "categoryLabel": "Backend & APIs",
+    "sub": "Fintech & Payments",
+    "badge": "PCI-DSS Tier 1",
+    "tags": ["Subscriptions", "Webhook Engine"],
+    "brandColor": "#635BFF",
+    "description": "Secure financial integration infrastructure for worldwide subscription billing and transactions."
+  },
+  {
+    "name": "Flutter",
+    "category": "mobile",
+    "categoryLabel": "Mobile Apps",
+    "sub": "Cross-Platform SDK",
+    "badge": "iOS & Android",
+    "tags": ["Dart Native", "60+ FPS UI"],
+    "brandColor": "#02569B",
+    "description": "Single codebase mobile framework compiling to native ARM code with pixel-perfect UI fidelity."
+  },
+  {
+    "name": "React Native",
+    "category": "mobile",
+    "categoryLabel": "Mobile Apps",
+    "sub": "Native Mobile Apps",
+    "badge": "Native Bridges",
+    "tags": ["Hermes Engine", "Shared Logic"],
+    "brandColor": "#61DAFB",
+    "description": "Native mobile applications powered by React, combining native UI components with shared codebases."
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "database",
+    "categoryLabel": "Databases & Cache",
+    "sub": "Advanced Relational DB",
+    "badge": "JSONB & PostGIS",
+    "tags": ["ACID Compliant", "Indexing Engine"],
+    "brandColor": "#336791",
+    "description": "Enterprise SQL database with JSONB support, spatial indexing, and rock-solid relational integrity."
+  },
+  {
+    "name": "MongoDB",
+    "category": "database",
+    "categoryLabel": "Databases & Cache",
+    "sub": "NoSQL Document DB",
+    "badge": "Horizontal Scale",
+    "tags": ["Flexible Schema", "Aggregation"],
+    "brandColor": "#47A248",
+    "description": "Flexible document database engineered for fast schema evolution and high-write throughput."
+  },
+  {
+    "name": "MySQL",
+    "category": "database",
+    "categoryLabel": "Databases & Cache",
+    "sub": "Relational Database",
+    "badge": "ACID Compliant",
+    "tags": ["InnoDB Engine", "High Replication"],
+    "brandColor": "#4479A1",
+    "description": "Proven, battle-tested transactional database backing high-volume transactional platforms."
+  },
+  {
+    "name": "Redis",
+    "category": "database",
+    "categoryLabel": "Databases & Cache",
+    "sub": "In-Memory Data Store",
+    "badge": "Sub-Millisecond",
+    "tags": ["Key-Value Cache", "Pub/Sub Queues"],
+    "brandColor": "#DC382D",
+    "description": "Ultra-fast in-memory cache and message broker for session management and instant data access."
+  },
+  {
+    "name": "Firebase",
+    "category": "database",
+    "categoryLabel": "Databases & Cache",
+    "sub": "Realtime Cloud DB",
+    "badge": "Serverless Suite",
+    "tags": ["Cloud Firestore", "Auth & Push"],
+    "brandColor": "#FFCA28",
+    "description": "Serverless database and backend infrastructure for real-time synchronization and rapid deployment."
+  },
+  {
+    "name": "Python",
+    "category": "ai",
+    "categoryLabel": "AI & Data",
+    "sub": "AI & Machine Learning",
+    "badge": "ML / Data Engine",
+    "tags": ["PyTorch / Pandas", "LLM Integration"],
+    "brandColor": "#3776AB",
+    "description": "Core language for data science, machine learning models, automation, and generative AI pipelines."
+  },
+  {
+    "name": "AWS",
+    "category": "cloud",
+    "categoryLabel": "Cloud & DevOps",
+    "sub": "Cloud Infrastructure",
+    "badge": "ECS / S3 / Lambda",
+    "tags": ["Auto-Scaling", "CloudFront CDN"],
+    "brandColor": "#FF9900",
+    "description": "Global enterprise cloud infrastructure for scalable container hosting, storage, and serverless compute."
+  },
+  {
+    "name": "Docker",
+    "category": "cloud",
+    "categoryLabel": "Cloud & DevOps",
+    "sub": "Containerization",
+    "badge": "DevOps & CI/CD",
+    "tags": ["Microservices", "Reproducible Envs"],
+    "brandColor": "#2496ED",
+    "description": "Container platform isolating dependencies to ensure identical execution from dev to production."
+  },
+  {
+    "name": "Wordpress",
+    "category": "cms",
+    "categoryLabel": "CMS & Web",
+    "sub": "CMS & Headless CMS",
+    "badge": "Custom Themes",
+    "tags": ["REST API", "Enterprise Portals"],
+    "brandColor": "#21759B",
+    "description": "World standard content management platform customized for speed, SEO, and corporate editorial teams."
+  },
+  {
+    "name": "Squarespace",
+    "category": "cms",
+    "categoryLabel": "CMS & Web",
+    "sub": "Rapid Web Publishing",
+    "badge": "Managed CMS",
+    "tags": ["Custom Layouts", "E-Commerce"],
+    "brandColor": "#FFFFFF",
+    "description": "Polished web platform for rapid brand launching, portfolio showcasing, and managed web experiences."
+  }
 ]

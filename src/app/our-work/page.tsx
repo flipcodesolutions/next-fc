@@ -6,6 +6,8 @@ import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import projectsData from '@/data/projects.json';
 import { BreadcrumbJsonLd, PortfolioJsonLd } from '@/components/seo/JsonLd';
+import ScrollReveal from '@/components/animations/ScrollReveal';
+import StaggerContainer from '@/components/animations/StaggerContainer';
 import {
   ArrowRight,
   CheckCircle2,
@@ -96,43 +98,51 @@ export default function OurWorkPage() {
         >
           {/* Subtle Grid & Radial Glows */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none animate-pulse-glow"></div>
           <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto">
             {/* Breadcrumb Navigation */}
-            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-white transition-colors">
-                Home
-              </Link>
-              <span className="text-white/40">›</span>
-              <span className="text-[#FF6B35]">Our Work</span>
-            </nav>
+            <ScrollReveal variant="fadeDown" delay={50}>
+              <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
+                <Link href="/" className="hover:text-white transition-colors">
+                  Home
+                </Link>
+                <span className="text-white/40">›</span>
+                <span className="text-[#FF6B35]">Our Work</span>
+              </nav>
+            </ScrollReveal>
 
             {/* Eyebrow Badge */}
-            <div className="flex justify-center mb-5">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
-                </span>
-                <span>Portfolio &amp; Case Studies</span>
+            <ScrollReveal variant="fadeUp" delay={100}>
+              <div className="flex justify-center mb-5">
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
+                  </span>
+                  <span>Portfolio &amp; Case Studies</span>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Main Heading */}
-            <h1
-              id="ourWorkHeroTitle"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"
-            >
-              Turning Ideas Into <br className="hidden sm:inline" />
-              <span className="text-[#FF6B35]">Digital Products</span>
-            </h1>
+            <ScrollReveal variant="fadeUp" delay={150}>
+              <h1
+                id="ourWorkHeroTitle"
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"
+              >
+                Turning Ideas Into <br className="hidden sm:inline" />
+                <span className="text-[#FF6B35]">Digital Products</span>
+              </h1>
+            </ScrollReveal>
 
             {/* Subtitle */}
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
-              Explore our production-grade work across responsive web platforms, iOS &amp; Android mobile apps, and custom enterprise digital portals.
-            </p>
+            <ScrollReveal variant="fadeUp" delay={250}>
+              <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
+                Explore our production-grade work across responsive web platforms, iOS &amp; Android mobile apps, and custom enterprise digital portals.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -141,57 +151,63 @@ export default function OurWorkPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Category Filter Bar (ALL | WEB | MOBILE) */}
-            <div className="flex flex-col items-center justify-center mb-14 space-y-3">
-              <div className="inline-flex p-1.5 bg-[#F7F8F8] border border-[#E5E7E9] rounded-2xl shadow-xs">
-                {filterOptions.map(({ label, icon: Icon }) => {
-                  const isActive = activeFilter === label;
-                  return (
-                    <button
-                      key={label}
-                      onClick={() => setActiveFilter(label)}
-                      className={`relative px-7 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                        isActive
-                          ? 'bg-[#FF6B35] text-white shadow-md shadow-[#FF6B35]/25 scale-100'
-                          : 'text-[#5A5D5C] hover:text-[#202323] hover:bg-white/80'
-                      }`}
-                      aria-pressed={isActive}
-                    >
-                      <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#73787A]'}`} />
-                      <span>{label}</span>
-                      {isActive && (
-                        <span className="ml-1.5 px-2 py-0.5 text-[10px] rounded-full bg-white/20 text-white font-mono">
-                          {label === 'ALL'
-                            ? projects.length
-                            : projects.filter((p) => p.category === label).length}
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
+            <ScrollReveal variant="fadeUp" delay={100}>
+              <div className="flex flex-col items-center justify-center mb-14 space-y-3">
+                <div className="inline-flex p-1.5 bg-[#F7F8F8] border border-[#E5E7E9] rounded-2xl shadow-xs">
+                  {filterOptions.map(({ label, icon: Icon }) => {
+                    const isActive = activeFilter === label;
+                    return (
+                      <button
+                        key={label}
+                        onClick={() => setActiveFilter(label)}
+                        className={`relative px-7 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wider transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+                          isActive
+                            ? 'bg-[#FF6B35] text-white shadow-md shadow-[#FF6B35]/25 scale-100'
+                            : 'text-[#5A5D5C] hover:text-[#202323] hover:bg-white/80'
+                        }`}
+                        aria-pressed={isActive}
+                      >
+                        <Icon className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'text-white scale-110' : 'text-[#73787A]'}`} />
+                        <span>{label}</span>
+                        {isActive && (
+                          <span className="ml-1.5 px-2 py-0.5 text-[10px] rounded-full bg-white/20 text-white font-mono animate-in fade-in zoom-in-75 duration-200">
+                            {label === 'ALL'
+                              ? projects.length
+                              : projects.filter((p) => p.category === label).length}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Status Hint */}
+                <p className="text-xs text-[#73787A]">
+                  Showing <span className="font-bold text-[#202323]">{filteredProjects.length}</span>{' '}
+                  {activeFilter === 'ALL'
+                    ? 'Total Projects'
+                    : activeFilter === 'WEB'
+                    ? 'Web Projects'
+                    : 'Mobile Projects'}
+                </p>
               </div>
+            </ScrollReveal>
 
-              {/* Status Hint */}
-              <p className="text-xs text-[#73787A]">
-                Showing <span className="font-bold text-[#202323]">{filteredProjects.length}</span>{' '}
-                {activeFilter === 'ALL'
-                  ? 'Total Projects'
-                  : activeFilter === 'WEB'
-                  ? 'Web Projects'
-                  : 'Mobile Projects'}
-              </p>
-            </div>
-
-            {/* Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Projects Grid with StaggerContainer */}
+            <StaggerContainer
+              staggerDelay={80}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
               {filteredProjects.map((proj) => (
                 <div
                   key={proj.id}
                   onClick={() => setSelectedProject(proj)}
-                  className="cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group hover:border-[#FF6B35]/40"
+                  className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:border-[#FF6B35]/50"
                 >
                   <div>
                     {/* Visual Card Top */}
-                    <div className={`h-52 bg-gradient-to-br ${proj.gradient} p-6 flex flex-col justify-between relative overflow-hidden`}>
+                    <div className={`h-52 bg-gradient-to-br ${proj.gradient} p-6 flex flex-col justify-between relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]`}>
+                      <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                       <div className="flex items-center justify-between relative z-10">
                         <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-white border border-white/15">
                           {proj.industry}
@@ -206,7 +222,7 @@ export default function OurWorkPage() {
                       </div>
                       
                       <div className="relative z-10">
-                        <div className="text-xs font-bold text-white font-mono flex items-center gap-1.5">
+                        <div className="text-xs font-bold text-white font-mono flex items-center gap-1.5 transition-transform duration-300 group-hover:translate-x-1">
                           <Sparkles className="w-3.5 h-3.5 text-[#FF6B35]" />
                           <span>{proj.results?.[0] || proj.impact}</span>
                         </div>
@@ -227,7 +243,7 @@ export default function OurWorkPage() {
                           {proj.techs.slice(0, 5).map((t, idx) => (
                             <span
                               key={idx}
-                              className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-[#F7F8F8] text-[#5A5D5C] border border-[#E5E7E9]"
+                              className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-[#F7F8F8] text-[#5A5D5C] border border-[#E5E7E9] group-hover:border-[#FF6B35]/20 transition-colors"
                             >
                               {t}
                             </span>
@@ -243,15 +259,15 @@ export default function OurWorkPage() {
                         e.stopPropagation();
                         setSelectedProject(proj);
                       }}
-                      className="w-full py-2.5 rounded-xl border border-[#E5E7E9] text-xs font-bold text-[#202323] group-hover:bg-[#202323] group-hover:text-white group-hover:border-[#202323] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full py-2.5 rounded-xl border border-[#E5E7E9] text-xs font-bold text-[#202323] group-hover:bg-[#202323] group-hover:text-white group-hover:border-[#202323] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs group-hover:shadow-md"
                     >
                       <span>View Full Case Study</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#FF6B35]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#FF6B35] group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -259,7 +275,7 @@ export default function OurWorkPage() {
         {/* Detailed Case Study Interactive Modal */}
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#202323]/80 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto">
-            <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-[#E5E7E9] overflow-hidden my-8">
+            <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-[#E5E7E9] overflow-hidden my-8 animate-in zoom-in-95 duration-250">
               
               {/* Modal Header */}
               <div className="p-6 sm:p-8 bg-[#202323] text-white flex items-start justify-between border-b border-white/10">
@@ -421,22 +437,29 @@ export default function OurWorkPage() {
 
         {/* Final CTA */}
         <section className="bg-[#202323] text-white py-20 lg:py-28 relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white">
-              Ready to Turn Your Idea Into a <span className="text-[#FF6B35]">Production-Ready Reality?</span>
-            </h2>
-            <p className="text-base text-slate-300 max-w-xl mx-auto">
-              Schedule a technical discovery session with Flipcode Solutions to outline your architecture and sprint roadmap.
-            </p>
-            <div className="pt-4">
-              <Link
-                href="/contact"
-                className="btn-primary-orange px-8 py-4 rounded-xl text-sm font-bold inline-flex items-center gap-2 shadow-xl shadow-[#FF6B35]/25"
-              >
-                <span>Start a Project</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] hero-radial-glow opacity-60 pointer-events-none"></div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+            <ScrollReveal variant="fadeUp" delay={100}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white">
+                Ready to Turn Your Idea Into a <span className="text-[#FF6B35]">Production-Ready Reality?</span>
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal variant="fadeUp" delay={200}>
+              <p className="text-base text-slate-300 max-w-xl mx-auto">
+                Schedule a technical discovery session with Flipcode Solutions to outline your architecture and sprint roadmap.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal variant="scaleIn" delay={300}>
+              <div className="pt-4">
+                <Link
+                  href="/contact"
+                  className="btn-primary-orange px-8 py-4 rounded-xl text-sm font-bold inline-flex items-center gap-2 shadow-xl shadow-[#FF6B35]/25"
+                >
+                  <span>Start a Project</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -446,3 +469,4 @@ export default function OurWorkPage() {
     </div>
   );
 }
+

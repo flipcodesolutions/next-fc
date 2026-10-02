@@ -6,6 +6,8 @@ import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import blogsData from '@/data/blogs.json';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import ScrollReveal from '@/components/animations/ScrollReveal';
+import StaggerContainer from '@/components/animations/StaggerContainer';
 import {
   ArrowRight,
   Mail,
@@ -68,35 +70,43 @@ export default function BlogPage() {
         <section className="bg-[#202323] text-white pt-36 pb-20 lg:pt-44 lg:pb-28 relative overflow-hidden" aria-labelledby="blog-hero-heading">
           {/* Subtle background grid and radial light */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none animate-pulse-glow"></div>
           <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto">
             {/* Breadcrumbs */}
-            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <span className="text-white/40">›</span>
-              <span className="text-[#FF6B35]">Blog</span>
-            </nav>
+            <ScrollReveal variant="fadeDown" delay={50}>
+              <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
+                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <span className="text-white/40">›</span>
+                <span className="text-[#FF6B35]">Blog</span>
+              </nav>
+            </ScrollReveal>
 
             {/* Eyebrow badge */}
-            <div className="flex justify-center mb-5">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
-                </span>
-                <span>Engineering &amp; Architecture Insights</span>
+            <ScrollReveal variant="fadeUp" delay={100}>
+              <div className="flex justify-center mb-5">
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
+                  </span>
+                  <span>Engineering &amp; Architecture Insights</span>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            <h1 id="blog-hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
-              Insights, Ideas &amp; <span className="text-[#FF6B35]">Engineering Guides</span>
-            </h1>
+            <ScrollReveal variant="fadeUp" delay={150}>
+              <h1 id="blog-hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
+                Insights, Ideas &amp; <span className="text-[#FF6B35]">Engineering Guides</span>
+              </h1>
+            </ScrollReveal>
 
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
-              Deep dives, architectural benchmarks, and practical technology guides written by our software engineering team.
-            </p>
+            <ScrollReveal variant="fadeUp" delay={250}>
+              <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
+                Deep dives, architectural benchmarks, and practical technology guides written by our software engineering team.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -105,58 +115,60 @@ export default function BlogPage() {
           <section className="bg-white py-14 lg:py-20 border-b border-[#E5E7E9]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               
-              <Link
-                href={`/blog/${featuredArticle.slug}`}
-                className="block card-lift-dark p-8 sm:p-12 rounded-3xl bg-[#202323] text-white relative overflow-hidden shadow-2xl border border-white/10 hover:border-[#FF6B35]/50 transition-all group"
-              >
-                <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF6B35]/15 rounded-full blur-3xl pointer-events-none"></div>
+              <ScrollReveal variant="scaleIn" delay={100}>
+                <Link
+                  href={`/blog/${featuredArticle.slug}`}
+                  className="block card-lift-dark p-8 sm:p-12 rounded-3xl bg-[#202323] text-white relative overflow-hidden shadow-2xl border border-white/10 hover:border-[#FF6B35]/50 transition-all group"
+                >
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF6B35]/15 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div className="max-w-3xl relative z-10 space-y-5">
-                  <div className="flex flex-wrap items-center gap-3 text-xs">
-                    <span className="px-3 py-1 rounded-full bg-[#FF6B35] text-white font-bold uppercase font-mono flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3" />
-                      <span>Featured Article</span>
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300 font-medium">
-                      {featuredArticle.category}
-                    </span>
-                    <span className="text-slate-400 flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#FF6B35]" />
-                      {featuredArticle.publishedAt}
-                    </span>
-                    <span className="text-slate-500">·</span>
-                    <span className="text-slate-400 flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-[#FF6B35]" />
-                      {featuredArticle.readTime}
-                    </span>
-                  </div>
-
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-white group-hover:text-[#FF6B35] transition-colors leading-tight">
-                    {featuredArticle.title}
-                  </h2>
-
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed line-clamp-3">
-                    {featuredArticle.summary}
-                  </p>
-
-                  <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-white/10 pt-4">
-                    <div className="flex items-center gap-2.5 text-xs text-slate-300">
-                      <div className="w-7 h-7 rounded-full bg-white/10 border border-white/20 flex items-center justify-center font-bold text-[#FF6B35]">
-                        {featuredArticle.author.name.charAt(0)}
-                      </div>
-                      <div>
-                        <span className="font-bold text-white">{featuredArticle.author.name}</span>
-                        <span className="text-slate-400 ml-1.5">· {featuredArticle.author.role}</span>
-                      </div>
+                  <div className="max-w-3xl relative z-10 space-y-5">
+                    <div className="flex flex-wrap items-center gap-3 text-xs">
+                      <span className="px-3 py-1 rounded-full bg-[#FF6B35] text-white font-bold uppercase font-mono flex items-center gap-1.5">
+                        <Sparkles className="w-3 h-3" />
+                        <span>Featured Article</span>
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300 font-medium">
+                        {featuredArticle.category}
+                      </span>
+                      <span className="text-slate-400 flex items-center gap-1">
+                        <Calendar className="w-3.5 h-3.5 text-[#FF6B35]" />
+                        {featuredArticle.publishedAt}
+                      </span>
+                      <span className="text-slate-500">·</span>
+                      <span className="text-slate-400 flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-[#FF6B35]" />
+                        {featuredArticle.readTime}
+                      </span>
                     </div>
 
-                    <span className="text-xs font-bold text-[#FF6B35] inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                      <span>Read Full Article</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-white group-hover:text-[#FF6B35] transition-colors leading-tight">
+                      {featuredArticle.title}
+                    </h2>
+
+                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed line-clamp-3">
+                      {featuredArticle.summary}
+                    </p>
+
+                    <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-white/10 pt-4">
+                      <div className="flex items-center gap-2.5 text-xs text-slate-300">
+                        <div className="w-7 h-7 rounded-full bg-white/10 border border-white/20 flex items-center justify-center font-bold text-[#FF6B35]">
+                          {featuredArticle.author.name.charAt(0)}
+                        </div>
+                        <div>
+                          <span className="font-bold text-white">{featuredArticle.author.name}</span>
+                          <span className="text-slate-400 ml-1.5">· {featuredArticle.author.role}</span>
+                        </div>
+                      </div>
+
+                      <span className="text-xs font-bold text-[#FF6B35] inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        <span>Read Full Article</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </ScrollReveal>
 
             </div>
           </section>
@@ -167,24 +179,26 @@ export default function BlogPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    activeCategory === cat
-                      ? 'bg-[#FF6B35] text-white shadow-md shadow-[#FF6B35]/25'
-                      : 'bg-white text-[#5A5D5C] hover:bg-[#E5E7E9] hover:text-[#202323] border border-[#E5E7E9]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+            <ScrollReveal variant="fadeUp" delay={100}>
+              <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      activeCategory === cat
+                        ? 'bg-[#FF6B35] text-white shadow-md shadow-[#FF6B35]/25 scale-105'
+                        : 'bg-white text-[#5A5D5C] hover:bg-[#E5E7E9] hover:text-[#202323] border border-[#E5E7E9]'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </ScrollReveal>
 
-            {/* Articles Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Articles Grid with StaggerContainer */}
+            <StaggerContainer staggerDelay={80} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredArticles.map((article) => (
                 <Link
                   key={article.id}
@@ -223,7 +237,7 @@ export default function BlogPage() {
                   </div>
                 </Link>
               ))}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -232,59 +246,67 @@ export default function BlogPage() {
         <section className="bg-[#202323] text-white py-20 lg:py-28 relative overflow-hidden border-t border-white/10">
           {/* Subtle Grid & Radial Glows */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none animate-pulse-glow"></div>
           <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-5">
-            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FF6B35] mx-auto shadow-sm">
-              <Mail className="w-6 h-6" />
-            </div>
+            <ScrollReveal variant="fadeDown" delay={50}>
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FF6B35] mx-auto shadow-sm">
+                <Mail className="w-6 h-6" />
+              </div>
+            </ScrollReveal>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
-              Get practical technology insights <br className="hidden sm:inline" />
-              <span className="text-[#FF6B35]">in your inbox.</span>
-            </h2>
+            <ScrollReveal variant="fadeUp" delay={100}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+                Get practical technology insights <br className="hidden sm:inline" />
+                <span className="text-[#FF6B35]">in your inbox.</span>
+              </h2>
+            </ScrollReveal>
 
-            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-normal">
-              No marketing fluff. Only real-world architectural case studies, performance benchmarks, and development guides.
-            </p>
+            <ScrollReveal variant="fadeUp" delay={150}>
+              <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-normal">
+                No marketing fluff. Only real-world architectural case studies, performance benchmarks, and development guides.
+              </p>
+            </ScrollReveal>
 
-            <div className="pt-4 max-w-xl mx-auto">
-              {subDone ? (
-                <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold flex items-center justify-center gap-2 shadow-sm">
-                  <CheckCircle2 className="w-5 h-5" />
-                  <span>Thank you for subscribing! Check your inbox soon.</span>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} noValidate className="flex flex-col gap-2">
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <input
-                      type="text"
-                      placeholder="Enter your corporate email..."
-                      value={emailSub}
-                      onChange={(e) => {
-                        setEmailSub(e.target.value);
-                        if (emailSubError) setEmailSubError('');
-                      }}
-                      className={`flex-1 px-5 py-3.5 rounded-xl bg-[#2C3030] border text-sm text-white placeholder-slate-400 focus:outline-none transition-colors ${
-                        emailSubError
-                          ? 'border-red-500 focus:border-red-500'
-                          : 'border-white/15 focus:border-[#FF6B35]'
-                      }`}
-                    />
-                    <button
-                      type="submit"
-                      className="btn-primary-orange px-8 py-3.5 rounded-xl text-sm font-bold whitespace-nowrap cursor-pointer shadow-lg shadow-[#FF6B35]/25"
-                    >
-                      Subscribe
-                    </button>
+            <ScrollReveal variant="scaleIn" delay={200}>
+              <div className="pt-4 max-w-xl mx-auto">
+                {subDone ? (
+                  <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold flex items-center justify-center gap-2 shadow-sm">
+                    <CheckCircle2 className="w-5 h-5" />
+                    <span>Thank you for subscribing! Check your inbox soon.</span>
                   </div>
-                  {emailSubError && (
-                    <p className="text-xs text-red-400 text-left pl-1 font-medium">{emailSubError}</p>
-                  )}
-                </form>
-              )}
-            </div>
+                ) : (
+                  <form onSubmit={handleSubscribe} noValidate className="flex flex-col gap-2">
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <input
+                        type="text"
+                        placeholder="Enter your corporate email..."
+                        value={emailSub}
+                        onChange={(e) => {
+                          setEmailSub(e.target.value);
+                          if (emailSubError) setEmailSubError('');
+                        }}
+                        className={`flex-1 px-5 py-3.5 rounded-xl bg-[#2C3030] border text-sm text-white placeholder-slate-400 focus:outline-none transition-colors ${
+                          emailSubError
+                            ? 'border-red-500 focus:border-red-500'
+                            : 'border-white/15 focus:border-[#FF6B35]'
+                        }`}
+                      />
+                      <button
+                        type="submit"
+                        className="btn-primary-orange px-8 py-3.5 rounded-xl text-sm font-bold whitespace-nowrap cursor-pointer shadow-lg shadow-[#FF6B35]/25"
+                      >
+                        Subscribe
+                      </button>
+                    </div>
+                    {emailSubError && (
+                      <p className="text-xs text-red-400 text-left pl-1 font-medium">{emailSubError}</p>
+                    )}
+                  </form>
+                )}
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -294,3 +316,4 @@ export default function BlogPage() {
     </div>
   );
 }
+

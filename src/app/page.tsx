@@ -10,11 +10,13 @@ import StatsBar from '@/components/home/StatsBar';
 // Import JSON Data Files
 import servicesData from '@/data/services.json';
 import projectsData from '@/data/projects.json';
-import technologiesData from '@/data/technologies.json';
 import testimonialsData from '@/data/testimonials.json';
 import faqsData from '@/data/faqs.json';
 import companyData from '@/data/company.json';
+import TechnologySection from '@/components/home/TechnologySection';
 import { FAQJsonLd } from '@/components/seo/JsonLd';
+import ScrollReveal from '@/components/animations/ScrollReveal';
+import StaggerContainer from '@/components/animations/StaggerContainer';
 
 import {
   ArrowRight,
@@ -146,7 +148,6 @@ export default function HomePage() {
   };
 
   // Active filter states
-  const [techCategory, setTechCategory] = useState('all');
   const [portfolioCategory, setPortfolioCategory] = useState('all');
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
@@ -189,12 +190,6 @@ export default function HomePage() {
       pills: ['Live Telematics', 'Route AI Engine', 'Instant Dispatch', 'IoT Sensor Mesh'],
     },
   ];
-
-  // 3. Technologies & Frameworks (Loaded from JSON)
-  const allTechnologies = technologiesData;
-  const filteredTechnologies = techCategory === 'all'
-    ? allTechnologies
-    : allTechnologies.filter((t) => t.category === techCategory);
 
   // 4. Why Businesses Choose Flipcode (6 Value Proposition Cards)
   const whyChooseUs = [
@@ -277,10 +272,10 @@ export default function HomePage() {
         {/* ========================================================
             3. CORE DIGITAL SERVICES (8 CARDS FROM JSON)
         ======================================================== */}
-        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9]" id="services">
+        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="services">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                 Core Capabilities
@@ -291,18 +286,18 @@ export default function HomePage() {
               <p className="mt-4 text-base sm:text-lg text-[#5A5D5C] leading-relaxed">
                 We deliver scalable technology solutions designed around your business goals, operational agility, and commercial ROI.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <StaggerContainer staggerDelay={70} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map((item) => {
                 const Icon = item.icon;
                 return (
                   <article
                     key={item.id}
-                    className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between group hover:border-[#FF6600]/40 transition-all shadow-sm"
+                    className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between group hover:border-[#FF6600]/40 transition-all duration-300 shadow-sm"
                   >
                     <div>
-                      <div className="w-12 h-12 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#202323] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-all duration-300 shadow-2xs mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#202323] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] group-hover:scale-110 transition-all duration-300 shadow-2xs mb-5">
                         <Icon className="w-6 h-6" />
                       </div>
 
@@ -334,13 +329,13 @@ export default function HomePage() {
                         className="inline-flex items-center gap-1.5 text-xs font-bold text-[#202323] group-hover:text-[#FF6600] transition-colors"
                       >
                         <span>Explore Service &amp; Specs</span>
-                        <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
                       </Link>
                     </div>
                   </article>
                 );
               })}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -348,10 +343,10 @@ export default function HomePage() {
         {/* ========================================================
             4. SOLUTIONS & ENTERPRISE SPECIALIZATIONS
         ======================================================== */}
-        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9]" id="solutions">
+        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="solutions">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                 Industry Solutions
@@ -362,20 +357,20 @@ export default function HomePage() {
               <p className="mt-4 text-base sm:text-lg text-[#5A5D5C] leading-relaxed">
                 Specialized engineering frameworks tailored for high-growth sectors, data pipelines, and mission-critical enterprise platforms.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <StaggerContainer staggerDelay={120} className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {solutions.map((sol) => (
                 <div
                   key={sol.num}
-                  className="cursor-pointer rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] p-8 hover:border-[#FF6600]/40 transition-all hover:shadow-md group relative overflow-hidden flex flex-col justify-between"
+                  className="cursor-pointer rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] p-8 hover:border-[#FF6600]/40 transition-all hover:shadow-lg hover:-translate-y-1.5 duration-300 group relative overflow-hidden flex flex-col justify-between"
                 >
-                  <div className="absolute top-4 right-4 text-4xl font-extrabold font-mono text-[#E5E7E9] group-hover:text-[#FF6600]/15 transition-colors select-none">
+                  <div className="absolute top-4 right-4 text-4xl font-extrabold font-mono text-[#E5E7E9] group-hover:text-[#FF6600]/15 group-hover:scale-110 transition-all duration-300 select-none">
                     {sol.num}
                   </div>
 
                   <div>
-                    <span className="inline-block px-2.5 py-1 rounded-md bg-[#202323] text-white text-xs font-mono font-bold mb-4">
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-[#202323] text-white text-xs font-mono font-bold mb-4 group-hover:bg-[#FF6600] transition-colors duration-300">
                       SOLUTION {sol.num}
                     </span>
 
@@ -392,7 +387,7 @@ export default function HomePage() {
                     {sol.pills.map((pill, pIdx) => (
                       <span
                         key={pIdx}
-                        className="px-2.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-[11px] font-semibold text-[#303333] shadow-2xs"
+                        className="px-2.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-[11px] font-semibold text-[#303333] shadow-2xs group-hover:border-[#FF6600]/30 transition-colors"
                       >
                         {pill}
                       </span>
@@ -400,96 +395,23 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
 
         {/* ========================================================
-            5. TECHNOLOGIES & FRAMEWORKS (Dark Charcoal Theme, from JSON)
+            5. TECHNOLOGIES & FRAMEWORKS (Elevated Enterprise Showcase)
         ======================================================== */}
-        <section className="bg-[#202323] text-white py-24 lg:py-32 relative overflow-hidden" id="technologies">
-          <div className="absolute inset-0 bg-cross-pattern-dark pointer-events-none opacity-40"></div>
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#FF6600]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.08] border border-white/10 text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
-                Enterprise Technology Stack
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
-                IT Technologies &amp; Frameworks We Engineer With
-              </h2>
-              <p className="mt-4 text-base text-slate-300/90 leading-relaxed">
-                From reactive web frontends and high-throughput microservices to cloud orchestration, AI integration, and robust database architectures.
-              </p>
-            </div>
-
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-              {[
-                { id: 'all', label: 'All Technologies', count: allTechnologies.length },
-                { id: 'frontend', label: 'Frontend & UI' },
-                { id: 'backend', label: 'Backend & APIs' },
-                { id: 'mobile', label: 'Mobile Apps' },
-                { id: 'cloud', label: 'Cloud & DevOps' },
-                { id: 'database', label: 'Databases' },
-                { id: 'ai', label: 'AI & Data' },
-                { id: 'cms', label: 'CMS & Web' },
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setTechCategory(tab.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                    techCategory === tab.id
-                      ? 'bg-[#FF6600] text-white shadow-md shadow-[#FF6600]/30'
-                      : 'bg-white/[0.06] text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
-                  }`}
-                >
-                  <span>{tab.label}</span>
-                  {tab.count !== undefined && (
-                    <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-white/20 text-[10px] font-mono">
-                      {tab.count}
-                    </span>
-                  )}
-                </button>
-              ))}
-            </div>
-
-            {/* Tech Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {filteredTechnologies.map((tech, idx) => (
-                <div
-                  key={idx}
-                  className="cursor-pointer p-4 rounded-xl bg-[#2C3030]/80 border border-white/10 hover:border-[#FF6600]/50 transition-all hover:-translate-y-1 group"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-extrabold text-white group-hover:text-[#FF6600] transition-colors">
-                      {tech.name}
-                    </span>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-slate-300">
-                      {tech.badge}
-                    </span>
-                  </div>
-                  <div className="text-[11px] text-slate-400">
-                    {tech.sub}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </section>
+        <TechnologySection onOpenConsult={() => setIsConsultModalOpen(true)} />
 
         {/* ========================================================
             6. WHY CHOOSE US (6 VALUE PROPOSITION CARDS)
         ======================================================== */}
-        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9]" id="why-us">
+        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="why-us">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                 Value Proposition
@@ -500,17 +422,17 @@ export default function HomePage() {
               <p className="mt-4 text-base sm:text-lg text-[#5A5D5C] leading-relaxed">
                 We operate as your dedicated technology arm, combining deep engineering competence with corporate reliability.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <StaggerContainer staggerDelay={80} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseUs.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-8 group hover:border-[#FF6600]/40 transition-all shadow-sm"
+                    className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-8 group hover:border-[#FF6600]/40 transition-all duration-300 shadow-sm"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#202323] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors shadow-2xs mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] flex items-center justify-center text-[#202323] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] group-hover:scale-110 transition-all duration-300 shadow-2xs mb-6">
                       <Icon className="w-6 h-6" />
                     </div>
 
@@ -524,7 +446,7 @@ export default function HomePage() {
                   </div>
                 );
               })}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -532,10 +454,10 @@ export default function HomePage() {
         {/* ========================================================
             7. PORTFOLIO & RECENT WORK (Loaded from JSON + Modal)
         ======================================================== */}
-        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9]" id="portfolio">
+        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="portfolio">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-14">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-14">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                 Featured Case Studies
@@ -546,7 +468,7 @@ export default function HomePage() {
               <p className="mt-4 text-base sm:text-lg text-[#5A5D5C] leading-relaxed">
                 Explore digital products, portals, mobile applications, and enterprise systems delivered for clients worldwide.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Portfolio Filter Tabs */}
             <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
@@ -560,9 +482,9 @@ export default function HomePage() {
                 <button
                   key={tab.id}
                   onClick={() => setPortfolioCategory(tab.id)}
-                  className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                  className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer ${
                     portfolioCategory === tab.id
-                      ? 'bg-[#FF6600] text-white shadow-md shadow-[#FF6600]/25'
+                      ? 'bg-[#FF6600] text-white shadow-md shadow-[#FF6600]/25 scale-105'
                       : 'bg-[#F7F8F8] text-[#5A5D5C] hover:bg-white hover:text-[#202323] border border-[#E5E7E9]'
                   }`}
                 >
@@ -572,12 +494,16 @@ export default function HomePage() {
             </div>
 
             {/* Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <StaggerContainer
+              key={portfolioCategory}
+              staggerDelay={90}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
               {filteredProjects.map((project) => (
                 <article
                   key={project.id}
                   onClick={() => setSelectedCaseStudy(project)}
-                  className="cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group hover:border-[#FF6600]/40 transition-all hover:shadow-lg flex flex-col justify-between"
+                  className="cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group hover:border-[#FF6600]/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col justify-between"
                 >
                   {/* Card Visual Header */}
                   <div className={`p-6 bg-gradient-to-br ${project.color} text-white relative overflow-hidden min-h-[160px] flex flex-col justify-between`}>
@@ -596,7 +522,7 @@ export default function HomePage() {
                       </h3>
                     </div>
 
-                    <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF6600]/20 rounded-full blur-2xl pointer-events-none"></div>
+                    <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF6600]/20 rounded-full blur-2xl pointer-events-none group-hover:scale-150 transition-transform duration-500"></div>
                   </div>
 
                   {/* Card Body */}
@@ -610,7 +536,7 @@ export default function HomePage() {
                         {project.techs.map((tech: string, tIdx: number) => (
                           <span
                             key={tIdx}
-                            className="px-2 py-0.5 rounded bg-[#F7F8F8] border border-[#E5E7E9] text-[11px] font-mono font-medium text-[#303333]"
+                            className="px-2 py-0.5 rounded bg-[#F7F8F8] border border-[#E5E7E9] text-[11px] font-mono font-medium text-[#303333] group-hover:border-[#FF6600]/30 transition-colors"
                           >
                             {tech}
                           </span>
@@ -624,10 +550,10 @@ export default function HomePage() {
                           e.stopPropagation();
                           setSelectedCaseStudy(project);
                         }}
-                        className="btn-secondary-outline px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5"
+                        className="btn-secondary-outline px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 group/btn"
                       >
                         <span>View Case Study</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                       </button>
 
                       <Link
@@ -641,7 +567,7 @@ export default function HomePage() {
                   </div>
                 </article>
               ))}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -649,10 +575,10 @@ export default function HomePage() {
         {/* ========================================================
             8. 7-STAGE METHODOLOGY WORKFLOW
         ======================================================== */}
-        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9]" id="process">
+        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="process">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                 Methodology
@@ -663,16 +589,16 @@ export default function HomePage() {
               <p className="mt-4 text-base sm:text-lg text-[#5A5D5C] leading-relaxed">
                 A systematic engineering lifecycle designed for transparency, agility, and precision delivery.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <StaggerContainer staggerDelay={60} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
               {processStages.map((stg) => (
                 <div
                   key={stg.num}
-                  className="cursor-pointer p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all hover:shadow-md group flex flex-col justify-between"
+                  className="cursor-pointer p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all hover:shadow-md hover:-translate-y-1 duration-300 group flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#202323] text-white flex items-center justify-center font-mono font-bold text-sm group-hover:bg-[#FF6600] transition-colors mb-4 shadow-sm">
+                    <div className="w-10 h-10 rounded-xl bg-[#202323] text-white flex items-center justify-center font-mono font-bold text-sm group-hover:bg-[#FF6600] group-hover:scale-105 transition-all duration-300 mb-4 shadow-sm">
                       {stg.num}
                     </div>
 
@@ -686,7 +612,7 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -694,14 +620,14 @@ export default function HomePage() {
         {/* ========================================================
             9. ABOUT US SECTION (Loaded with company data)
         ======================================================== */}
-        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9]" id="about">
+        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="about">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
               {/* Left Visual Illustration Mockup */}
-              <div className="lg:col-span-6 relative">
-                <div className="p-8 rounded-3xl bg-[#202323] text-white border border-white/10 shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF6600]/15 rounded-full blur-2xl pointer-events-none"></div>
+              <ScrollReveal variant="fadeRight" className="lg:col-span-6 relative">
+                <div className="p-8 rounded-3xl bg-[#202323] text-white border border-white/10 shadow-2xl relative overflow-hidden group hover:border-[#FF6600]/30 transition-colors">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF6600]/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
                   
                   <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
                     <div className="text-xs font-mono text-[#FF6600] font-bold uppercase tracking-wider">
@@ -713,19 +639,19 @@ export default function HomePage() {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="p-4 rounded-xl bg-[#2C3030] border border-white/10">
+                    <div className="p-4 rounded-xl bg-[#2C3030] border border-white/10 hover:border-white/20 transition-colors">
                       <div className="text-xs text-slate-400">Incorporation Date</div>
                       <div className="text-lg font-bold text-white mt-0.5">{companyData.founded}</div>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-[#2C3030] border border-white/10">
+                    <div className="p-4 rounded-xl bg-[#2C3030] border border-white/10 hover:border-white/20 transition-colors">
                       <div className="text-xs text-slate-400">Headquarters</div>
                       <div className="text-sm font-semibold text-white mt-0.5">
                         {companyData.headquarters.street}, {companyData.headquarters.city}, {companyData.headquarters.state} {companyData.headquarters.postalCode}, {companyData.headquarters.country}
                       </div>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-[#2C3030] border border-white/10">
+                    <div className="p-4 rounded-xl bg-[#2C3030] border border-white/10 hover:border-[#FF6600]/30 transition-colors">
                       <div className="text-xs text-slate-400">Global Service Reach</div>
                       <div className="text-sm font-semibold text-[#FF6600] mt-0.5">
                         {companyData.globalReach.join(' • ')}
@@ -733,10 +659,10 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
               {/* Right Content */}
-              <div className="lg:col-span-6 space-y-6">
+              <ScrollReveal variant="fadeLeft" delay={150} className="lg:col-span-6 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                   About Company
@@ -792,7 +718,7 @@ export default function HomePage() {
                   </a>
                 </div>
 
-              </div>
+              </ScrollReveal>
 
             </div>
           </div>
@@ -801,10 +727,10 @@ export default function HomePage() {
         {/* ========================================================
             10. CLIENT TESTIMONIALS (FROM JSON)
         ======================================================== */}
-        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9]" id="testimonials">
+        <section className="bg-[#F7F8F8] py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="testimonials">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                 Client Reviews
@@ -815,9 +741,9 @@ export default function HomePage() {
               <p className="mt-4 text-base sm:text-lg text-[#5A5D5C] leading-relaxed">
                 Read authentic feedback from founders, directors, and executives who trust Flipcode Solutions.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <StaggerContainer staggerDelay={120} className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((test, idx) => (
                 <div
                   key={idx}
@@ -851,7 +777,7 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -859,10 +785,10 @@ export default function HomePage() {
         {/* ========================================================
             11. FAQ ACCORDION SECTION (FROM JSON)
         ======================================================== */}
-        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9]" id="faq">
+        <section className="bg-white py-24 lg:py-32 border-b border-[#E5E7E9] overflow-hidden" id="faq">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
                 FAQ
@@ -873,16 +799,16 @@ export default function HomePage() {
               <p className="mt-4 text-base sm:text-lg text-[#5A5D5C]">
                 Everything you need to know about partnering with Flipcode Solutions.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="space-y-4">
+            <StaggerContainer staggerDelay={60} className="space-y-4">
               {faqs.map((faq, fIdx) => {
                 const isOpen = activeFaq === fIdx;
                 return (
                   <div
                     key={fIdx}
                     onClick={() => setActiveFaq(isOpen ? null : fIdx)}
-                    className="cursor-pointer rounded-2xl border border-[#E5E7E9] bg-white overflow-hidden transition-all duration-200 hover:border-[#FF6600]/40"
+                    className="cursor-pointer rounded-2xl border border-[#E5E7E9] bg-white overflow-hidden transition-all duration-200 hover:border-[#FF6600]/40 shadow-xs"
                   >
                     <button
                       onClick={(e) => {
@@ -892,20 +818,20 @@ export default function HomePage() {
                       className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold font-heading text-base sm:text-lg text-[#202323] hover:text-[#FF6600] transition-colors cursor-pointer"
                     >
                       <span>{faq.q}</span>
-                      <span className="w-8 h-8 rounded-full bg-[#F7F8F8] flex items-center justify-center text-[#5A5D5C] flex-shrink-0">
+                      <span className="w-8 h-8 rounded-full bg-[#F7F8F8] flex items-center justify-center text-[#5A5D5C] flex-shrink-0 transition-transform duration-200">
                         {isOpen ? <ChevronUp className="w-4 h-4 text-[#FF6600]" /> : <ChevronDown className="w-4 h-4" />}
                       </span>
                     </button>
 
                     {isOpen && (
-                      <div className="px-6 pb-6 text-sm sm:text-base text-[#5A5D5C] leading-relaxed border-t border-[#E5E7E9]/70 pt-4 bg-[#F7F8F8]/40">
+                      <div className="px-6 pb-6 text-sm sm:text-base text-[#5A5D5C] leading-relaxed border-t border-[#E5E7E9]/70 pt-4 bg-[#F7F8F8]/40 animate-fade-in duration-200">
                         {faq.a}
                       </div>
                     )}
                   </div>
                 );
               })}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -915,9 +841,9 @@ export default function HomePage() {
         ======================================================== */}
         <section className="bg-[#FF6600] text-white py-20 lg:py-24 relative overflow-hidden" id="cta">
           <div className="absolute inset-0 bg-cross-pattern-dark opacity-10 pointer-events-none"></div>
-          <div className="absolute -top-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -top-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
 
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <ScrollReveal variant="fadeUp" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
               Have a Project in Mind? Let&apos;s Build It Together.
             </h2>
@@ -928,32 +854,32 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#202323] hover:bg-[#202323] hover:text-white text-base font-bold transition-all shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#202323] hover:bg-[#202323] hover:text-white text-base font-bold transition-all shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
               >
                 <span>Start Your Project</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <button
                 onClick={() => setIsConsultModalOpen(true)}
-                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#202323] text-white hover:bg-[#2C3030] text-base font-bold transition-all border border-white/20 hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#202323] text-white hover:bg-[#2C3030] text-base font-bold transition-all border border-white/20 hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer group"
               >
-                <Calendar className="w-4 h-4 text-[#FF6600]" />
+                <Calendar className="w-4 h-4 text-[#FF6600] group-hover:scale-110 transition-transform" />
                 <span>Book 30-Min Discovery Call</span>
               </button>
             </div>
-          </div>
+          </ScrollReveal>
         </section>
 
         {/* ========================================================
             13. CONTACT US SECTION (Dual Grid from JSON)
         ======================================================== */}
-        <section className="bg-[#F7F8F8] py-24 lg:py-32" id="contact">
+        <section className="bg-[#F7F8F8] py-24 lg:py-32 overflow-hidden" id="contact">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               
               {/* Left Contact Info */}
-              <div className="lg:col-span-5 space-y-8">
+              <ScrollReveal variant="fadeRight" className="lg:col-span-5 space-y-8">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3.5 shadow-2xs">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
@@ -969,7 +895,7 @@ export default function HomePage() {
 
                 <div className="space-y-4">
                   {/* Address */}
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all flex items-start gap-4 shadow-2xs group cursor-pointer">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all duration-300 hover:-translate-y-0.5 flex items-start gap-4 shadow-2xs group cursor-pointer">
                     <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors flex items-center justify-center text-[#FF6600] flex-shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
@@ -981,7 +907,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Email */}
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all flex items-start gap-4 shadow-2xs group cursor-pointer">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all duration-300 hover:-translate-y-0.5 flex items-start gap-4 shadow-2xs group cursor-pointer">
                     <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors flex items-center justify-center text-[#FF6600] flex-shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
@@ -994,7 +920,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Phone */}
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all flex items-start gap-4 shadow-2xs group cursor-pointer">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6600]/40 transition-all duration-300 hover:-translate-y-0.5 flex items-start gap-4 shadow-2xs group cursor-pointer">
                     <div className="w-10 h-10 rounded-xl bg-[#F7F8F8] border border-[#E5E7E9] group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-colors flex items-center justify-center text-[#FF6600] flex-shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
@@ -1009,10 +935,10 @@ export default function HomePage() {
                   </div>
                 </div>
 
-              </div>
+              </ScrollReveal>
 
               {/* Right Interactive Form */}
-              <div className="lg:col-span-7">
+              <ScrollReveal variant="fadeLeft" delay={150} className="lg:col-span-7">
                 <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7E9] shadow-lg">
                   <h3 className="text-2xl font-extrabold font-heading text-[#202323]">
                     Send Us a Message
@@ -1022,7 +948,7 @@ export default function HomePage() {
                   </p>
 
                   {formSubmitted ? (
-                    <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-2">
+                    <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-2 animate-fade-in">
                       <div className="w-12 h-12 rounded-full bg-emerald-500 text-white mx-auto flex items-center justify-center font-bold">
                         <Check className="w-6 h-6" />
                       </div>
@@ -1176,7 +1102,7 @@ export default function HomePage() {
                     </form>
                   )}
                 </div>
-              </div>
+              </ScrollReveal>
 
             </div>
           </div>

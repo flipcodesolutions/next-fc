@@ -123,7 +123,7 @@ export default function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-down ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E5E7E9] py-3.5'
           : 'bg-white border-b border-[#E5E7E9] py-4'
@@ -133,7 +133,7 @@ export default function SiteHeader() {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 hover:opacity-90 transition-opacity">
             <FlipcodeLogo variant="dark" size="md" />
           </div>
 

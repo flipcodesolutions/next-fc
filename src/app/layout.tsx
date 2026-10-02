@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import PageLoader from "@/components/ui/PageLoader";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import CustomCursor from "@/components/animations/CustomCursor";
+import PageTransition from "@/components/animations/PageTransition";
 
 export const viewport: Viewport = {
   themeColor: "#202323",
@@ -107,10 +109,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth antialiased">
       <body className="min-h-screen flex flex-col bg-white text-[#3F4446] font-sans selection:bg-[#FF6B35] selection:text-white">
+        <CustomCursor />
         <OrganizationJsonLd />
         <WebSiteJsonLd />
         <PageLoader />
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

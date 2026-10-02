@@ -5,6 +5,8 @@ import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import { JobPostingJsonLd } from '@/components/seo/JsonLd';
+import ScrollReveal from '@/components/animations/ScrollReveal';
+import StaggerContainer from '@/components/animations/StaggerContainer';
 import {
   MapPin,
   Sparkles,
@@ -182,43 +184,51 @@ export default function CareerPage() {
         >
           {/* Subtle Grid & Radial Glows */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none animate-pulse-glow"></div>
           <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto">
             {/* Breadcrumb Navigation */}
-            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-white transition-colors">
-                Home
-              </Link>
-              <span className="text-white/40">›</span>
-              <span className="text-[#FF6B35]">Career</span>
-            </nav>
+            <ScrollReveal variant="fadeDown" delay={50}>
+              <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
+                <Link href="/" className="hover:text-white transition-colors">
+                  Home
+                </Link>
+                <span className="text-white/40">›</span>
+                <span className="text-[#FF6B35]">Career</span>
+              </nav>
+            </ScrollReveal>
 
             {/* Eyebrow Badge */}
-            <div className="flex justify-center mb-5">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
-                </span>
-                <span>Careers at Flipcode Solutions</span>
+            <ScrollReveal variant="fadeUp" delay={100}>
+              <div className="flex justify-center mb-5">
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
+                  </span>
+                  <span>Careers at Flipcode Solutions</span>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Main Heading */}
-            <h1
-              id="careerHeroTitle"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"
-            >
-              Build the Future <br className="hidden sm:inline" />
-              <span className="text-[#FF6B35]">With Flipcode</span>
-            </h1>
+            <ScrollReveal variant="fadeUp" delay={150}>
+              <h1
+                id="careerHeroTitle"
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"
+              >
+                Build the Future <br className="hidden sm:inline" />
+                <span className="text-[#FF6B35]">With Flipcode</span>
+              </h1>
+            </ScrollReveal>
 
             {/* Subtitle */}
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
-              We are always looking for talented developers, designers, problem solvers, and technology enthusiasts who enjoy building meaningful digital products.
-            </p>
+            <ScrollReveal variant="fadeUp" delay={250}>
+              <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
+                We are always looking for talented developers, designers, problem solvers, and technology enthusiasts who enjoy building meaningful digital products.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -226,7 +236,7 @@ export default function CareerPage() {
         <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-semibold text-[#5A5D5C] uppercase tracking-wider mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
                 Culture &amp; Growth
@@ -234,20 +244,20 @@ export default function CareerPage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#202323]">
                 Why Join <span className="text-[#FF6B35]">Flipcode?</span>
               </h2>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <StaggerContainer staggerDelay={80} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {perks.map((perk, idx) => {
                 const Icon = perk.icon;
                 return (
                   <div
                     key={idx}
-                    className="card-lift cursor-pointer p-8 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9]"
+                    className="card-lift cursor-pointer p-8 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] hover:border-[#FF6B35]/40 hover:bg-white hover:shadow-xl transition-all duration-300 group"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-white border border-[#E5E7E9] flex items-center justify-center text-[#FF6B35] mb-5 shadow-2xs">
+                    <div className="w-11 h-11 rounded-xl bg-white border border-[#E5E7E9] flex items-center justify-center text-[#FF6B35] mb-5 shadow-2xs group-hover:scale-110 group-hover:bg-[#FF6B35] group-hover:text-white transition-all duration-300">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold font-heading text-[#202323] mb-2">
+                    <h3 className="text-lg font-bold font-heading text-[#202323] group-hover:text-[#FF6B35] transition-colors mb-2">
                       {perk.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#6B7070] leading-relaxed">
@@ -256,7 +266,7 @@ export default function CareerPage() {
                   </div>
                 );
               })}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -265,7 +275,7 @@ export default function CareerPage() {
         <section id="positions" className="bg-[#F7F8F8] py-20 lg:py-28 border-b border-[#E5E7E9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-semibold text-[#5A5D5C] uppercase tracking-wider mb-3 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
                 Current Openings
@@ -276,14 +286,14 @@ export default function CareerPage() {
               <p className="mt-3 text-sm text-[#6B7070]">
                 Explore roles across engineering and design. Join our team in Surendranagar, Gujarat or work remotely.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <StaggerContainer staggerDelay={100} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {jobs.map((job) => (
                 <div
                   key={job.id}
                   onClick={() => handleOpenApply(job)}
-                  className="cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between hover:shadow-lg transition-all hover:border-[#FF6B35]/40 group"
+                  className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] p-7 flex flex-col justify-between hover:shadow-xl transition-all hover:border-[#FF6B35]/50 group"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
@@ -312,7 +322,7 @@ export default function CareerPage() {
                       {job.skills.map((skill: string, sIdx: number) => (
                         <span
                           key={sIdx}
-                          className="text-[11px] font-medium px-2 py-0.5 rounded bg-[#F7F8F8] text-[#5A5D5C] border border-[#E5E7E9]"
+                          className="text-[11px] font-medium px-2 py-0.5 rounded bg-[#F7F8F8] text-[#5A5D5C] border border-[#E5E7E9] group-hover:border-[#FF6B35]/20 transition-colors"
                         >
                           {skill}
                         </span>
@@ -336,34 +346,37 @@ export default function CareerPage() {
                         e.stopPropagation();
                         handleOpenApply(job);
                       }}
-                      className="btn-primary-orange px-5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                      className="btn-primary-orange px-5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-sm group-hover:shadow-md"
                     >
                       <span>Apply Now</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerContainer>
 
             {/* General Application Banner */}
-            <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-[#202323] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-              <div className="space-y-2 text-center sm:text-left">
-                <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
-                  Don&apos;t see the right position? Send us your profile.
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300">
-                  We are always on the lookout for standout engineering and design talent.
-                </p>
-              </div>
+            <ScrollReveal variant="fadeUp" delay={150}>
+              <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-[#202323] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl border border-white/10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF6B35]/15 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="space-y-2 text-center sm:text-left relative z-10">
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
+                    Don&apos;t see the right position? Send us your profile.
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300">
+                    We are always on the lookout for standout engineering and design talent.
+                  </p>
+                </div>
 
-              <button
-                onClick={() => handleOpenApply()}
-                className="btn-primary-orange px-7 py-3 rounded-xl text-xs font-bold flex-shrink-0"
-              >
-                Submit Resume
-              </button>
-            </div>
+                <button
+                  onClick={() => handleOpenApply()}
+                  className="btn-primary-orange px-7 py-3 rounded-xl text-xs font-bold flex-shrink-0 cursor-pointer relative z-10 shadow-lg shadow-[#FF6B35]/25"
+                >
+                  Submit Resume
+                </button>
+              </div>
+            </ScrollReveal>
 
           </div>
         </section>
@@ -371,7 +384,7 @@ export default function CareerPage() {
         {/* Application Modal */}
         {isApplyModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#202323]/80 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-[#E5E7E9] overflow-hidden">
+            <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-[#E5E7E9] overflow-hidden animate-in zoom-in-95 duration-200">
               
               <div className="p-6 bg-[#202323] text-white flex items-center justify-between border-b border-white/10">
                 <div>
@@ -384,7 +397,7 @@ export default function CareerPage() {
                 </div>
                 <button
                   onClick={() => setIsApplyModalOpen(false)}
-                  className="p-1 rounded-lg text-slate-400 hover:text-white"
+                  className="p-1 rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -499,13 +512,13 @@ export default function CareerPage() {
                       <button
                         type="button"
                         onClick={() => setIsApplyModalOpen(false)}
-                        className="px-4 py-2 text-xs font-semibold text-[#5A5D5C] hover:text-[#202323]"
+                        className="px-4 py-2 text-xs font-semibold text-[#5A5D5C] hover:text-[#202323] cursor-pointer"
                       >
                         Cancel
                       </button>
                       <button
                         type="submit"
-                        className="btn-primary-orange px-6 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2"
+                        className="btn-primary-orange px-6 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer shadow-md shadow-[#FF6B35]/20"
                       >
                         <Send className="w-3.5 h-3.5" />
                         <span>Submit Application</span>
@@ -525,3 +538,4 @@ export default function CareerPage() {
     </div>
   );
 }
+

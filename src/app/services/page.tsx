@@ -5,6 +5,7 @@ import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import servicesData from '@/data/services.json';
+import ScrollReveal from '@/components/animations/ScrollReveal';
 import {
   Code2,
   Smartphone,
@@ -90,12 +91,12 @@ export default function ServicesPage() {
         >
           {/* Subtle Grid & Radial Glows */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none animate-pulse-glow"></div>
           <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto">
             {/* Breadcrumb Navigation */}
-            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
+            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6 animate-fade-down" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-white transition-colors">
                 Home
               </Link>
@@ -104,7 +105,7 @@ export default function ServicesPage() {
             </nav>
 
             {/* Eyebrow Badge */}
-            <div className="flex justify-center mb-5">
+            <div className="flex justify-center mb-5 opacity-0 animate-fade-down" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
@@ -117,19 +118,26 @@ export default function ServicesPage() {
             {/* Main Heading */}
             <h1
               id="servicesHeroTitle"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight opacity-0 animate-fade-up"
+              style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
             >
               Technology Services Built <br className="hidden sm:inline" />
               <span className="text-[#FF6B35]">Around Your Goals</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
+            <p
+              className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal opacity-0 animate-fade-up"
+              style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
+            >
               From high-traffic web applications and mobile apps to multi-tenant SaaS platforms, cloud DevOps, and AI workflow integrations, we engineer solutions that scale.
             </p>
 
             {/* Quick stats pills */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate-300">
+            <div
+              className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate-300 opacity-0 animate-fade-up"
+              style={{ animationDelay: '480ms', animationFillMode: 'forwards' }}
+            >
               <span className="px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/15">12 Specialized Disciplines</span>
               <span className="px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/15">100% Client IP Ownership</span>
               <span className="px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/15">99.9% Production SLA</span>
@@ -138,7 +146,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Detailed Service Categories */}
-        <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9]">
+        <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9] overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             {servicesData.map((service, idx) => {
@@ -146,10 +154,11 @@ export default function ServicesPage() {
               const isEven = idx % 2 === 1;
 
               return (
-                <div
+                <ScrollReveal
                   key={service.id}
-                  id={service.slug}
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-8 sm:p-12 rounded-3xl border border-[#E5E7E9] hover:border-[#FF6B35]/40 transition-all ${
+                  variant={isEven ? 'fadeLeft' : 'fadeRight'}
+                  delay={idx * 40}
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-8 sm:p-12 rounded-3xl border border-[#E5E7E9] hover:border-[#FF6B35]/40 transition-all duration-300 hover:shadow-lg ${
                     isEven ? 'bg-[#F7F8F8]' : 'bg-white shadow-sm'
                   }`}
                 >
@@ -189,10 +198,10 @@ export default function ServicesPage() {
                     <div className="pt-4 flex flex-wrap items-center gap-3">
                       <Link
                         href={`/services/${service.slug}`}
-                        className="btn-primary-orange px-5 py-2.5 rounded-xl text-xs font-bold inline-flex items-center gap-2 cursor-pointer"
+                        className="btn-primary-orange px-5 py-2.5 rounded-xl text-xs font-bold inline-flex items-center gap-2 cursor-pointer group"
                       >
                         <span>Explore {service.title}</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
 
                       <Link
@@ -228,7 +237,7 @@ export default function ServicesPage() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               );
             })}
 
@@ -239,7 +248,7 @@ export default function ServicesPage() {
         <section className="bg-[#202323] text-white py-20 lg:py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
 
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+          <ScrollReveal variant="fadeUp" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight">
               Have a technical challenge? <br />
               <span className="text-[#FF6B35]">Let&apos;s discuss it.</span>
@@ -250,13 +259,13 @@ export default function ServicesPage() {
             <div className="pt-4">
               <Link
                 href="/contact"
-                className="btn-primary-orange px-8 py-4 rounded-xl text-sm font-bold inline-flex items-center gap-2.5 shadow-xl shadow-[#FF6B35]/25"
+                className="btn-primary-orange px-8 py-4 rounded-xl text-sm font-bold inline-flex items-center gap-2.5 shadow-xl shadow-[#FF6B35]/25 group"
               >
                 <span>Schedule an Architecture Review</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
         </section>
 
       </main>

@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Service } from '@/types';
+import ScrollReveal from '@/components/animations/ScrollReveal';
+import StaggerContainer from '@/components/animations/StaggerContainer';
 import {
   ArrowRight,
   CheckCircle2,
@@ -27,11 +29,11 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
   };
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-20 overflow-hidden">
       
       {/* 1. Overview Block */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-7 space-y-6">
+        <ScrollReveal variant="fadeRight" className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
             {service.badge || 'Engineering Capabilities'}
@@ -55,10 +57,10 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link
               href="/contact"
-              className="btn-primary-orange px-6 py-3 rounded-xl text-sm font-bold inline-flex items-center gap-2 shadow-sm"
+              className="btn-primary-orange px-6 py-3 rounded-xl text-sm font-bold inline-flex items-center gap-2 shadow-sm group"
             >
               <span>Consult on {service.title}</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <Link
@@ -68,12 +70,12 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
               <span>View All Services</span>
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Deliverables Card */}
-        <div className="lg:col-span-5">
-          <div className="bg-[#202323] text-white p-8 rounded-3xl border border-white/10 shadow-xl space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF6B35]/10 rounded-full blur-2xl pointer-events-none"></div>
+        <ScrollReveal variant="fadeLeft" delay={150} className="lg:col-span-5">
+          <div className="bg-[#202323] text-white p-8 rounded-3xl border border-white/10 shadow-xl space-y-6 relative overflow-hidden group hover:border-[#FF6B35]/30 transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF6B35]/10 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
 
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#FF6B35]">
@@ -96,13 +98,13 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
               </ul>
             )}
           </div>
-        </div>
+        </ScrollReveal>
       </div>
 
       {/* 2. Core Features & Capabilities */}
       {service.features && service.features.length > 0 && (
         <div className="space-y-8">
-          <div className="border-t border-[#E5E7E9] pt-12">
+          <ScrollReveal variant="fadeUp" className="border-t border-[#E5E7E9] pt-12">
             <div className="flex items-center gap-2 text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-2">
               <Layers className="w-4 h-4 text-[#FF6B35]" />
               <span>Core Features</span>
@@ -110,13 +112,13 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
             <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#202323]">
               What We Build Under {service.title}
             </h3>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <StaggerContainer staggerDelay={60} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {service.features.map((feat, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-[#FAFBFB] border border-[#E5E7E9] hover:border-[#FF6B35]/40 hover:bg-white hover:shadow-md transition-all duration-200 flex items-start gap-3"
+                className="p-5 rounded-2xl bg-[#FAFBFB] border border-[#E5E7E9] hover:border-[#FF6B35]/40 hover:bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-start gap-3"
               >
                 <div className="w-7 h-7 rounded-lg bg-[#FF6B35]/10 text-[#FF6B35] flex items-center justify-center flex-shrink-0 font-bold text-xs">
                   {idx + 1}
@@ -126,13 +128,13 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                 </span>
               </div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       )}
 
       {/* 3. Technology Stack */}
       {service.techStack && service.techStack.length > 0 && (
-        <div className="bg-[#F7F8F8] p-8 sm:p-10 rounded-3xl border border-[#E5E7E9] space-y-5">
+        <ScrollReveal variant="fadeUp" className="bg-[#F7F8F8] p-8 sm:p-10 rounded-3xl border border-[#E5E7E9] space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#FF6B35]">
@@ -151,19 +153,19 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
             {service.techStack.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2 rounded-xl bg-white border border-[#E5E7E9] text-xs font-bold text-[#202323] shadow-xs hover:border-[#FF6B35] transition-colors"
+                className="px-4 py-2 rounded-xl bg-white border border-[#E5E7E9] text-xs font-bold text-[#202323] shadow-xs hover:border-[#FF6B35] hover:scale-105 transition-all duration-200"
               >
                 {tech}
               </span>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       )}
 
       {/* 4. Engineering Process / Methodology */}
       {service.process && service.process.length > 0 && (
         <div className="space-y-8 border-t border-[#E5E7E9] pt-12">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
+          <ScrollReveal variant="fadeUp" className="text-center max-w-2xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
               <Compass className="w-4 h-4 text-[#FF6B35]" />
               <span>Step-by-Step Delivery</span>
@@ -174,13 +176,13 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
             <p className="text-sm text-[#73787A]">
               A proven, transparent engineering lifecycle from discovery to 24/7 post-launch SLA.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <StaggerContainer staggerDelay={70} className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {service.process.map((stepItem, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6B35]/40 hover:shadow-lg transition-all relative flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-white border border-[#E5E7E9] hover:border-[#FF6B35]/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative flex flex-col justify-between"
               >
                 <div>
                   <span className="text-2xl font-black font-heading text-[#FF6B35]/30">
@@ -195,26 +197,28 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                 </div>
               </div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       )}
 
       {/* 5. Business Benefits */}
       {service.benefits && service.benefits.length > 0 && (
         <div className="space-y-6 border-t border-[#E5E7E9] pt-12">
-          <div className="flex items-center gap-2 text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4 text-[#FF6B35]" />
-            <span>Value &amp; Advantages</span>
-          </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#202323]">
-            Why Partner with Flipcode for {service.title}
-          </h3>
+          <ScrollReveal variant="fadeUp">
+            <div className="flex items-center gap-2 text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#FF6B35]" />
+              <span>Value &amp; Advantages</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#202323] mt-1">
+              Why Partner with Flipcode for {service.title}
+            </h3>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <StaggerContainer staggerDelay={80} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {service.benefits.map((benefit, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-[#FAFBFB] border border-[#E5E7E9] flex items-center gap-3.5"
+                className="p-5 rounded-2xl bg-[#FAFBFB] border border-[#E5E7E9] flex items-center gap-3.5 hover:border-[#FF6B35]/40 hover:bg-white transition-all duration-300"
               >
                 <div className="w-8 h-8 rounded-lg bg-[#FF6B35] text-white flex items-center justify-center flex-shrink-0">
                   <CheckCircle2 className="w-4 h-4" />
@@ -222,22 +226,24 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                 <span className="text-sm font-semibold text-[#202323]">{benefit}</span>
               </div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       )}
 
       {/* 6. Service Specific FAQs */}
       {service.faqs && service.faqs.length > 0 && (
         <div className="space-y-6 border-t border-[#E5E7E9] pt-12">
-          <div className="flex items-center gap-2 text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
-            <HelpCircle className="w-4 h-4 text-[#FF6B35]" />
-            <span>Frequently Asked Questions</span>
-          </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#202323]">
-            Common Inquiries About {service.title}
-          </h3>
+          <ScrollReveal variant="fadeUp">
+            <div className="flex items-center gap-2 text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
+              <HelpCircle className="w-4 h-4 text-[#FF6B35]" />
+              <span>Frequently Asked Questions</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#202323] mt-1">
+              Common Inquiries About {service.title}
+            </h3>
+          </ScrollReveal>
 
-          <div className="space-y-3">
+          <StaggerContainer staggerDelay={60} className="space-y-3">
             {service.faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
@@ -259,17 +265,18 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#5A5D5C] leading-relaxed border-t border-[#F0F2F2] bg-[#FAFBFB]">
+                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#5A5D5C] leading-relaxed border-t border-[#F0F2F2] bg-[#FAFBFB] animate-fade-in">
                       {faq.answer}
                     </div>
                   )}
                 </div>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
       )}
 
     </div>
   );
 }
+

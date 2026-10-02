@@ -22,6 +22,9 @@ import {
 } from 'lucide-react';
 import teamData from '@/data/team.json';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import ScrollReveal from '@/components/animations/ScrollReveal';
+import StaggerContainer from '@/components/animations/StaggerContainer';
+import AnimatedCounter from '@/components/animations/AnimatedCounter';
 
 export const metadata: Metadata = {
   title: 'About Us | Engineering Excellence & Culture — Flipcode Solutions',
@@ -185,12 +188,12 @@ export default function AboutPage() {
         >
           {/* Subtle Grid & Radial Glows */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none animate-pulse-glow"></div>
           <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto">
             {/* Breadcrumb Navigation */}
-            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
+            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6 animate-fade-down" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-white transition-colors">
                 Home
               </Link>
@@ -199,7 +202,7 @@ export default function AboutPage() {
             </nav>
 
             {/* Eyebrow Badge */}
-            <div className="flex justify-center mb-5">
+            <div className="flex justify-center mb-5 opacity-0 animate-fade-down" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
@@ -212,22 +215,26 @@ export default function AboutPage() {
             {/* Main Heading */}
             <h1
               id="pageHeroTitle"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight opacity-0 animate-fade-up"
+              style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
             >
               Crafting digital excellence <br className="hidden sm:inline" />
               <span className="text-[#FF6B35]">since September 2023</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
+            <p
+              className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal opacity-0 animate-fade-up"
+              style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
+            >
               Founded in September 2023 in Surendranagar, Gujarat — we help businesses embrace digital transformation through innovative, reliable, and scalable technology solutions.
             </p>
 
             {/* Hero CTA Button */}
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex justify-center opacity-0 animate-fade-up" style={{ animationDelay: '480ms', animationFillMode: 'forwards' }}>
               <a
                 href="#ab-story"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] border border-white/15 text-white text-sm font-semibold transition-all duration-200 hover:border-[#FF6B35]/50 group"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] border border-white/15 text-white text-sm font-semibold transition-all duration-200 hover:border-[#FF6B35]/50 group cursor-pointer"
               >
                 <span>Discover Our Story</span>
                 <ArrowDown className="w-4 h-4 text-[#FF6B35] group-hover:translate-y-0.5 transition-transform" />
@@ -239,12 +246,12 @@ export default function AboutPage() {
         {/* ==========================================================================
             2. COMPANY STORY & IDENTITY
             ========================================================================== */}
-        <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9]" id="ab-story">
+        <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9] overflow-hidden" id="ab-story">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
               
               {/* Left Column: Story Content */}
-              <div className="lg:col-span-6 space-y-6">
+              <ScrollReveal variant="fadeRight" className="lg:col-span-6 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
                   About FlipCode
@@ -276,7 +283,7 @@ export default function AboutPage() {
 
                   <div>
                     <div className="text-2xl sm:text-3xl font-extrabold text-[#202323] leading-none">
-                      70+
+                      <AnimatedCounter value={70} suffix="+" />
                     </div>
                     <div className="text-xs sm:text-sm text-[#6B7070] font-semibold mt-1.5">
                       Projects Delivered
@@ -285,7 +292,7 @@ export default function AboutPage() {
 
                   <div>
                     <div className="text-2xl sm:text-3xl font-extrabold text-[#2563EB] leading-none">
-                      70+
+                      <AnimatedCounter value={70} suffix="+" />
                     </div>
                     <div className="text-xs sm:text-sm text-[#6B7070] font-semibold mt-1.5">
                       Happy Customers
@@ -294,20 +301,20 @@ export default function AboutPage() {
 
                   <div>
                     <div className="text-2xl sm:text-3xl font-extrabold text-[#16A34A] leading-none">
-                      6+
+                      <AnimatedCounter value={6} suffix="+" />
                     </div>
                     <div className="text-xs sm:text-sm text-[#6B7070] font-semibold mt-1.5">
                       Countries Served
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
               {/* Right Column: Dark Leadership Card */}
-              <div className="lg:col-span-6">
-                <div className="relative rounded-3xl bg-gradient-to-br from-[#202323] to-[#2C3030] p-8 sm:p-12 text-white shadow-xl overflow-hidden border border-white/10">
+              <ScrollReveal variant="fadeLeft" delay={150} className="lg:col-span-6">
+                <div className="relative rounded-3xl bg-gradient-to-br from-[#202323] to-[#2C3030] p-8 sm:p-12 text-white shadow-xl overflow-hidden border border-white/10 group hover:border-[#FF6B35]/30 transition-colors">
                   {/* Subtle radial orange glow effect in bottom-right corner */}
-                  <div className="absolute -right-8 -bottom-8 w-64 h-64 rounded-full bg-radial from-[#FF6B35]/25 to-transparent pointer-events-none"></div>
+                  <div className="absolute -right-8 -bottom-8 w-64 h-64 rounded-full bg-radial from-[#FF6B35]/25 to-transparent pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
 
                   <div className="relative z-10">
                     <div className="inline-block bg-[#FF6B35] text-white font-extrabold px-3.5 py-1 rounded-full text-xs uppercase tracking-wider mb-6 shadow-sm">
@@ -331,7 +338,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
             </div>
           </div>
@@ -340,11 +347,11 @@ export default function AboutPage() {
         {/* ==========================================================================
             3. MEET OUR TEAM (Leadership & Engineering)
             ========================================================================== */}
-        <section className="bg-[#F7F8F8] py-20 lg:py-28 border-b border-[#E5E7E9]" id="ab-team">
+        <section className="bg-[#F7F8F8] py-20 lg:py-28 border-b border-[#E5E7E9] overflow-hidden" id="ab-team">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Section Header */}
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
                 Meet Our Team
@@ -355,14 +362,14 @@ export default function AboutPage() {
               <p className="mt-3 text-sm sm:text-base text-[#6B7070]">
                 Passionate experts united by a shared commitment to quality, scalable architecture, and continuous innovation.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Team Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <StaggerContainer staggerDelay={100} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {teamData.map((member, idx) => (
                 <article
                   key={idx}
-                  className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group flex flex-col shadow-xs"
+                  className="card-lift cursor-pointer rounded-2xl bg-white border border-[#E5E7E9] overflow-hidden group flex flex-col shadow-xs hover:border-[#FF6B35]/40 transition-all duration-300 hover:shadow-lg"
                 >
                   {/* Photo & LinkedIn Link */}
                   <div className="relative aspect-square w-full bg-[#202323] overflow-hidden">
@@ -370,7 +377,7 @@ export default function AboutPage() {
                       src={member.avatar}
                       alt={`${member.name}, ${member.role}`}
                       fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     
@@ -406,7 +413,7 @@ export default function AboutPage() {
                   </div>
                 </article>
               ))}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -414,11 +421,11 @@ export default function AboutPage() {
         {/* ==========================================================================
             4. PURPOSE & PRINCIPLES (Mission, Vision & Core Values)
             ========================================================================== */}
-        <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9]" id="ab-identity">
+        <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9] overflow-hidden" id="ab-identity">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F7F8F8] border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
                 Purpose &amp; Principles
@@ -429,12 +436,12 @@ export default function AboutPage() {
               <p className="mt-3 text-sm sm:text-base text-[#6B7070]">
                 We don&apos;t just build software — we build partnerships that drive lasting digital transformation.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Mission & Vision Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <StaggerContainer staggerDelay={120} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {/* Mission Card */}
-              <div className="card-lift cursor-pointer p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between">
+              <div className="card-lift cursor-pointer p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between hover:border-[#FF6B35]/40 transition-all duration-300">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#FF6B35]/10 border border-[#FF6B35]/20 flex items-center justify-center text-[#FF6B35] mb-6">
                     <Target className="w-6 h-6" />
@@ -449,7 +456,7 @@ export default function AboutPage() {
               </div>
 
               {/* Vision Card */}
-              <div className="card-lift cursor-pointer p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between">
+              <div className="card-lift cursor-pointer p-8 sm:p-10 rounded-2xl bg-[#F7F8F8] border border-[#E5E7E9] flex flex-col justify-between hover:border-[#2563EB]/40 transition-all duration-300">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center text-[#2563EB] mb-6">
                     <Eye className="w-6 h-6" />
@@ -462,20 +469,20 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </StaggerContainer>
 
             {/* 6 Core Values Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <StaggerContainer staggerDelay={80} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {coreValues.map((val, idx) => {
                 const Icon = val.icon;
                 return (
                   <div
                     key={idx}
-                    className="card-lift cursor-pointer rounded-2xl bg-[#F8FAFC] border border-[#E5E7E9] p-7 flex flex-col justify-between hover:border-[#FF6B35]/40 transition-colors"
+                    className="card-lift cursor-pointer rounded-2xl bg-[#F8FAFC] border border-[#E5E7E9] p-7 flex flex-col justify-between hover:border-[#FF6B35]/40 transition-all duration-300"
                   >
                     <div>
                       <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                        className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300"
                         style={{ backgroundColor: val.bgColor, color: val.color }}
                       >
                         <Icon className="w-5 h-5" />
@@ -490,7 +497,7 @@ export default function AboutPage() {
                   </div>
                 );
               })}
-            </div>
+            </StaggerContainer>
 
           </div>
         </section>
@@ -498,11 +505,11 @@ export default function AboutPage() {
         {/* ==========================================================================
             5. MILESTONES & TIMELINE ROADMAP
             ========================================================================== */}
-        <section className="bg-[#F7F8F8] py-20 lg:py-28 border-b border-[#E5E7E9]" id="ab-journey">
+        <section className="bg-[#F7F8F8] py-20 lg:py-28 border-b border-[#E5E7E9] overflow-hidden" id="ab-journey">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <ScrollReveal variant="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7E9] text-xs font-bold text-[#5A5D5C] uppercase tracking-wider mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
                 Our Journey
@@ -513,14 +520,14 @@ export default function AboutPage() {
               <p className="mt-3 text-sm sm:text-base text-[#6B7070]">
                 A journey of dedication, technical excellence, and lasting partnerships.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Timeline Roadmap (Alternating Left & Right Cards) */}
             <div className="relative max-w-4xl mx-auto py-6">
               {/* Vertical Spine Line */}
               <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#FF6B35] via-[#202323]/25 to-[#FF6B35] -translate-x-1/2"></div>
 
-              <div className="space-y-8 md:space-y-12">
+              <StaggerContainer staggerDelay={120} className="space-y-8 md:space-y-12">
                 {timelineMilestones.map((item, idx) => {
                   const isLeft = item.align === 'left';
                   return (
@@ -573,7 +580,7 @@ export default function AboutPage() {
                     </div>
                   );
                 })}
-              </div>
+              </StaggerContainer>
             </div>
 
           </div>
@@ -584,9 +591,9 @@ export default function AboutPage() {
             ========================================================================== */}
         <section className="bg-[#202323] text-white py-20 lg:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] cta-radial-glow pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] cta-radial-glow pointer-events-none animate-pulse-glow"></div>
 
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+          <ScrollReveal variant="fadeUp" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] uppercase tracking-wider mb-2">
               <Sparkles className="w-3.5 h-3.5 text-[#FF6B35]" />
               Engineering Partnership
@@ -603,20 +610,20 @@ export default function AboutPage() {
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="btn-primary-orange px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2.5 w-full sm:w-auto shadow-md"
+                className="btn-primary-orange px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2.5 w-full sm:w-auto shadow-md group"
               >
                 <span>Start Your Project</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/our-work"
-                className="btn-outline-white px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2.5 w-full sm:w-auto"
+                className="btn-outline-white px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2.5 w-full sm:w-auto group"
               >
-                <Layers className="w-4 h-4" />
+                <Layers className="w-4 h-4 text-[#FF6B35]" />
                 <span>View Case Studies</span>
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
         </section>
 
       </main>
