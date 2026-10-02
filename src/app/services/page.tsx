@@ -4,21 +4,43 @@ import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import servicesData from '@/data/services.json';
 import {
   Code2,
   Smartphone,
   Layers,
-  ShoppingBag,
   Server,
+  ShoppingBag,
+  Palette,
+  Users2,
+  CloudCog,
+  Cpu,
   Network,
+  FileText,
+  TrendingUp,
   CheckCircle2,
   ArrowRight,
 } from 'lucide-react';
 
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Code2,
+  Smartphone,
+  Layers,
+  Server,
+  ShoppingBag,
+  Palette,
+  Users2,
+  CloudCog,
+  Cpu,
+  Network,
+  FileText,
+  TrendingUp,
+};
+
 export const metadata: Metadata = {
   title: 'Enterprise Software & IT Engineering Services | Flipcode Solutions',
   description:
-    'Comprehensive software engineering services: Custom Web Application Development, Native & Cross-Platform Mobile Apps (Flutter, React Native), SaaS Platforms, Cloud DevOps, and API Architectures.',
+    'Comprehensive software engineering services: Custom Web Application Development, Native & Cross-Platform Mobile Apps (Flutter, React Native), SaaS Platforms, Cloud DevOps, AI & Automation, and API Architectures.',
   keywords: [
     'Software Development Services',
     'Custom Web Application Engineering',
@@ -27,6 +49,8 @@ export const metadata: Metadata = {
     'Cloud Architecture DevOps AWS',
     'REST API Microservices Node.js',
     'Custom CRM ERP Development',
+    'AI Workflow Automation',
+    'Headless CMS eCommerce',
   ],
   alternates: {
     canonical: '/services',
@@ -34,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Enterprise IT & Software Engineering Services | Flipcode Solutions',
     description:
-      'Explore our full suite of digital engineering capabilities: Web, Mobile, Cloud, SaaS, APIs, and Custom Enterprise Software.',
+      'Explore our full suite of 12 digital engineering capabilities: Web, Mobile, Cloud, SaaS, APIs, AI Automation, and Custom Enterprise Software.',
     url: 'https://flipcodesolutions.com/services',
     type: 'website',
   },
@@ -42,111 +66,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Software Development & IT Engineering Services | Flipcode Solutions',
     description:
-      'Explore full-stack web, mobile, SaaS, and cloud architecture services delivered by Flipcode Solutions.',
+      'Explore full-stack web, mobile, SaaS, cloud architecture, and AI services delivered by Flipcode Solutions.',
   },
 };
 
 export default function ServicesPage() {
-  const serviceCategories = [
-    {
-      id: 'web',
-      title: 'Web Application Development',
-      badge: 'Modern Full-Stack',
-      icon: Code2,
-      desc: 'We engineer bespoke, lightning-fast web applications designed to handle high concurrency, intricate data models, and fluid interactive user journeys.',
-      capabilities: [
-        'Custom Web Applications',
-        'Enterprise Business Portals',
-        'Admin Panels & Internal Dashboards',
-        'Customer Self-Service Portals',
-        'Custom CRM Systems',
-        'Enterprise Resource Planning (ERP)',
-        'Complex Management Systems',
-      ],
-      techs: ['Next.js', 'React.js', 'TypeScript', 'Node.js', 'Tailwind CSS'],
-    },
-    {
-      id: 'saas',
-      title: 'SaaS Development',
-      badge: 'Cloud Architecture',
-      icon: Layers,
-      desc: 'From initial MVP wireframes to multi-tenant cloud enterprise solutions, we architect scalable software-as-a-service products with automated monetization.',
-      capabilities: [
-        'Multi-Tenant SaaS Architectures',
-        'Recurring Subscription Systems (Stripe)',
-        'Role-Based Granular Access Control',
-        'Customer Onboarding & Provisioning',
-        'Product & Asset Management Platforms',
-        'Usage-Based Metering & Telemetry',
-      ],
-      techs: ['Next.js', 'Node.js / Express', 'Stripe Connect', 'MySQL', 'Redis', 'AWS'],
-    },
-    {
-      id: 'mobile',
-      title: 'Mobile App Development',
-      badge: 'iOS & Android',
-      icon: Smartphone,
-      desc: 'Native and hybrid mobile applications delivering 60fps animations, intuitive tactile gestures, offline database caching, and native hardware sensor access.',
-      capabilities: [
-        'Native iOS (Swift) & Android (Kotlin)',
-        'Cross-Platform Flutter Development',
-        'React Native Mobile Architectures',
-        'API-driven Mobile Applications',
-        'Biometric Auth & Push Notifications',
-        'App Store & Play Store CI/CD Pipelines',
-      ],
-      techs: ['Flutter', 'React Native', 'Swift', 'Kotlin', 'Firebase', 'SQLite'],
-    },
-    {
-      id: 'ecommerce',
-      title: 'eCommerce Development',
-      badge: 'Omnichannel Commerce',
-      icon: ShoppingBag,
-      desc: 'High-converting custom storefronts and multi-vendor marketplaces engineered with sub-second page loads, automated tax calculation, and seamless checkout.',
-      capabilities: [
-        'Custom Headless eCommerce',
-        'Multi-Vendor Marketplace Platforms',
-        'Product Catalog & Inventory Sync',
-        'Secure Multi-Gateway Payment Processing',
-        'Order Lifecycle & Shipment Tracking',
-        'Affiliate & Referral Platforms',
-      ],
-      techs: ['Next.js Commerce', 'Node.js', 'Shopify Plus', 'Stripe', 'PayPal', 'MySQL'],
-    },
-    {
-      id: 'backend',
-      title: 'Backend & API Development',
-      badge: 'High Concurrency',
-      icon: Server,
-      desc: 'Resilient backend microservices, robust API gateways, and optimized database storage layers built for low latency and high data integrity.',
-      capabilities: [
-        'Laravel & Modern PHP Systems',
-        'Node.js & Express REST APIs',
-        'Python & FastAPI High-Performance Engines',
-        'GraphQL Schema Federation',
-        'Third-Party API Integration Layer',
-        'JWT & OAuth2 Authentication Systems',
-      ],
-      techs: ['Node.js', 'Laravel', 'Python / FastAPI', 'MySQL 8.0', 'PostgreSQL', 'Docker'],
-    },
-    {
-      id: 'integrations',
-      title: 'Integration Services',
-      badge: 'Ecosystem Connectivity',
-      icon: Network,
-      desc: 'Connect disparate software systems into unified, automated data pipelines that eliminate manual double-entry and sync records in real-time.',
-      capabilities: [
-        'Payment Gateways (Stripe, Razorpay, PayPal)',
-        'Amazon SP-API & Marketplaces Sync',
-        'Affiliate Network & Tracking APIs',
-        'YouTube & Social Media Data APIs',
-        'CRM & ERP Connectors (HubSpot, Salesforce)',
-        'Custom Webhooks & Event Streams',
-      ],
-      techs: ['RESTful APIs', 'GraphQL', 'Webhooks', 'Message Queues', 'Kafka', 'Redis'],
-    },
-  ];
-
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <BreadcrumbJsonLd
@@ -167,7 +91,7 @@ export default function ServicesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#A0A4A6] uppercase tracking-wider mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
-              Full-Stack Engineering Services
+              Full-Stack Engineering Capabilities
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
@@ -175,8 +99,15 @@ export default function ServicesPage() {
             </h1>
 
             <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
-              From high-traffic web applications and mobile apps to multi-tenant SaaS engines and bespoke enterprise integrations, we engineer solutions that perform.
+              From high-traffic web applications and mobile apps to multi-tenant SaaS platforms, cloud DevOps, and AI workflow integrations, we engineer solutions that scale.
             </p>
+
+            {/* Quick stats pills */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate-300">
+              <span className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10">12 Specialized Disciplines</span>
+              <span className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10">100% Client IP Ownership</span>
+              <span className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10">99.9% Production SLA</span>
+            </div>
           </div>
         </section>
 
@@ -184,14 +115,14 @@ export default function ServicesPage() {
         <section className="bg-white py-20 lg:py-28 border-b border-[#E5E7E9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
-            {serviceCategories.map((service, idx) => {
-              const Icon = service.icon;
+            {servicesData.map((service, idx) => {
+              const Icon = (service.iconName && iconMap[service.iconName]) || Code2;
               const isEven = idx % 2 === 1;
 
               return (
                 <div
                   key={service.id}
-                  id={service.id}
+                  id={service.slug}
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-8 sm:p-12 rounded-3xl border border-[#E5E7E9] hover:border-[#FF6B35]/40 transition-all ${
                     isEven ? 'bg-[#F7F8F8]' : 'bg-white shadow-sm'
                   }`}
@@ -203,7 +134,7 @@ export default function ServicesPage() {
                         <Icon className="w-6 h-6" />
                       </div>
                       <span className="text-xs font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#FF6B35]/10 text-[#FF6B35]">
-                        {service.badge}
+                        {service.badge || 'Engineering'}
                       </span>
                     </div>
 
@@ -212,40 +143,57 @@ export default function ServicesPage() {
                     </h2>
 
                     <p className="text-sm text-[#303333] leading-relaxed">
-                      {service.desc}
+                      {service.description || service.shortDesc}
                     </p>
 
                     {/* Tech tags */}
-                    <div className="pt-2 flex flex-wrap gap-2">
-                      {service.techs.map((tech, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="px-2.5 py-1 rounded-md bg-white border border-[#E5E7E9] text-xs font-semibold text-[#5A5D5C]"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                    {service.techStack && (
+                      <div className="pt-2 flex flex-wrap gap-2">
+                        {service.techStack.map((tech, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="px-2.5 py-1 rounded-md bg-white border border-[#E5E7E9] text-xs font-semibold text-[#5A5D5C]"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                    <div className="pt-4">
+                    <div className="pt-4 flex flex-wrap items-center gap-3">
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="btn-primary-orange px-5 py-2.5 rounded-xl text-xs font-bold inline-flex items-center gap-2 cursor-pointer"
+                      >
+                        <span>Explore {service.title}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+
                       <Link
                         href="/contact"
-                        className="btn-primary-orange px-6 py-2.5 rounded-xl text-xs font-bold inline-flex items-center gap-2 cursor-pointer"
+                        className="px-4 py-2.5 rounded-xl text-xs font-bold text-[#303333] hover:text-[#FF6B35] bg-white border border-[#E5E7E9] hover:border-[#FF6B35]/40 transition-colors"
                       >
-                        <span>Discuss Your Project</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <span>Request Scope</span>
                       </Link>
                     </div>
                   </div>
 
-                  {/* Right Column: Capabilities list (6 cols) */}
+                  {/* Right Column: Capabilities & Deliverables list (6 cols) */}
                   <div className={`lg:col-span-6 ${isEven ? 'lg:order-1' : ''}`}>
                     <div className="card-lift cursor-pointer p-6 sm:p-8 rounded-2xl bg-white border border-[#E5E7E9] shadow-sm space-y-3.5 hover:border-[#FF6B35]/40 transition-all">
-                      <h3 className="text-sm font-bold uppercase tracking-wider text-[#5A5D5C] font-heading mb-4">
-                        Core Deliverables &amp; Capabilities
-                      </h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A5D5C] font-heading">
+                          Core Deliverables &amp; Capabilities
+                        </h3>
+                        {service.metrics && (
+                          <span className="text-[11px] font-bold text-[#FF6B35] bg-[#FF6B35]/10 px-2 py-0.5 rounded-full">
+                            {service.metrics}
+                          </span>
+                        )}
+                      </div>
+
                       <ul className="space-y-3">
-                        {service.capabilities.map((cap, cIdx) => (
+                        {(service.features || service.deliverables || []).slice(0, 6).map((cap, cIdx) => (
                           <li key={cIdx} className="flex items-center gap-3 text-sm text-[#303333]">
                             <CheckCircle2 className="w-4 h-4 text-[#FF6B35] flex-shrink-0" />
                             <span className="font-medium">{cap}</span>

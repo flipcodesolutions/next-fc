@@ -1,14 +1,31 @@
+export interface ServiceProcessStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
+export interface ServiceFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Service {
   id: string;
   title: string;
   slug: string;
+  badge?: string;
   shortDesc: string;
+  description?: string;
   fullDesc?: string;
   iconName?: string;
   deliverables?: string[];
   techStack?: string[];
   features?: string[];
   metrics?: string;
+  benefits?: string[];
+  process?: ServiceProcessStep[];
+  faqs?: ServiceFAQ[];
+  link?: string;
 }
 
 export interface Project {

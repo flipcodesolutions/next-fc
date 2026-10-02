@@ -1,106 +1,1065 @@
 [
   {
+    "id": "web-application-development",
+    "slug": "web",
+    "title": "Web Application Development",
+    "badge": "Full-Stack Enterprise",
+    "iconName": "Code2",
+    "shortDesc": "High-performance, scalable web apps built with Next.js, React, Node.js, TypeScript, and modern cloud databases.",
+    "description": "We engineer robust, scalable, and responsive web applications catering to unique workflows using modern full-stack architectures, clean code conventions, and enterprise-grade security standards.",
+    "fullDesc": "Our web engineering team designs and develops high-traffic web applications that combine pixel-perfect frontend experiences with resilient, highly concurrent backend systems. Whether building multi-tenant SaaS dashboards, custom internal workflow portals, or customer self-service applications, we focus on modular architecture, sub-second latency, accessibility (WCAG), and seamless database synchronization.",
+    "features": [
+      "Custom Web Applications & Portals",
+      "Multi-Tenant SaaS Architecture",
+      "Responsive Admin Dashboards",
+      "Progressive Web Apps (PWA) with Offline Caching",
+      "Role-Based Granular Access Control (RBAC)",
+      "Real-Time WebSockets & Telemetry",
+      "Automated CI/CD & Cloud Deployment",
+      "SEO-Friendly Server-Side Rendering (SSR)"
+    ],
+    "deliverables": [
+      "Fully Tested Web Application Codebase",
+      "Comprehensive Architecture Diagram & API Specs",
+      "Production CI/CD Pipeline Configuration",
+      "Responsive Frontend UI with Design System",
+      "Role-Based Access Control (RBAC) System",
+      "90+ Google Lighthouse Score Guarantee"
+    ],
+    "techStack": [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Redis",
+      "GraphQL",
+      "Docker",
+      "AWS / Cloudflare"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Technical Scoping & Discovery",
+        "description": "We analyze user flows, define system architecture, data models, and prepare a sprint execution roadmap."
+      },
+      {
+        "step": "02",
+        "title": "UI/UX & Component Design",
+        "description": "Interactive Figma wireframes, design tokens, and modular atomic component libraries are constructed."
+      },
+      {
+        "step": "03",
+        "title": "Full-Stack Development",
+        "description": "Agile two-week sprints building typed frontend interfaces, backend endpoints, and database migrations."
+      },
+      {
+        "step": "04",
+        "title": "Automated Testing & Security",
+        "description": "Rigorous unit, integration, end-to-end tests, vulnerability scans, and Core Web Vitals optimization."
+      },
+      {
+        "step": "05",
+        "title": "Production Deployment & Support",
+        "description": "Zero-downtime deployment, infrastructure monitoring, automated backups, and 24/7 technical SLA support."
+      }
+    ],
+    "benefits": [
+      "Accelerated Time-to-Market with Modular Codebase",
+      "99.9% Uptime and High-Concurrency Handling",
+      "SEO-Optimized Next.js Server-Side Rendering",
+      "Clean, Maintainable Code with 100% Client Ownership"
+    ],
+    "faqs": [
+      {
+        "question": "What frontend and backend technologies do you use for web applications?",
+        "answer": "We primarily leverage Next.js, React, TypeScript, Node.js, and Laravel, paired with PostgreSQL, MySQL, and Redis for high-performance caching and relational data integrity."
+      },
+      {
+        "question": "Can you migrate legacy web platforms to modern Next.js/React architecture?",
+        "answer": "Yes, we specialize in legacy modernization, breaking down monolithic systems into maintainable microservices or modular headless frontends with zero data loss or downtime."
+      },
+      {
+        "question": "How do you ensure web application security and data privacy?",
+        "answer": "We enforce strict security practices including JWT/OAuth2 authentication, HTTPS encryption, CSRF/XSS sanitization, rate limiting, and automated dependency vulnerability auditing."
+      }
+    ],
+    "metrics": "Sub-100ms Page Loads & 99.9% Uptime",
+    "link": "/services/web"
+  },
+  {
     "id": "mobile-app-development",
     "slug": "mobile",
     "title": "Mobile App Development",
     "badge": "iOS & Android",
-    "description": "We specialize in designing and developing high-performance mobile applications that deliver seamless user experiences across all devices and operating systems.",
+    "iconName": "Smartphone",
+    "shortDesc": "Native and cross-platform mobile apps for iOS & Android built with Flutter, React Native, Swift, and Kotlin.",
+    "description": "We specialize in designing and developing high-performance mobile applications that deliver smooth 60fps animations, intuitive tactile gestures, and native hardware sensor integration across all mobile devices.",
+    "fullDesc": "Flipcode builds native and cross-platform mobile experiences that delight users and drive real engagement. From native iOS (Swift) and Android (Kotlin) development to fast cross-platform Flutter and React Native architectures, our team handles the entire mobile lifecycle—from offline SQLite caching and biometric security to App Store and Google Play deployment pipelines.",
     "features": [
-      "Native iOS & Android Apps",
-      "Cross-Platform Frameworks (Flutter & React Native)",
-      "Offline Sync & Real-Time Telemetry"
+      "Cross-Platform Flutter & React Native Apps",
+      "Native iOS (Swift) & Android (Kotlin) Engineering",
+      "Offline-First Architecture & SQLite Sync",
+      "Biometric Auth (FaceID & Fingerprint)",
+      "Real-Time Push Notifications (FCM / APNs)",
+      "In-App Subscriptions & StoreKit / Google Play Billing",
+      "Background Geolocation & Bluetooth BLE",
+      "Automated App Store & Play Store CI/CD"
     ],
-    "link": "/services#mobile"
+    "deliverables": [
+      "Published iOS & Android Apps on App Store & Play Store",
+      "Complete Source Code with Clean Architecture",
+      "Offline Database Sync Engine",
+      "Integrated Analytics & Crash Reporting SDKs",
+      "App Store Submission & Compliance Assets",
+      "Post-Launch Maintenance & Version Updates"
+    ],
+    "techStack": [
+      "Flutter",
+      "React Native",
+      "Swift",
+      "Kotlin",
+      "Firebase",
+      "SQLite",
+      "Fastlane",
+      "Node.js API",
+      "Tailwind Native",
+      "StoreKit"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Product UX & Mobile Strategy",
+        "description": "Defining user journeys, device interaction patterns, and OS-specific interface guidelines (HIG / Material)."
+      },
+      {
+        "step": "02",
+        "title": "Interactive Prototyping",
+        "description": "Clickable mobile prototypes in Figma to test tactile ergonomics and responsive screen layouts."
+      },
+      {
+        "step": "03",
+        "title": "Native & Hybrid Engineering",
+        "description": "Building performant mobile UI, integrating device APIs, biometric auth, and backend REST/GraphQL sync."
+      },
+      {
+        "step": "04",
+        "title": "Device Lab QA & Performance",
+        "description": "Comprehensive testing across 30+ physical Android and iOS screen resolutions and operating versions."
+      },
+      {
+        "step": "05",
+        "title": "Store Submission & CI/CD",
+        "description": "Automated Fastlane build scripts, signing certificates, Store review handling, and production release."
+      }
+    ],
+    "benefits": [
+      "Single Codebase for iOS & Android Reducing Cost by 40%",
+      "Native 60FPS Fluid Performance & Animations",
+      "Offline-First Reliability in Spotty Network Conditions",
+      "Streamlined App Store & Google Play Approval Support"
+    ],
+    "faqs": [
+      {
+        "question": "Should I build a Flutter app or React Native app?",
+        "answer": "Both are exceptional frameworks. We recommend Flutter for rich custom UI animations and cross-platform desktop/mobile parity, and React Native when your team already has React web expertise or requires deep platform-native module bindings."
+      },
+      {
+        "question": "Do you help with App Store and Google Play approvals?",
+        "answer": "Yes, we handle the complete store submission process, including metadata guidelines, privacy policy compliance, screenshot generation, and resolving any review inquiries."
+      },
+      {
+        "question": "Can the mobile app work offline without an active internet connection?",
+        "answer": "Yes, we implement offline-first caching using SQLite, WatermelonDB, or Hive, automatically synchronizing changes with cloud servers whenever connectivity is restored."
+      }
+    ],
+    "metrics": "60 FPS Fluid UI & 4.9/5 Store Ratings",
+    "link": "/services/mobile"
   },
   {
-    "id": "web-application-development",
-    "slug": "web",
-    "title": "Web Application Development",
-    "badge": "Enterprise Web",
-    "description": "We engineer robust, scalable, and responsive web applications catering to unique workflows using modern full-stack architectures and high-security standards.",
+    "id": "saas-platform-engineering",
+    "slug": "saas",
+    "title": "SaaS Platform Engineering",
+    "badge": "Multi-Tenant Cloud",
+    "iconName": "Layers",
+    "shortDesc": "End-to-end multi-tenant SaaS products with automated recurring billing, telemetry, and high availability.",
+    "description": "From initial MVP architecture to high-scale enterprise cloud solutions, we engineer software-as-a-service platforms with multi-tenancy, Stripe billing, and granular permissions.",
+    "fullDesc": "Building a scalable SaaS product demands more than just basic web development—it requires rock-solid tenant data isolation, flexible recurring billing engines (usage-based, tiered, seats), automated provisioning, granular RBAC permissions, and deep operational telemetry. Flipcode builds SaaS foundations that allow founders and product owners to scale users and revenue effortlessly.",
     "features": [
-      "Multi-Tenant SaaS Platforms",
-      "Enterprise Web Portals & Dashboards",
-      "Progressive Web Apps (PWA) with Offline Caching"
+      "Multi-Tenant Database & Schema Isolation",
+      "Stripe Connect & Automated Subscription Billing",
+      "Granular Role-Based Access Control (RBAC)",
+      "Automated Tenant Onboarding & Provisioning",
+      "Usage-Based Metering & Customer Telemetry",
+      "Real-Time Audit Logs & Compliance",
+      "Custom White-Labeling & Custom Domains",
+      "Resilient Webhook Ingestion Engine"
     ],
-    "link": "/services#web"
+    "deliverables": [
+      "Production Multi-Tenant SaaS Architecture",
+      "Stripe Billing Integration with Invoicing & Dunning",
+      "Admin Super-Console & Customer Self-Serve Portals",
+      "Tenant Isolation Security Audit",
+      "Automated Provisioning & Onboarding Flow",
+      "Monitoring & Billing Usage Dashboard"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "NestJS",
+      "Stripe API",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS ECS",
+      "Tailwind CSS",
+      "SendGrid"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Tenancy & Billing Architecture",
+        "description": "Designing tenant isolation models (shared DB vs schema-per-tenant) and subscription pricing logic."
+      },
+      {
+        "step": "02",
+        "title": "MVP Feature Scoping",
+        "description": "Defining the core product value proposition and building essential customer workflows."
+      },
+      {
+        "step": "03",
+        "title": "SaaS Engine Engineering",
+        "description": "Developing authentication, Stripe webhook pipelines, team invitations, and tenant routing."
+      },
+      {
+        "step": "04",
+        "title": "Security & Multi-Tenant Testing",
+        "description": "Verifying zero data bleed between tenants, load testing under high concurrency, and payment test cases."
+      },
+      {
+        "step": "05",
+        "title": "Launch & Telemetry Monitoring",
+        "description": "Deploying scalable cloud containers, configuring analytics funnels, and setting up error telemetry."
+      }
+    ],
+    "benefits": [
+      "Scales from 10 to 100,000+ Tenants with Zero Downtime",
+      "Automated Revenue Collection with Stripe & Tax Compliance",
+      "White-Label & Custom Subdomain Routing Built-In",
+      "Lower Infrastructure Costs with Optimized Resource Pooling"
+    ],
+    "faqs": [
+      {
+        "question": "How do you ensure data isolation between different SaaS tenants?",
+        "answer": "We employ strict tenant isolation patterns such as PostgreSQL Row-Level Security (RLS) or tenant schema separation, combined with tenant ID scoping at the ORM/data access layer."
+      },
+      {
+        "question": "Can we support complex pricing tiers like usage-based or per-seat billing?",
+        "answer": "Yes, we integrate Stripe Billing and custom metering middleware that accurately tracks API calls, storage, or active seats in real-time."
+      },
+      {
+        "question": "Do you provide white-label and custom domain support?",
+        "answer": "Yes, we configure edge routing via Cloudflare for SaaS or AWS CloudFront to support custom SSL certificates and custom customer domains automatically."
+      }
+    ],
+    "metrics": "99.99% Uptime & 100% Tenant Isolation",
+    "link": "/services/saas"
   },
   {
     "id": "backend-development",
     "slug": "backend",
-    "title": "Backend Development",
-    "badge": "APIs & Cloud Architecture",
-    "description": "Our backend engineering services build powerful, resilient, and fault-tolerant cloud backbones that power high-concurrency enterprise workloads.",
+    "title": "Backend & API Development",
+    "badge": "High-Throughput APIs",
+    "iconName": "Server",
+    "shortDesc": "Resilient backend microservices, high-throughput RESTful & GraphQL APIs, and optimized database storage.",
+    "description": "Our backend engineering services build powerful, resilient, and fault-tolerant cloud backbones that power high-concurrency enterprise workloads with low latency.",
+    "fullDesc": "A responsive frontend requires a blazing-fast, secure, and bulletproof backend. We build high-throughput RESTful and GraphQL APIs, event-driven microservices, asynchronous worker queues, and optimized database storage layers that maintain sub-100ms response times even under heavy traffic spikes.",
     "features": [
       "Microservices & Event-Driven Architecture",
       "High-Throughput RESTful & GraphQL APIs",
-      "Optimized Database Schemas & Caching Layers"
+      "Asynchronous Job Queues (RabbitMQ / Redis Bull)",
+      "Database Optimization, Indexing & Sharding",
+      "OAuth2, JWT & OpenID Connect Auth",
+      "Automated API Documentation (Swagger / Postman)",
+      "Rate Limiting & DDoS Mitigation Layers",
+      "Third-Party System & Webhook Integrations"
     ],
-    "link": "/services#backend"
-  },
-  {
-    "id": "seo-digital-marketing",
-    "slug": "marketing",
-    "title": "SEO & Digital Marketing",
-    "badge": "Growth & Search Ranking",
-    "description": "We help brands achieve technical search dominance and organic customer acquisition through data-driven technical SEO, performance audits, and strategy.",
-    "features": [
-      "Technical Core Web Vitals Audits",
-      "Keyword Strategy & Competitor Analysis",
-      "Conversion Rate Optimization (CRO) Pipelines"
+    "deliverables": [
+      "Production-Ready API Service with Complete Documentation",
+      "Optimized Database Schema & Migration Scripts",
+      "Automated Unit & Load Testing Suites",
+      "Containerized Docker Compose & Helm Configurations",
+      "API Gateway & Caching Configuration",
+      "Logging & APM Telemetry Integration"
     ],
-    "link": "/services#marketing"
-  },
-  {
-    "id": "uiux-development",
-    "slug": "uiux",
-    "title": "UI/UX Development",
-    "badge": "Design Systems & UX",
-    "description": "We craft intuitive, accessible, and conversion-optimized digital interfaces anchored by scalable design systems and polished micro-interactions.",
-    "features": [
-      "User Journey Mapping & Wireframing",
-      "Multi-Brand Design Systems & Tokens",
-      "Fluid Micro-Interactions & Motion Choreography"
+    "techStack": [
+      "Node.js",
+      "Express",
+      "Laravel",
+      "PHP 8.3",
+      "Python / FastAPI",
+      "PostgreSQL",
+      "MySQL 8.0",
+      "Redis",
+      "Docker",
+      "RabbitMQ"
     ],
-    "link": "/services#uiux"
-  },
-  {
-    "id": "crm-development",
-    "slug": "crm",
-    "title": "CRM Development",
-    "badge": "Enterprise CRM & Automation",
-    "description": "Custom Customer Relationship Management (CRM) and ERP solutions designed to streamline sales pipelines, automate workflows, and unify data.",
-    "features": [
-      "Custom Sales & Lead Pipelines",
-      "Omnichannel In-App Communications",
-      "Third-Party ERP, Billing & Logistics Integrations"
+    "process": [
+      {
+        "step": "01",
+        "title": "Domain Modeling & API Contract",
+        "description": "Defining RESTful/GraphQL schemas, request validation schemas, and database entity relationships."
+      },
+      {
+        "step": "02",
+        "title": "Database Optimization",
+        "description": "Structuring normalized tables, indexes, foreign keys, and Redis caching layers for high throughput."
+      },
+      {
+        "step": "03",
+        "title": "Service Implementation",
+        "description": "Building modular controllers, business logic services, transactional queries, and worker queues."
+      },
+      {
+        "step": "04",
+        "title": "Stress & Load Testing",
+        "description": "Simulating high concurrent connections using k6/JMeter to identify bottlenecks and optimize memory."
+      },
+      {
+        "step": "05",
+        "title": "Containerized Deployment",
+        "description": "Deploying behind load balancers with health checks, automated database backups, and error monitoring."
+      }
     ],
-    "link": "/services#crm"
+    "benefits": [
+      "Sub-100ms API Latency under High Concurrency",
+      "Predictable Horizontal Scaling with Containerized Microservices",
+      "Zero Data Loss with Transactional Integrity & Backups",
+      "Comprehensive OpenAPI / Swagger Documentation"
+    ],
+    "faqs": [
+      {
+        "question": "Which backend framework is best for our project?",
+        "answer": "For ultra-fast I/O and real-time APIs, Node.js/TypeScript or FastAPI are ideal. For complex business enterprise logic with rapid development, Laravel or NestJS provide proven, structured architectures."
+      },
+      {
+        "question": "How do you handle high traffic spikes?",
+        "answer": "We utilize horizontal auto-scaling, Redis distributed caching, database read replicas, and message queues to decouple intensive background jobs from real-time API requests."
+      },
+      {
+        "question": "Do you document the APIs for external integration?",
+        "answer": "Yes, we generate interactive Swagger / OpenAPI documentation, Postman collections, and typed SDK contracts for easy client integration."
+      }
+    ],
+    "metrics": "<80ms Average Latency & 10k+ RPS",
+    "link": "/services/backend"
   },
   {
     "id": "e-commerce-development",
     "slug": "ecommerce",
     "title": "E-commerce Development",
-    "badge": "High-Conversion Stores",
-    "description": "Scalable multi-vendor marketplaces, high-speed headless stores, and custom checkout flows engineered to maximize revenue and minimize cart drop-off.",
+    "badge": "Headless & Marketplaces",
+    "iconName": "ShoppingBag",
+    "shortDesc": "High-converting headless stores, multi-vendor marketplaces, and custom checkout flows engineered for speed.",
+    "description": "Scalable multi-vendor marketplaces, high-speed headless stores, and custom checkout flows engineered to maximize revenue, average order value, and minimize cart drop-off.",
+    "fullDesc": "Today's eCommerce shoppers expect instant page transitions, personalized recommendations, and frictionless checkout. We build custom headless commerce platforms, multi-vendor marketplaces, and bespoke Shopify/WooCommerce architectures that deliver sub-second product page loads and high conversion rates.",
     "features": [
-      "Sub-Second High-Conversion Checkout",
-      "Multi-Warehouse & Inventory Real-Time Sync",
-      "Headless & Omnichannel Commerce Architectures"
+      "Headless Commerce with Next.js & Shopify Plus",
+      "Multi-Vendor Marketplace Architectures",
+      "Sub-Second High-Conversion Checkout Flows",
+      "Real-Time Inventory & Multi-Warehouse Sync",
+      "Multi-Currency & Localized Payment Gateways",
+      "Automated Abandoned Cart Recovery Pipelines",
+      "Dynamic Product Filtering & Elastic Search",
+      "Custom Admin Order & Fulfillment Dashboards"
     ],
-    "link": "/services#ecommerce"
+    "deliverables": [
+      "Turnkey eCommerce Storefront or Multi-Vendor Marketplace",
+      "Payment Gateway & Tax Automation Integration",
+      "Product Catalog Import & Real-Time Sync Engine",
+      "Mobile-Optimized Cart & Checkout Experience",
+      "Automated Transactional Email & SMS Notifications",
+      "Analytics & Conversion Funnel Dashboard"
+    ],
+    "techStack": [
+      "Next.js Commerce",
+      "Shopify Plus",
+      "WooCommerce",
+      "Node.js",
+      "Stripe",
+      "PayPal",
+      "Razorpay",
+      "MySQL",
+      "Redis",
+      "Algolia"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Customer Journey & UX Scoping",
+        "description": "Mapping product discovery, filtering, cart workflows, and checkout friction points."
+      },
+      {
+        "step": "02",
+        "title": "Storefront & Catalog Architecture",
+        "description": "Engineering headless product schemas, variant matrices, inventory sync, and SEO meta structure."
+      },
+      {
+        "step": "03",
+        "title": "Payment & Logistics Integration",
+        "description": "Connecting payment gateways, automated tax engines (TaxJar/Stripe Tax), and shipping carriers."
+      },
+      {
+        "step": "04",
+        "title": "Conversion Rate Optimization QA",
+        "description": "A/B testing checkout friction, mobile touch responsiveness, and sub-second page performance."
+      },
+      {
+        "step": "05",
+        "title": "Launch & Growth Handover",
+        "description": "Production go-live, SEO redirects, inventory validation, and staff training for order management."
+      }
+    ],
+    "benefits": [
+      "3x Faster Page Loads Compared to Standard Monolithic Stores",
+      "Higher Checkout Conversions with Streamlined Payment UX",
+      "Automated Multi-Channel Inventory & Order Management",
+      "Direct Integration with Shipping Logistics & ERPs"
+    ],
+    "faqs": [
+      {
+        "question": "Why choose headless commerce over a standard template?",
+        "answer": "Headless separates frontend presentation from backend eCommerce logic, resulting in sub-second page speeds, unlimited UX customization, and superior SEO rankings."
+      },
+      {
+        "question": "Can you integrate multiple payment gateways for global customers?",
+        "answer": "Yes, we integrate Stripe, PayPal, Razorpay, Apple Pay, Google Pay, and Klarna with automated currency conversion and fraud protection."
+      },
+      {
+        "question": "Can you build multi-vendor marketplaces like Etsy or Amazon?",
+        "answer": "Yes, we build multi-vendor platforms featuring vendor payout splits, vendor self-serve portals, separate commissions, and centralized order fulfillment."
+      }
+    ],
+    "metrics": "35% Conversion Boost & Sub-1s Loads",
+    "link": "/services/ecommerce"
+  },
+  {
+    "id": "uiux-development",
+    "slug": "uiux",
+    "title": "UI/UX Design & Prototyping",
+    "badge": "Design Systems & UX",
+    "iconName": "Palette",
+    "shortDesc": "Human-centered UI/UX design, interactive Figma prototypes, and modular multi-brand design systems.",
+    "description": "We craft intuitive, accessible, and conversion-optimized digital interfaces anchored by scalable design systems, UX research, and polished micro-interactions.",
+    "fullDesc": "Great software begins with an exceptional user experience. Our UI/UX design practice blends user psychology, empirical research, and brand aesthetics into high-converting, accessible digital products. We create comprehensive design systems in Figma that streamline development and guarantee design consistency across platforms.",
+    "features": [
+      "User Research & Persona Development",
+      "Information Architecture & Wireframing",
+      "High-Fidelity Interactive Figma Prototypes",
+      "Multi-Brand Design Systems & Design Tokens",
+      "WCAG 2.1 AA/AAA Accessibility Audits",
+      "Usability Testing & Heatmap Analysis",
+      "Micro-Interactions & Animation Choreography",
+      "Developer-Ready Component Handover Specs"
+    ],
+    "deliverables": [
+      "Complete Figma Design System with UI Kit & Components",
+      "Clickable High-Fidelity Desktop & Mobile Prototypes",
+      "User Flow Diagrams & Journey Maps",
+      "Developer Handover Guidelines & CSS Tokens",
+      "Usability Audit Report with Actionable Insights",
+      "Iconography & Brand Asset Library"
+    ],
+    "techStack": [
+      "Figma",
+      "Adobe XD",
+      "Storybook",
+      "Framer Motion",
+      "Tailwind CSS",
+      "Zeroheight",
+      "Lottie",
+      "WCAG 2.1 AA"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "User Research & Discovery",
+        "description": "Conducting user interviews, stakeholder workshops, and competitor benchmark evaluations."
+      },
+      {
+        "step": "02",
+        "title": "Information Architecture & Wireframes",
+        "description": "Creating low-fidelity wireframes to establish logical content hierarchy and frictionless navigation."
+      },
+      {
+        "step": "03",
+        "title": "Visual Design & System Crafting",
+        "description": "Developing typography scales, color palettes, atomic components, and dark/light modes."
+      },
+      {
+        "step": "04",
+        "title": "Interactive Prototyping & Testing",
+        "description": "Building realistic clickable prototypes and conducting usability testing with real users."
+      },
+      {
+        "step": "05",
+        "title": "Developer Handover & Specs",
+        "description": "Providing tokenized variables, responsive layout specs, and ongoing implementation reviews."
+      }
+    ],
+    "benefits": [
+      "Drastically Reduces Development Rework and Friction",
+      "Increases User Retention and Task Completion Rates",
+      "Consistent Brand Identity Across Web, iOS, and Android",
+      "Strict Compliance with Accessibility (WCAG 2.1) Standards"
+    ],
+    "faqs": [
+      {
+        "question": "What tools do you use for design and prototyping?",
+        "answer": "We primarily work in Figma for collaborative UI design, interactive prototyping, and component libraries, paired with Storybook and Zeroheight for design system documentation."
+      },
+      {
+        "question": "Will your designs be easy for our developers to build?",
+        "answer": "Yes, we use Auto Layout, tokenized styling variables matching Tailwind CSS / CSS variables, and provide clean asset exports and annotated handover specs."
+      },
+      {
+        "question": "Do you redesign existing software interfaces?",
+        "answer": "Yes, we perform UX heuristic evaluations and usability audits to identify drop-off points, followed by a phased UI modernization without breaking existing user habits."
+      }
+    ],
+    "metrics": "98% Usability Score & 40% Fewer Dev Revisions",
+    "link": "/services/uiux"
+  },
+  {
+    "id": "crm-development",
+    "slug": "crm",
+    "title": "CRM & Custom ERP Solutions",
+    "badge": "Enterprise Automation",
+    "iconName": "Users2",
+    "shortDesc": "Bespoke CRM and ERP systems engineered to unify sales pipelines, inventory, and business operations.",
+    "description": "Custom Customer Relationship Management (CRM) and ERP solutions designed to streamline sales pipelines, automate workflows, unify data, and eliminate manual entry.",
+    "fullDesc": "Off-the-shelf CRM and ERP software often forces businesses into rigid workflows and expensive per-user monthly licenses. Flipcode engineers tailored CRM and ERP systems built specifically around your organization's unique operational pipelines, approval matrices, and third-party accounting software.",
+    "features": [
+      "Custom Lead & Sales Pipeline Tracking",
+      "Automated Email/SMS Workflow Triggers",
+      "Role-Based Analytics & Executive Dashboards",
+      "Real-Time Inventory & Supply Chain Tracking",
+      "Customer Ticketing & Support Desk Portals",
+      "Document Generation & Digital e-Signatures",
+      "Accounting & Invoice Automation Connectors",
+      "Granular Security & Audit Trail Logs"
+    ],
+    "deliverables": [
+      "Custom Enterprise CRM/ERP Web Application",
+      "Role-Based User Management & Permissions Engine",
+      "Automated Workflow & Notification Rules Engine",
+      "Comprehensive Reporting & Export Modules (PDF/Excel)",
+      "Data Migration from Legacy Systems",
+      "Staff Training & Video Documentation"
+    ],
+    "techStack": [
+      "Laravel",
+      "React.js",
+      "Node.js",
+      "PostgreSQL",
+      "MySQL",
+      "Tailwind CSS",
+      "Redis",
+      "AWS",
+      "SendGrid",
+      "Twilio"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Operational Workflow Audit",
+        "description": "Mapping sales pipelines, departmental handoffs, approval hierarchies, and pain points."
+      },
+      {
+        "step": "02",
+        "title": "Data Modeling & Security Design",
+        "description": "Structuring relational databases with strict access controls, audit logs, and data encryption."
+      },
+      {
+        "step": "03",
+        "title": "Core Module Engineering",
+        "description": "Developing lead management, quoting, invoicing, automated email triggers, and reporting."
+      },
+      {
+        "step": "04",
+        "title": "Legacy Data Migration",
+        "description": "Cleaning, migrating, and validating historical customer and transaction data with zero data loss."
+      },
+      {
+        "step": "05",
+        "title": "User Acceptance Testing & Training",
+        "description": "Conducting departmental UAT, fine-tuning permission roles, and delivering admin training."
+      }
+    ],
+    "benefits": [
+      "Zero Per-User Monthly License Fees — 100% Ownership",
+      "Customized to Your Exact Business Workflows and Approval Rules",
+      "Automated Daily Tasks Saving 15+ Team Hours Every Week",
+      "Unified Single Source of Truth Across All Departments"
+    ],
+    "faqs": [
+      {
+        "question": "Why build a custom CRM instead of using Salesforce or HubSpot?",
+        "answer": "Custom CRMs give you 100% data ownership, zero recurring seat fees, and are tailored precisely to your company's workflows without bloated unnecessary features."
+      },
+      {
+        "question": "Can you migrate data from our existing spreadsheets or legacy CRM?",
+        "answer": "Yes, we handle the extraction, deduplication, schema normalization, and automated import of historical customer records and invoices."
+      },
+      {
+        "question": "Can the CRM integrate with our existing accounting software?",
+        "answer": "Yes, we integrate with QuickBooks, Xero, Tally, Zoho Books, Stripe, and custom banking APIs for automated invoice and payment reconciliation."
+      }
+    ],
+    "metrics": "15+ Hours Saved Weekly & Zero Per-User Fees",
+    "link": "/services/crm"
+  },
+  {
+    "id": "cloud-architecture-devops",
+    "slug": "cloud-devops",
+    "title": "Cloud Architecture & DevOps",
+    "badge": "AWS & Infrastructure",
+    "iconName": "CloudCog",
+    "shortDesc": "Resilient cloud infrastructure, automated CI/CD pipelines, Docker containerization, and 99.9% uptime SLAs.",
+    "description": "Resilient cloud engineering, automated CI/CD deployment pipelines, infrastructure as code (IaC), containerization, and 24/7 telemetry monitoring on AWS and Cloudflare.",
+    "fullDesc": "Modern businesses cannot afford server crashes, slow deployments, or data loss. Flipcode's Cloud & DevOps team designs, migrates, and manages resilient cloud infrastructure on AWS, DigitalOcean, and Cloudflare. We automate continuous delivery so your team can deploy updates safely multiple times a day with zero downtime.",
+    "features": [
+      "AWS Cloud Architecture (ECS, EKS, RDS, S3, Lambda)",
+      "Automated CI/CD Pipelines (GitHub Actions & GitLab)",
+      "Docker Containerization & Kubernetes Orchestration",
+      "Infrastructure as Code (Terraform & AWS CDK)",
+      "Zero-Downtime Blue/Green Deployments",
+      "Automated Daily Backups & Disaster Recovery",
+      "24/7 APM Telemetry & Log Aggregation (Datadog/CloudWatch)",
+      "Web Application Firewall (WAF) & DDoS Protection"
+    ],
+    "deliverables": [
+      "Production Cloud Infrastructure on AWS / Cloudflare",
+      "Automated Multi-Stage CI/CD Deployment Pipelines",
+      "Terraform Infrastructure as Code Repository",
+      "Automated SSL, CDN, and DNS Configuration",
+      "Disaster Recovery & Automated Snapshot Strategy",
+      "Server Health & Performance Monitoring Dashboard"
+    ],
+    "techStack": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions",
+      "Cloudflare",
+      "Nginx",
+      "PostgreSQL RDS",
+      "Linux",
+      "Datadog"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Infrastructure Audit & Architecture",
+        "description": "Evaluating server sizing, bottlenecks, security vulnerabilities, and monthly cloud spend."
+      },
+      {
+        "step": "02",
+        "title": "Infrastructure as Code (IaC)",
+        "description": "Writing reproducible Terraform / CDK scripts for VPCs, databases, load balancers, and security groups."
+      },
+      {
+        "step": "03",
+        "title": "CI/CD Pipeline Automation",
+        "description": "Configuring automated test runs, Docker container builds, and staging/production deployments."
+      },
+      {
+        "step": "04",
+        "title": "Disaster Recovery & Security Hardening",
+        "description": "Setting up automated multi-region snapshots, WAF rules, IAM least-privilege roles, and SSL."
+      },
+      {
+        "step": "05",
+        "title": "24/7 Monitoring & Alerting Handover",
+        "description": "Configuring real-time Slack/PagerDuty alerts for CPU, memory, errors, and database latency."
+      }
+    ],
+    "benefits": [
+      "99.9% Production Uptime with Self-Healing Containers",
+      "Deploy New Features in Minutes with Zero Downtime",
+      "30-50% Reduction in Monthly Cloud Hosting Expenses",
+      "Automated Daily Backups with 15-Minute Recovery Time"
+    ],
+    "faqs": [
+      {
+        "question": "Can you help reduce our monthly AWS bill?",
+        "answer": "Yes, our cloud cost optimization audits frequently reduce AWS hosting costs by 30-50% through reserved instances, autoscaling, caching, and removing idle resources."
+      },
+      {
+        "question": "What is zero-downtime deployment?",
+        "answer": "Zero-downtime (such as blue/green or rolling updates) ensures new code is spun up and health-checked on new containers before traffic is switched, meaning users never experience an outage during releases."
+      },
+      {
+        "question": "Do you provide ongoing server maintenance and support?",
+        "answer": "Yes, we provide 24/7 monitoring, security patching, SSL renewals, and emergency on-call support SLAs."
+      }
+    ],
+    "metrics": "99.95% Uptime SLA & <5min Deployments",
+    "link": "/services/cloud-devops"
+  },
+  {
+    "id": "ai-automation-solutions",
+    "slug": "ai-automation",
+    "title": "AI & Workflow Automation",
+    "badge": "LLMs & Intelligent Workflows",
+    "iconName": "Cpu",
+    "shortDesc": "Custom AI agents, LLM integrations, document intelligence, and automated business workflows.",
+    "description": "Unlock business efficiency with custom AI agents, OpenAI/Claude LLM integrations, RAG knowledge retrieval systems, intelligent OCR document extraction, and workflow automation.",
+    "fullDesc": "Artificial intelligence is transforming how competitive businesses operate. Flipcode helps companies integrate practical, high-ROI AI capabilities into their existing software ecosystems. From Retrieval-Augmented Generation (RAG) knowledge assistants to automated invoice OCR and predictive data models, we engineer production-ready AI solutions.",
+    "features": [
+      "Custom LLM Integrations (OpenAI, Anthropic Claude, Gemini)",
+      "Retrieval-Augmented Generation (RAG) Knowledge Systems",
+      "Intelligent Document Parsing & OCR Data Extraction",
+      "Autonomous AI Customer Support & Sales Agents",
+      "Vector Database Setup (Pinecone, Qdrant, pgvector)",
+      "Automated Multi-Step Business Logic Pipelines",
+      "Sentiment Analysis & Predictive Analytics Engines",
+      "Enterprise Data Privacy & Zero Data Leaks Guarantee"
+    ],
+    "deliverables": [
+      "Production AI Agent / RAG Service Connected to Your Data",
+      "Vector Database & Embedding Ingestion Pipeline",
+      "Interactive AI Chat / Assistant Frontend Interface",
+      "Secure API Middleware with Rate Limiting & Token Caching",
+      "Model Fine-Tuning & Prompt Engineering Specs",
+      "Comprehensive Evaluation & Accuracy Benchmark Report"
+    ],
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "OpenAI API",
+      "Claude API",
+      "LangChain",
+      "LlamaIndex",
+      "pgvector",
+      "Pinecone",
+      "Redis",
+      "Docker"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "AI Feasibility & Use Case Scoping",
+        "description": "Identifying high-impact workflows, data availability, and defining accuracy benchmarks."
+      },
+      {
+        "step": "02",
+        "title": "Data Ingestion & Vector Architecture",
+        "description": "Parsing proprietary PDFs, docs, and databases into clean chunked vector embeddings."
+      },
+      {
+        "step": "03",
+        "title": "Agent & RAG Pipeline Engineering",
+        "description": "Developing context-aware prompt templates, retrieval algorithms, and guardrail validation."
+      },
+      {
+        "step": "04",
+        "title": "Accuracy & Hallucination Testing",
+        "description": "Benchmarking responses against ground truth test sets to ensure zero hallucinations."
+      },
+      {
+        "step": "05",
+        "title": "Production Deployment & Caching",
+        "description": "Deploying behind fast caching proxies to minimize API latency and token consumption costs."
+      }
+    ],
+    "benefits": [
+      "Automates Repetitive Manual Document & Inquiry Tasks",
+      "Instant 24/7 Responses with 95%+ Accurate Retrieval",
+      "Reduces LLM API Token Costs by up to 60% with Smart Caching",
+      "Enterprise-Grade Security with Zero Customer Data Training"
+    ],
+    "faqs": [
+      {
+        "question": "Will our proprietary business data be used to train public AI models?",
+        "answer": "No. We utilize enterprise API agreements with OpenAI/Anthropic and private vector databases (such as pgvector/Pinecone) that explicitly guarantee your private data is never used for model training."
+      },
+      {
+        "question": "What is RAG (Retrieval-Augmented Generation)?",
+        "answer": "RAG enables the AI to fetch accurate facts from your company's private documents and databases before generating answers, preventing hallucinations and ensuring up-to-date responses."
+      },
+      {
+        "question": "Can AI integrate with our existing database or CRM?",
+        "answer": "Yes, we connect AI agents directly to PostgreSQL, MySQL, CRMs, and email systems to execute actions like drafting replies or updating records automatically."
+      }
+    ],
+    "metrics": "95%+ Retrieval Accuracy & 60% Cost Reduction",
+    "link": "/services/ai-automation"
+  },
+  {
+    "id": "api-integration-services",
+    "slug": "api-integrations",
+    "title": "API & System Integration",
+    "badge": "Ecosystem Connectors",
+    "iconName": "Network",
+    "shortDesc": "Seamless synchronization between third-party SaaS tools, payment gateways, and enterprise software.",
+    "description": "Connect disparate software systems into unified, automated data pipelines that eliminate manual double-entry, sync records in real-time, and guarantee data consistency.",
+    "fullDesc": "Growing businesses often struggle with disconnected software silos—customer data in one tool, invoices in another, inventory somewhere else. Flipcode designs and builds secure middleware and API integrations that connect your ERP, CRM, payment processors, eCommerce marketplaces, and third-party APIs into a unified, synchronized ecosystem.",
+    "features": [
+      "Payment Gateway Integrations (Stripe, Razorpay, PayPal)",
+      "Marketplace Integrations (Amazon SP-API, eBay, Shopify)",
+      "CRM & Marketing Sync (HubSpot, Salesforce, Mailchimp)",
+      "Accounting System Connectors (QuickBooks, Xero, Tally)",
+      "Custom Webhook Receivers & Event Handlers",
+      "High-Speed Message Queuing (Kafka / RabbitMQ)",
+      "Data Transformation & Schema Normalization",
+      "Automated Retry Logic & Failure Alerting"
+    ],
+    "deliverables": [
+      "Production Integration Middleware Engine",
+      "Webhook Listener & Event Dispatcher Architecture",
+      "Real-Time Sync Logs & Monitoring Dashboard",
+      "Data Mapping & Schema Transformation Specifications",
+      "Automated Failure Recovery & Retry Mechanism",
+      "Security Encryption & Token Management Module"
+    ],
+    "techStack": [
+      "Node.js",
+      "Python / FastAPI",
+      "GraphQL",
+      "REST APIs",
+      "RabbitMQ",
+      "Redis",
+      "PostgreSQL",
+      "Docker",
+      "AWS Lambda",
+      "Webhooks"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "API Specification & Data Mapping",
+        "description": "Reviewing third-party API documentation, rate limits, webhooks, and field mappings."
+      },
+      {
+        "step": "02",
+        "title": "Middleware & Event Architecture",
+        "description": "Designing idempotent event handlers, queue processors, and data transformation logic."
+      },
+      {
+        "step": "03",
+        "title": "Connector Implementation",
+        "description": "Building typed API clients, OAuth token refreshers, and robust error handling wrappers."
+      },
+      {
+        "step": "04",
+        "title": "Edge-Case & Concurrency Testing",
+        "description": "Testing network drops, duplicate webhook events, rate limit spikes, and payload malformations."
+      },
+      {
+        "step": "05",
+        "title": "Live Synchronization & Monitoring",
+        "description": "Activating real-time synchronization with automated alerts for any failed events."
+      }
+    ],
+    "benefits": [
+      "Eliminates Manual Data Re-Entry and Human Error",
+      "Real-Time Sub-Second Synchronization Across Systems",
+      "Built-In Idempotency Preventing Duplicate Transactions",
+      "Complete Visibility with Audit Logging and Error Alerts"
+    ],
+    "faqs": [
+      {
+        "question": "What happens if a third-party API goes down temporarily?",
+        "answer": "Our integration middleware uses durable message queues (RabbitMQ/Redis) with exponential backoff retries and dead-letter queues, ensuring zero data loss during third-party outages."
+      },
+      {
+        "question": "Can you integrate legacy databases that don't have a modern REST API?",
+        "answer": "Yes, we build custom ETL data extraction scripts and database listeners that safely sync legacy databases (SQL Server, Oracle, MySQL) with modern cloud APIs."
+      },
+      {
+        "question": "How do you protect sensitive API keys and tokens?",
+        "answer": "We store all credentials in encrypted cloud secret vaults (AWS Secrets Manager / Doppler) with automatic OAuth token refresh cycles."
+      }
+    ],
+    "metrics": "100% Data Consistency & 0 Data Loss",
+    "link": "/services/api-integrations"
   },
   {
     "id": "cms-development",
     "slug": "cms",
     "title": "CMS Development",
-    "badge": "Content Management Platforms",
-    "description": "Custom headless and modular Content Management Systems giving marketing teams full editorial autonomy with lightning-fast static delivery.",
+    "badge": "Headless & Modular CMS",
+    "iconName": "FileText",
+    "shortDesc": "Custom headless and modular Content Management Systems giving marketing teams full editorial autonomy.",
+    "description": "Custom headless and modular Content Management Systems giving marketing teams full editorial autonomy with lightning-fast static delivery and enterprise security.",
+    "fullDesc": "Modern content teams need the freedom to publish dynamic landing pages and blog content quickly without constantly bothering engineers. Flipcode delivers custom headless CMS solutions using Strapi, Sanity, and WordPress Headless paired with Next.js frontends for lightning-fast edge static delivery and full marketing flexibility.",
     "features": [
-      "Custom Headless CMS Architecture",
-      "Enterprise WordPress & Strapi Integration",
-      "Multi-Language Localization & Granular Roles"
+      "Headless CMS with Next.js Frontend (Strapi / Sanity)",
+      "Custom Dynamic Block Page Builders",
+      "Multi-Language Internationalization (i18n)",
+      "Granular Multi-User Role Permissions & Workflow Approvals",
+      "Automatic Image Optimization & CDN Delivery",
+      "Instant Incremental Static Regeneration (ISR)",
+      "Scheduled Content Publishing Pipelines",
+      "Headless WordPress & WooCommerce Modernization"
     ],
-    "link": "/services#cms"
+    "deliverables": [
+      "Custom Configured Headless CMS Backend",
+      "Next.js High-Performance Marketing Frontend",
+      "Reusable Content Block Components Library",
+      "Multi-Language Localization Setup",
+      "Content Editor User Guide & Training Videos",
+      "95+ Core Web Vitals Performance Score"
+    ],
+    "techStack": [
+      "Strapi",
+      "Sanity.io",
+      "WordPress Headless",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GraphQL",
+      "PostgreSQL",
+      "Cloudinary"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Content Architecture & Modeling",
+        "description": "Defining content types, relation fields, modular page blocks, and authoring workflows."
+      },
+      {
+        "step": "02",
+        "title": "Headless Backend Setup",
+        "description": "Configuring CMS schemas, media libraries, permissions, and webhook invalidation triggers."
+      },
+      {
+        "step": "03",
+        "title": "Frontend Block Builder Engineering",
+        "description": "Developing modular Next.js components that map dynamically to CMS block layouts."
+      },
+      {
+        "step": "04",
+        "title": "Preview & Editorial Workflow Testing",
+        "description": "Setting up real-time content previews so editors see exact layouts before publishing."
+      },
+      {
+        "step": "05",
+        "title": "Launch & Editor Training",
+        "description": "Production rollout, CDN caching configuration, and training session for marketing staff."
+      }
+    ],
+    "benefits": [
+      "Marketing Teams Launch New Pages in Minutes Without Devs",
+      "Lightning-Fast Static Page Speed Powered by Next.js ISR",
+      "Enterprise Security with Decoupled Frontend and Backend",
+      "Multi-Language & Multi-Region Support Built-In"
+    ],
+    "faqs": [
+      {
+        "question": "Why should we choose a headless CMS over traditional WordPress?",
+        "answer": "Headless CMS separates content management from frontend rendering, giving you 5x faster load times, bulletproof security (hackers cannot reach your DB), and complete design freedom."
+      },
+      {
+        "question": "Can marketing editors preview pages before publishing?",
+        "answer": "Yes, we configure live draft previews in Next.js so editors can view changes in real-time before clicking publish."
+      },
+      {
+        "question": "Can we migrate our existing WordPress posts and SEO rankings?",
+        "answer": "Yes, we migrate all historical articles, media assets, authors, categories, and preserve URL structures and 301 redirects to maintain 100% of your SEO ranking."
+      }
+    ],
+    "metrics": "<0.5s Edge Delivery & 100% SEO Retention",
+    "link": "/services/cms"
+  },
+  {
+    "id": "seo-digital-marketing",
+    "slug": "marketing",
+    "title": "SEO & Technical Optimization",
+    "badge": "Technical SEO & Growth",
+    "iconName": "TrendingUp",
+    "shortDesc": "Technical Core Web Vitals audits, keyword strategy, schema markup, and organic search ranking growth.",
+    "description": "We help brands achieve technical search dominance and organic customer acquisition through data-driven technical SEO, performance audits, schema markup, and strategy.",
+    "fullDesc": "Having a great web application is only half the battle—it needs to be found by customers searching for your solutions. Flipcode provides deep technical SEO engineering that optimizes Core Web Vitals, implements rich JSON-LD structured data schemas, builds scalable indexable content architectures, and boosts organic search rankings.",
+    "features": [
+      "Core Web Vitals & PageSpeed Performance Audits",
+      "Advanced Schema Markup (JSON-LD Breadcrumbs, FAQ, Services)",
+      "Automated Sitemap & Robots.txt Generation",
+      "Canonical URL & Duplicate Content Resolution",
+      "International Hreflang SEO Configuration",
+      "Next.js Dynamic OpenGraph & Meta Tag Generation",
+      "Competitor Keyword & Content Gap Analysis",
+      "Google Search Console & Indexing Optimization"
+    ],
+    "deliverables": [
+      "Comprehensive Technical SEO Audit Report",
+      "Clean Structured Data (JSON-LD) Implementation",
+      "90+ Core Web Vitals Lighthouse Score",
+      "Optimized Meta Tag & OpenGraph Dynamic Templates",
+      "Canonical & Redirect Hierarchy Configuration",
+      "Google Search Console & GA4 Setup"
+    ],
+    "techStack": [
+      "Next.js Metadata API",
+      "Schema.org",
+      "Google Search Console",
+      "Google Analytics 4",
+      "Lighthouse",
+      "Ahrefs",
+      "SEMrush",
+      "Screaming Frog"
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Technical SEO Audit & Crawl",
+        "description": "Running comprehensive crawls to identify 404 errors, redirect chains, and indexing blocks."
+      },
+      {
+        "step": "02",
+        "title": "Core Web Vitals Remediation",
+        "description": "Fixing Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP)."
+      },
+      {
+        "step": "03",
+        "title": "Schema Markup & Metadata Strategy",
+        "description": "Embedding rich JSON-LD snippets for Organization, Service, FAQ, Breadcrumbs, and Articles."
+      },
+      {
+        "step": "04",
+        "title": "Internal Linking & Content Architecture",
+        "description": "Structuring topic clusters and silo architectures that pass maximum PageRank to money pages."
+      },
+      {
+        "step": "05",
+        "title": "Search Console Monitoring & Reporting",
+        "description": "Tracking impressions, ranking keywords, click-through rates, and ongoing optimization."
+      }
+    ],
+    "benefits": [
+      "Consistently High Core Web Vitals (90+ Scores)",
+      "Rich Snippets in Google SERPs with Structured Data",
+      "Scalable Indexing for Thousands of Dynamic Pages",
+      "Sustainable Long-Term Inbound Organic Lead Flow"
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between technical SEO and regular SEO?",
+        "answer": "Technical SEO focuses on website architecture, code efficiency, Core Web Vitals speed, structured data, and server responses that enable search engines to crawl and index your site without friction."
+      },
+      {
+        "question": "How quickly do we see results from technical SEO improvements?",
+        "answer": "Core Web Vitals and crawling fixes are often reflected in Google Search Console within 2 to 4 weeks, with ranking and organic traffic improvements building consistently over 2 to 3 months."
+      },
+      {
+        "question": "Do you add structured data / JSON-LD markup?",
+        "answer": "Yes, we implement complete JSON-LD schemas for your Organization, Services, FAQs, Breadcrumbs, and Case Studies to qualify for Google rich snippets."
+      }
+    ],
+    "metrics": "90+ Lighthouse Score & 2x Organic Traffic",
+    "link": "/services/marketing"
   }
 ]
