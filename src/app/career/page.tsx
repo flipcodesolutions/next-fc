@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
+import { JobPostingJsonLd } from '@/components/seo/JsonLd';
 import {
   MapPin,
   Sparkles,
@@ -169,6 +170,7 @@ export default function CareerPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <JobPostingJsonLd jobs={jobs} />
       <SiteHeader />
 
       <main className="flex-1">

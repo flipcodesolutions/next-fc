@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "@/styles/globals.css";
+import "./globals.css";
 import PageLoader from "@/components/ui/PageLoader";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
@@ -12,6 +12,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flipcodesolutions.com"),
+  applicationName: "Flipcode Solutions",
+  referrer: "origin-when-cross-origin",
   title: {
     default: "Flipcode Solutions | Enterprise Full-Stack Software & Mobile Engineering",
     template: "%s | Flipcode Solutions",
@@ -69,22 +71,30 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Flipcode Solutions — Full-Stack Software Engineering Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@flipcodesolutions",
+    creator: "@flipcodesolutions",
     title: "Flipcode Solutions | Enterprise Full-Stack Software & Mobile Engineering",
     description:
       "Building mission-critical web applications, mobile ecosystems, and multi-tenant SaaS platforms with modern engineering stacks.",
     images: ["/images/og-image.jpg"],
-    creator: "@flipcodesolutions",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [
+      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   category: "technology",
 };
@@ -96,11 +106,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth antialiased">
-      <head>
+      <body className="min-h-screen flex flex-col bg-white text-[#3F4446] font-sans selection:bg-[#FF6B35] selection:text-white">
         <OrganizationJsonLd />
         <WebSiteJsonLd />
-      </head>
-      <body className="min-h-screen flex flex-col bg-white text-[#3F4446] font-sans selection:bg-[#FF6B35] selection:text-white">
         <PageLoader />
         {children}
       </body>

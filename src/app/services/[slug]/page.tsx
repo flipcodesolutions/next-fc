@@ -6,7 +6,7 @@ import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import ServiceDetails from '@/components/services/ServiceDetails';
 import servicesData from '@/data/services.json';
-import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, ServiceJsonLd, FAQJsonLd } from '@/components/seo/JsonLd';
 import { ArrowRight } from 'lucide-react';
 
 interface Props {
@@ -47,11 +47,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: service.description,
       url: `https://flipcodesolutions.com/services/${service.slug}`,
       type: 'website',
+      images: [
+        {
+          url: `/services/${service.slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} — Flipcode Solutions`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${service.title} | Flipcode Solutions`,
       description: service.description,
+      images: [`/services/${service.slug}/opengraph-image`],
     },
   };
 }
@@ -82,6 +91,8 @@ export default async function ServiceSlugPage({ params }: Props) {
     metrics: service.metrics,
   };
 
+  const faqItems = service.faqs ? service.faqs.map((f) => ({ q: f.question, a: f.answer })) : [];
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <BreadcrumbJsonLd
@@ -96,6 +107,7 @@ export default async function ServiceSlugPage({ params }: Props) {
         description={service.description}
         url={`https://flipcodesolutions.com/services/${service.slug}`}
       />
+      {faqItems.length > 0 && <FAQJsonLd faqs={faqItems} />}
       <SiteHeader />
 
       <main className="flex-1">

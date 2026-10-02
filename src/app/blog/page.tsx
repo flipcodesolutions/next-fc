@@ -228,58 +228,62 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* Newsletter CTA Section */}
-        <section className="bg-white py-20 lg:py-28">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl bg-[#202323] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-xl border border-white/10">
-              <div className="max-w-xl mx-auto space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FF6B35] mx-auto mb-2">
-                  <Mail className="w-6 h-6" />
+        {/* Full-Width Newsletter CTA Section */}
+        <section className="bg-[#202323] text-white py-20 lg:py-28 relative overflow-hidden border-t border-white/10">
+          {/* Subtle Grid & Radial Glows */}
+          <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
+
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-5">
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FF6B35] mx-auto shadow-sm">
+              <Mail className="w-6 h-6" />
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+              Get practical technology insights <br className="hidden sm:inline" />
+              <span className="text-[#FF6B35]">in your inbox.</span>
+            </h2>
+
+            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-normal">
+              No marketing fluff. Only real-world architectural case studies, performance benchmarks, and development guides.
+            </p>
+
+            <div className="pt-4 max-w-xl mx-auto">
+              {subDone ? (
+                <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold flex items-center justify-center gap-2 shadow-sm">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span>Thank you for subscribing! Check your inbox soon.</span>
                 </div>
-
-                <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                  Get practical technology insights in your inbox.
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-300">
-                  No marketing fluff. Only real-world architectural case studies, performance benchmarks, and development guides.
-                </p>
-
-                {subDone ? (
-                  <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <span>Thank you for subscribing! Check your inbox soon.</span>
+              ) : (
+                <form onSubmit={handleSubscribe} noValidate className="flex flex-col gap-2">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <input
+                      type="text"
+                      placeholder="Enter your corporate email..."
+                      value={emailSub}
+                      onChange={(e) => {
+                        setEmailSub(e.target.value);
+                        if (emailSubError) setEmailSubError('');
+                      }}
+                      className={`flex-1 px-5 py-3.5 rounded-xl bg-[#2C3030] border text-sm text-white placeholder-slate-400 focus:outline-none transition-colors ${
+                        emailSubError
+                          ? 'border-red-500 focus:border-red-500'
+                          : 'border-white/15 focus:border-[#FF6B35]'
+                      }`}
+                    />
+                    <button
+                      type="submit"
+                      className="btn-primary-orange px-8 py-3.5 rounded-xl text-sm font-bold whitespace-nowrap cursor-pointer shadow-lg shadow-[#FF6B35]/25"
+                    >
+                      Subscribe
+                    </button>
                   </div>
-                ) : (
-                  <form onSubmit={handleSubscribe} noValidate className="pt-2 flex flex-col gap-2">
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <input
-                        type="text"
-                        placeholder="Enter your corporate email..."
-                        value={emailSub}
-                        onChange={(e) => {
-                          setEmailSub(e.target.value);
-                          if (emailSubError) setEmailSubError('');
-                        }}
-                        className={`flex-1 px-4 py-3 rounded-xl bg-[#2C3030] border text-sm text-white placeholder-slate-500 focus:outline-none transition-colors ${
-                          emailSubError
-                            ? 'border-red-500 focus:border-red-500'
-                            : 'border-white/10 focus:border-[#FF6B35]'
-                        }`}
-                      />
-                      <button
-                        type="submit"
-                        className="btn-primary-orange px-6 py-3 rounded-xl text-xs font-bold whitespace-nowrap cursor-pointer"
-                      >
-                        Subscribe
-                      </button>
-                    </div>
-                    {emailSubError && (
-                      <p className="text-xs text-red-400 text-left pl-1 font-medium">{emailSubError}</p>
-                    )}
-                  </form>
-                )}
-              </div>
+                  {emailSubError && (
+                    <p className="text-xs text-red-400 text-left pl-1 font-medium">{emailSubError}</p>
+                  )}
+                </form>
+              )}
             </div>
           </div>
         </section>

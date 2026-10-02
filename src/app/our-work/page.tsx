@@ -5,7 +5,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import projectsData from '@/data/projects.json';
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, PortfolioJsonLd } from '@/components/seo/JsonLd';
 import {
   ArrowRight,
   CheckCircle2,
@@ -84,6 +84,7 @@ export default function OurWorkPage() {
           { name: 'Our Work', url: 'https://flipcodesolutions.com/our-work' },
         ]}
       />
+      <PortfolioJsonLd projects={projects} />
       <SiteHeader />
 
       <main className="flex-1">

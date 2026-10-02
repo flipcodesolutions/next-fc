@@ -27,6 +27,16 @@ export async function generateStaticParams() {
   }));
 }
 
+function parseDateToIso(dateStr?: string): string {
+  if (!dateStr) return new Date().toISOString();
+  try {
+    const d = new Date(dateStr);
+    return isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
+  } catch {
+    return new Date().toISOString();
+  }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogsData.find((b) => b.slug === slug);
@@ -36,6 +46,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: 'Article Not Found | Flipcode Solutions',
     };
   }
+
+  const publishedIso = parseDateToIso(post.publishedAt);
 
   return {
     title: `${post.title} | Flipcode Engineering Blog`,
@@ -57,14 +69,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.summary,
       url: `https://flipcodesolutions.com/blog/${post.slug}`,
       type: 'article',
-      publishedTime: '2026-03-01T08:00:00.000Z',
+      publishedTime: publishedIso,
       authors: [post.author.name],
       tags: post.tags,
+      images: [
+        {
+          url: `/blog/${post.slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${post.title} | Flipcode Blog`,
       description: post.summary,
+      images: [`/blog/${post.slug}/opengraph-image`],
     },
   };
 }
@@ -82,6 +103,8 @@ export default async function BlogPostPage({ params }: Props) {
     .filter((b) => b.slug !== slug)
     .slice(0, 3);
 
+  const publishedIso = parseDateToIso(post.publishedAt);
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <BreadcrumbJsonLd
@@ -95,7 +118,10 @@ export default async function BlogPostPage({ params }: Props) {
         title={post.title}
         description={post.summary}
         url={`https://flipcodesolutions.com/blog/${post.slug}`}
+        datePublished={publishedIso}
         authorName={post.author.name}
+        authorRole={post.author.role}
+        images={[`https://flipcodesolutions.com/blog/${post.slug}/opengraph-image`]}
       />
       <SiteHeader />
 

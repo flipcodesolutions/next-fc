@@ -1,8 +1,18 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import { Home, Compass } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: '404 - Page Not Found | Flipcode Solutions',
+  description: 'The requested page could not be found on Flipcode Solutions.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function NotFound() {
   return (
