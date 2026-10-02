@@ -102,9 +102,11 @@ export default async function BlogPostPage({ params }: Props) {
       <main className="flex-1">
         
         {/* Post Hero Header */}
-        <section className="bg-[#202323] text-white pt-36 pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] hero-radial-glow pointer-events-none"></div>
+        <section className="bg-[#202323] text-white pt-36 pb-20 lg:pt-44 lg:pb-28 relative overflow-hidden" aria-labelledby="blog-post-heading">
+          {/* Subtle background grid and radial light */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
@@ -117,9 +119,15 @@ export default async function BlogPostPage({ params }: Props) {
               <span className="text-[#FF6B35]">{post.category}</span>
             </nav>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FF6B35]/15 border border-[#FF6B35]/30 text-xs font-bold text-[#FF6B35] uppercase tracking-wider mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
-              {post.category}
+            {/* Eyebrow badge */}
+            <div className="flex justify-center mb-5">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
+                </span>
+                <span>{post.category}</span>
+              </div>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight mb-6">

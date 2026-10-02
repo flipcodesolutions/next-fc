@@ -89,21 +89,47 @@ export default function OurWorkPage() {
       <main className="flex-1">
         
         {/* Our Work Hero */}
-        <section className="bg-[#202323] text-white pt-36 pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] hero-radial-glow pointer-events-none"></div>
+        <section
+          className="bg-[#202323] text-white pt-36 pb-20 lg:pt-44 lg:pb-28 relative overflow-hidden"
+          aria-labelledby="ourWorkHeroTitle"
+        >
+          {/* Subtle Grid & Radial Glows */}
           <div className="absolute inset-0 bg-grid-dark opacity-35 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[550px] h-[550px] hero-radial-glow pointer-events-none"></div>
+          <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] bg-radial from-[#FF6B35]/10 via-transparent to-transparent pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#A0A4A6] uppercase tracking-wider mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35]"></span>
-              Portfolio &amp; Case Studies
+            {/* Breadcrumb Navigation */}
+            <nav className="inline-flex items-center gap-2 text-xs font-semibold text-[#A0A4A6] mb-6" aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-white transition-colors">
+                Home
+              </Link>
+              <span className="text-white/40">›</span>
+              <span className="text-[#FF6B35]">Our Work</span>
+            </nav>
+
+            {/* Eyebrow Badge */}
+            <div className="flex justify-center mb-5">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-semibold text-[#CBD5E1] tracking-wide shadow-xs">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B35]"></span>
+                </span>
+                <span>Portfolio &amp; Case Studies</span>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
-              Turning Ideas Into <span className="text-[#FF6B35]">Digital Products</span>
+            {/* Main Heading */}
+            <h1
+              id="ourWorkHeroTitle"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"
+            >
+              Turning Ideas Into <br className="hidden sm:inline" />
+              <span className="text-[#FF6B35]">Digital Products</span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            {/* Subtitle */}
+            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
               Explore our production-grade work across responsive web platforms, iOS &amp; Android mobile apps, and custom enterprise digital portals.
             </p>
           </div>
